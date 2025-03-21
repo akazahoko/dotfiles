@@ -15,6 +15,7 @@ yabai -m config window_placement second_child
 yabai -m config window_opacity on
 yabai -m config active_window_opacity 0.85
 yabai -m config normal_window_opacity 0.8
+
 # yabai -m config window_shadow on
 yabai -m config window_animation_duration 0.05
 
@@ -43,6 +44,7 @@ yabai -m rule --add app="Raycast"	manage=off
 yabai -m rule --add app="活動監視器"	manage=off
 yabai -m rule --add app="CrossOver"	manage=off
 yabai -m rule --add app="日曆"		manage=off
+
 # Rules - Space 1 (Obsidian)
 yabai -m rule --add app=Obsidian	space=^1
 
@@ -54,8 +56,8 @@ yabai -m rule --add app=Outlook		space=^12
 # Rules - Space 11 (Browser)
 yabai -m rule --add app=Firefox		space=^11
 
-# Space 10 (Coding)
-yabai -m rule --add app="iTerm2"	space=^10
+# Space 9-10 (Coding)
+yabai -m rule --add app="iTerm2"	space=^9
 yabai -m rule --add app="Code"		space=^10
 
 yabai -m rule --add app="預覽程式"	space=^2
