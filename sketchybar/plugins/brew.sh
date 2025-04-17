@@ -8,6 +8,7 @@ else
   LABEL=$FORMULAE
 fi
 
-sketchybar --set "$NAME" icon="􀐚"		\
-			 icon.padding_left=5	\
-			 label="$LABEL"
+sketchybar  --set "$NAME"  \
+              icon="􀐚"		\
+              icon.padding_left=5	\
+              label="$LABEL"

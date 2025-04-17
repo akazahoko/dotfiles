@@ -2,16 +2,3 @@ syntax on
 
 set number
 set shiftwidth=2
-
-" vim-plug
-
-call plug#begin()
-
-Plug 'tpope/vim-sensible'
-
-" SURROUND.VIM
-Plug 'tpope/vim-surround'
-
-Plug 'scrooloose/nerdtree'
-
-call plug#end()
