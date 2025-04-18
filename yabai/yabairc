@@ -40,7 +40,7 @@ yabai -m rule --add app="Final2x"	        manage=off
 yabai -m rule --add app="Shottr"	        manage=off
 yabai -m rule --add app="Raycast"	        manage=off
 yabai -m rule --add app="CrossOver"	        manage=off
-                         1234567890
+
 yabai -m rule --add app="計算機"	 		manage=off
 yabai -m rule --add app="系統設定"	  		manage=off
 yabai -m rule --add app="活動監視器"  		manage=off
