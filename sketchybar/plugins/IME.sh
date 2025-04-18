@@ -21,4 +21,4 @@ CONFIG=(
     label="$IME" 
 )
 
-sketchybar --set "$NAME" ${CONFIG[@]}
+sketchybar --set "$NAME" "${CONFIG[@]}"

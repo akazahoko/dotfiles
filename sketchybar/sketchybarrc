@@ -18,12 +18,8 @@ bar=(
     color="$BAR_BG_COLOR"
 )
 
-sketchybar --bar "${bar[@]}"   
-		
 ##### Defaults #####
 default=(
-    background.padding_left=2
-    background.padding_right=2
     icon.font="SF Pro:Regular:16.0"
     icon.color=$BAR_COLOR
     label.font="SF Pro:Regular:14.0"
@@ -32,25 +28,28 @@ default=(
     label.padding_right=5
     background.color=$ITEM_BG_COLOR
     background.corner_radius=10
+    background.padding_left=2
+    background.padding_right=2
     blur_radius=40
 )
 
-sketchybar --default "${default[@]}"  
+sketchybar  --bar "${bar[@]}"   \
+            --default "${default[@]}"  
 
 #### Left Side Items ####
-source $ITEM_DIR/front_app.sh
-source $ITEM_DIR/spaces.sh
+source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/spaces.sh"
 
 #### Right Side Items ####
-source $ITEM_DIR/calendar.sh
-source $ITEM_DIR/wifi.sh
-source $ITEM_DIR/volume.sh
-source $ITEM_DIR/IME.sh
-source $ITEM_DIR/battery.sh
-source $ITEM_DIR/brew.sh
-source $ITEM_DIR/control.sh
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/IME.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/control.sh"
 
 #### Force all scripts to run the first time (never do this in a script) #####
-sketchybar  --hotload true
-sketchybar  --update
-sketchybar  --trigger volume_change
+sketchybar  --hotload true  \
+            --update        \
+            --trigger volume_change

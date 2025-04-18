@@ -41,7 +41,7 @@ yabai -m rule --add app="Shottr"	        manage=off
 yabai -m rule --add app="Raycast"	        manage=off
 yabai -m rule --add app="CrossOver"	        manage=off
 
-yabai -m rule --add app="計算機"	 		manage=off
+yabai -m rule --add app="計算機"	 		    manage=off
 yabai -m rule --add app="系統設定"	  		manage=off
 yabai -m rule --add app="活動監視器"  		manage=off
 yabai -m rule --add app="日曆"		 		manage=off
@@ -53,5 +53,5 @@ yabai -m rule --add app="日曆"		 		manage=off
 # yabai -m rule --add app=Firefox		    space=^11
 # yabai -m rule --add app="iTerm2"		    space=^9
 # yabai -m rule --add app="Code"		    space=^10
-# yabai -m rule --add app="預覽程式"		space=^2
+# yabai -m rule --add app="預覽程式"		    space=^2
 # yabai -m rule --add app=OneNote	 	    space=^3
