@@ -1,5 +1,22 @@
 #!/bin/bash
 
-sketchybar 	--add item brew right	\
-	   		--set brew script="$PLUGIN_DIR/brew.sh"	\
-	   		--subscribe brew is_unlock mouse.clicked
+COMPONENT=(
+    item
+    brew
+    right
+)
+
+CONFIG=(
+    script="$PLUGIN_DIR/brew.sh"
+)
+
+SUBSCRIBE=(
+    is_unlock 
+    mouse.clicked
+)
+
+NAME="${COMPONENT[1]}"
+
+sketchybar  --add       "${COMPONENT[@]}"           \
+	        --set       "${NAME}" "${CONFIG[@]}"    \
+	        --subscribe "${NAME}" "${SUBSCRIBE[@]}"

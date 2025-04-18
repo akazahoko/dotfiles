@@ -2,11 +2,6 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-sketchybar 	--set "$NAME"	\
-				background.height=30					\
-				background.color="$ACCENT_COLOR"		\
-				background.drawing="$SELECTED"			
-
 SPACE_ID=$(echo $NAME | cut -c 7-)
 APP_LABEL=()
 IFS=$'\n'
@@ -23,13 +18,15 @@ if [ "$SENDER" = "space_windows_change" ] || [ "$SENDER" = "space_change" ]; the
 	# fi
 fi
 
-
-
 # $($CONFIG_DIR/plugins/icon_map_fn.sh ${APP_ARR[i]})
 
+CONFIG=(
+    background.height=30
+    background.color="$ACCENT_COLOR"
+    background.drawing="$SELECTED"
+    label="${APP_LABEL[@]}"
+)
 
-sketchybar	--set "$NAME"	\
-					label="${APP_LABEL[*]}"	\
-					# label.font="sketchybar-app-font:Regular:16.0"	\ 
+sketchybar --set "$NAME" "${CONFIG[@]}"
 
 

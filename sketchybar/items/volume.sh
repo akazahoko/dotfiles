@@ -1,6 +1,22 @@
 #!/bin/bash
 
-sketchybar --add item volume right			\
-	   --set volume script="$PLUGIN_DIR/volume.sh"	\
-			background.drawing=off		\
-	   --subscribe volume volume_change
+COMPONENT=(
+    item
+    volume
+    right
+)
+
+CONFIG=(
+    script="$PLUGIN_DIR/volume.sh"
+	background.drawing=off
+)
+
+SUBSCRIBE=(
+    volume_change
+)
+
+NAME="${COMPONENT[1]}"
+
+sketchybar  --add       "${COMPONENT[@]}"           \
+	        --set       "${NAME}" "${CONFIG[@]}"    \
+	        --subscribe "${NAME}" "${SUBSCRIBE[@]}"
