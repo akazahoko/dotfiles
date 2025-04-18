@@ -4,6 +4,10 @@
 
 # .config folder
 
-ln -s yabai ~/.config/yabai
-ln -s sketchybar ~/.config/sketchybar
-ln -s skhd ~/.config/skhd
+SOURCE_DIR="$(pwd)/yabai"
+CONFIG_DIR="$HOME/.config"
+
+ln -s "$SOURCE_DIR/yabai" "$CONFIG_DIR"
+ln -s "$SOURCE_DIR/skhd" "$CONFIG_DIR"
+ln -s "$SOURCE_DIR/sketchybar" "$CONFIG_DIR"
+ln -s "$SOURCE_DIR/vim/vimrc" "$HOME/.vimrc"
