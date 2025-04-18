@@ -8,11 +8,11 @@ skhd --start-service
 PADDING=10
 
 # Layout
-yabai -m config layout                      bsp
-yabai -m config window_placement            second_child
+yabai -m config layout bsp
+yabai -m config window_placement second_child
 
 # Windows Modifications
-yabai -m config window_opacity              on
+yabai -m config window_opacity on
 yabai -m config active_window_opacity       0.85
 yabai -m config normal_window_opacity       0.8
 
@@ -20,38 +20,27 @@ yabai -m config normal_window_opacity       0.8
 yabai -m config window_animation_duration   0.05
 
 # Paddings & Gaps
-yabai -m config top_padding	 		  	    $PADDING
-yabai -m config bottom_padding			    $PADDING
-yabai -m config left_padding			    $PADDING
-yabai -m config right_padding			    $PADDING
-yabai -m config window_gap	    		    $PADDING
+yabai -m config top_padding                 $PADDING
+yabai -m config bottom_padding              $PADDING
+yabai -m config left_padding                $PADDING
+yabai -m config right_padding               $PADDING
+yabai -m config window_gap                  $PADDING
 
 # Mouse
-yabai -m config focus_follows_mouse 	    autofocus
-yabai -m config mouse_follows_focus 	    on 
-yabai -m config mouse_modifier 			    alt
-yabai -m config mouse_action1 			    move
-yabai -m config mouse_action2 			    resize
-yabai -m mouse_drop_action 				    swap
+yabai -m config focus_follows_mouse         autofocus
+yabai -m config mouse_follows_focus         on
+yabai -m config mouse_modifier              alt
+yabai -m config mouse_action1               move
+yabai -m config mouse_action2               resize
+yabai -m mouse_drop_action                  swap
 
-# Rules - Manage 
-yabai -m rule --add app="Wacom Center"	    manage=off
-yabai -m rule --add app="Final2x"	        manage=off
-yabai -m rule --add app="Shottr"	        manage=off
-yabai -m rule --add app="Raycast"	        manage=off
-yabai -m rule --add app="CrossOver"	        manage=off
-
-yabai -m rule --add app="計算機"	 		manage=off
-yabai -m rule --add app="系統設定"	  		manage=off
-yabai -m rule --add app="活動監視器"  		manage=off
-yabai -m rule --add app="日曆"		 		manage=off
-
-# yabai -m rule --add app=Obsidian			space=^1
-# yabai -m rule --add app=WhatsApp			space=^12
-# yabai -m rule --add app=Discord		    space=^12
-# yabai -m rule --add app=Outlook		    space=^12
-# yabai -m rule --add app=Firefox		    space=^11
-# yabai -m rule --add app="iTerm2"		    space=^9
-# yabai -m rule --add app="Code"		    space=^10
-# yabai -m rule --add app="預覽程式"		space=^2
-# yabai -m rule --add app=OneNote	 	    space=^3
+# Rules - Manage
+yabai -m rule --add app="Wacom Center"      manage=off
+yabai -m rule --add app="Final2x"           manage=off
+yabai -m rule --add app="Shottr"            manage=off
+yabai -m rule --add app="Raycast"           manage=off
+yabai -m rule --add app="CrossOver"         manage=off
+yabai -m rule --add app="計算機"            manage=off
+yabai -m rule --add app="系統設定"          manage=off
+yabai -m rule --add app="活動監視器"        manage=off
+yabai -m rule --add app="日曆"              manage=off

@@ -1,24 +1,24 @@
-#!/bin/sh
+#!/bin/bash
 
 KBINPUT="$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | grep -E "KeyboardLayout Name|Input Mode")"
 
 if [[ $KBINPUT == *"ABC"* ]]; then
-    IME="A"
+  IME="A"
 elif [[ $KBINPUT == *"Japanese"* ]]; then
-    IME="あ"
+  IME="あ"
 elif [[ $KBINPUT == *"Cangjie"* ]]; then
-    IME="倉"
+  IME="倉"
 else
-    IME="?"
+  IME="?"
 fi
 
 if [ "$BUTTON" = "left" ]; then
-    open "x-apple.systempreferences:com.apple.preference.keyboard"
+  open "x-apple.systempreferences:com.apple.preference.keyboard"
 fi
 
 CONFIG=(
-    icon="􀇳"
-    label="$IME" 
+  icon="􀇳"
+  label="$IME"
 )
 
 sketchybar --set "$NAME" "${CONFIG[@]}"
