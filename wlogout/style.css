@@ -1,0 +1,31 @@
+* {
+	background-image: none;
+	box-shadow: none;
+	font-family: "Noto Sans";
+	font-size: larger;
+}
+
+window {
+	background-color: rgba(12, 12, 12, 0.9);
+}
+
+button {
+    border-radius: 25;
+    border-color: #1e1e2e;
+	text-decoration-color: #cdd6f4;
+    color: #FFFFFF;
+	background-color: #1e1e2e;
+	border-style: solid;
+	border-width: 3px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 5%;
+	margin-left: 750;
+	margin-right: 750;
+	margin-top: 50;
+}
+
+button:focus, button:active, button:hover {
+	background-color: #cba6f7;
+	outline-style: solid;
+}

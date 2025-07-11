@@ -1,0 +1,71 @@
+// SEE: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "separator": ": ",
+    "key": {
+      "width": 15,
+      "type": "both"
+    },
+    "bar": {
+      "charElapsed": "■",
+      "charTotal": "-"
+    },
+    "percent": {
+      "type": 2
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "separator",
+    "de",
+    "wm",
+    "terminal",
+    "separator",
+    // "wmtheme",
+    // "theme",
+    // "icons",
+    // "font",
+    // "cursor",
+    // "terminal",
+    // "terminalfont",
+    {
+      "type": "display",
+      "key": "Display",
+      "format": "{name} {inch}\" {width}x{height} @ {refresh-rate}Hz"
+    },
+    {
+      "type": "cpu",
+      "key": "CPU",
+      "format": "{name} ({cores-physical}C/{cores-logical}T @ {freq-max})"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "format": "{vendor} {name}"
+    },
+    "memory",
+    "swap",
+    {
+      "type": "disk",
+      "key": "Disk",
+      "format": "{size-percentage-bar} {size-used} / {size-total} - {mountpoint}"
+    },
+    "separator",
+    {
+      "type": "localip",
+      "key": "IP",
+      "format": "{ipv4}"
+    },
+    "locale",
+    "break",
+    // "colors"
+  ]
+}

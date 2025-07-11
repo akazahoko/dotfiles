@@ -1,0 +1,36 @@
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+    "text" : " 睡眠",
+    "keybind" : "u"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : " 關機",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : " 重新啟動",
+    "keybind" : "r"
+}
+{
+    "label" : "lock",
+    "action" : "loginctl lock-session",
+    "text" : " 鎖定",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "action" : "loginctl terminate-user $USER",
+    "text" : " 登出",
+    "keybind" : "e"
+}
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : " 休眠",
+    "keybind" : "h"
+}
