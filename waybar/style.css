@@ -1,11 +1,11 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: otf-font-awesome, "Noto Sans";
-    font-size: 13px;
+    font-size: 14px;
 }
 
 window#waybar {
-    background-color: #181926;
+    background-color: transparent;
     border-bottom: transparent;
     border-radius: 0px;
     transition-property: background-color;
@@ -25,10 +25,17 @@ window#waybar.chromium {
     border: none;
 }
 
+window#waybar.fullscreen {
+    opacity: 0;
+}
+
+window#waybar.empty #window
+{
+    opacity: 0;
+}
+
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
@@ -39,28 +46,28 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: rgb(205, 214, 244);
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgb(49, 50, 68);
 }
 
 #workspaces button.focused {
+    color: rgb(203, 166, 247);
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px rgb(203, 166, 247);
+}
+
+#workspaces button.active {
+    color: rgb(203, 166, 247)
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: rgb(243, 139, 168);
 }
 
 #mode {
@@ -85,27 +92,17 @@ button:hover {
 #custom-wlogout,
 #workspaces,
 #window,
-#user
+#user,
+#privacy-item,
+#custom-waypaper,
+#hyprland,
+#power
 {
-    border-radius: 5;
-    background-color: #24273a;
-    padding: 0 10px;
+    margin-top: 5px;
+    border-radius: 10;
+    background-color: rgba(30, 30, 46, 0.85);
+    padding: 0 5px;
     color: rgb(205, 214, 244);
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
 }
 
 label:focus {
@@ -160,21 +157,14 @@ label:focus {
 	background-color: transparent;
 }
 
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
 #privacy-item.screenshare {
     background-color: #cf5700;
 }
 
 #privacy-item.audio-in {
-    background-color: #1ca000;
+    background-color: #a6d189;
+    padding: 0 0px;
+    color: transparent;
 }
 
 #privacy-item.audio-out {

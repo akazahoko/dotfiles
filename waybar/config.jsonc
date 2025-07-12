@@ -5,7 +5,10 @@
     "spacing": 2,
 
     "modules-left": [
-        "group/hyprland"
+        // "group/hyprland"
+        // "custom/system",
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
 
     "modules-center": [
@@ -16,29 +19,38 @@
 
     "modules-right": [
         // "mpd",
+        "privacy",
         "group/hardware",
         "wireplumber",
         "tray",
-        "privacy",
         "group/power"
     ],
     
+    "custom/system": {
+        "format": "",
+        "on-click": "hyprsysteminfo"
+    },
+
     // Hyprland
     "hyprland/workspaces": {
-        "format": "{id}"
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+        }
     },
 
     "hyprland/window": {
-        "format": "{title}"
+        "format": "{title}",
+        "icon": true
     },
 
-    "group/hyprland": {
-        "orientation": "horizontal",
-        "modules": [
-            "hyprland/workspaces",
-            "hyprland/window"
-        ]
-    },
+    // "group/hyprland": {
+    //     "orientation": "horizontal",
+    //     "modules": [
+    //         "hyprland/workspaces",
+    //         "hyprland/window"
+    //     ]
+    // },
 
     "user": {
         "format": " {user}"
@@ -107,7 +119,7 @@
         // "format-wifi": "{essid} ({signalStrength}%) ",
         // "format-ethernet": " {ipaddr}/{cidr}",
         // "format-linked": "{ifname} (No IP)",
-        "format": "{bandwidthDownBits} | {bandwidthUpBits}",
+        "format": "{bandwidthDownBits}|{bandwidthUpBits}",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-disconnected": "Disconnected ⚠",
         "on-click": "nm-connection-editor"
@@ -145,7 +157,8 @@
         "orientation": "horizontal",
         "modules": [
             "custom/wlogout",
-            "idle_inhibitor"
+            "idle_inhibitor",
+            "custom/waypaper"
         ],
         "drawer": {
             "transition-left-to-right": false
@@ -164,6 +177,11 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+
+    "custom/waypaper": {
+        "format": "",
+        "on-click": "waypaper",
+        "tooltip-format": "Change Wallpaper"
     }
-    
 }
