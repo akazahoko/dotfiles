@@ -1,4 +1,12 @@
 return {
-    "williamboman/mason.nvim",
-    dependencies = { "williamboman/mason-lspconfig.nvim" }
+    "williamboman/mason-lspconfig",
+    dependencies = { "williamboman/mason.nvim", opts = {} },
+    opts = {
+        ensure_installed = {
+            -- lsp servers
+            "lua_ls",
+            "clangd",
+        },
+        automatic_installation = true,
+    }
 }
