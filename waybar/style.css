@@ -5,24 +5,10 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: rgba(30, 30, 46, 0.9);
     border-bottom: transparent;
-    border-radius: 0px;
     transition-property: background-color;
     transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
 }
 
 window#waybar.fullscreen {
@@ -87,7 +73,6 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#power-profiles-daemon,
 #mpd,
 #custom-wlogout,
 #workspaces,
@@ -96,13 +81,17 @@ button:hover {
 #privacy-item,
 #custom-waypaper,
 #hyprland,
-#power
+#power,
+#submap
 {
-    margin-top: 5px;
+    background-color: rgb(49, 50, 68);
     border-radius: 10;
-    background-color: rgba(30, 30, 46, 0.85);
     padding: 0 5px;
     color: rgb(205, 214, 244);
+}
+
+tooltip {
+    background-color: #1e1e2e;
 }
 
 label:focus {
@@ -110,7 +99,8 @@ label:focus {
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    color: rgb(49, 50, 68);
+    background-color: rgb(243, 139, 168);
 }
 
 #custom-media {
