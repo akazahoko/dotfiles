@@ -1,3 +1,5 @@
+@import "palette.css";
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: otf-font-awesome, "Noto Sans";
@@ -5,8 +7,8 @@
 }
 
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.9);
-    border-bottom: transparent;
+    background: transparent;
+    background-color: alpha(@base, 0.9);
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -84,14 +86,14 @@ button:hover {
 #power,
 #submap
 {
-    background-color: rgb(49, 50, 68);
-    border-radius: 10;
+    /* background-color: @overlay1; */
+    /* border-radius: 100; */
     padding: 0 5px;
-    color: rgb(205, 214, 244);
+    color: @text;
 }
 
 tooltip {
-    background-color: #1e1e2e;
+    background-color: alpha(@base, 0.9);
 }
 
 label:focus {
@@ -99,8 +101,8 @@ label:focus {
 }
 
 #wireplumber.muted {
-    color: rgb(49, 50, 68);
-    background-color: rgb(243, 139, 168);
+    color: @base;
+    background-color: @red;
 }
 
 #custom-media {

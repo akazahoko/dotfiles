@@ -1,7 +1,6 @@
-// -*- mode: jsonc -*-
 {
     "position": "top",
-    "height": 35,   // removed for auto height
+    "height": 35,
     "spacing": 5,
 
     "modules-left": [
@@ -11,13 +10,10 @@
     ],
 
     "modules-center": [
-        "user",
-        "clock",
-        "temperature"
+        "clock"
     ],
 
     "modules-right": [
-        // "mpd",
         "privacy",
         "group/hardware",
         "wireplumber",
@@ -43,45 +39,6 @@
         "icon": true
     },
 
-    // "group/hyprland": {
-    //     "orientation": "horizontal",
-    //     "modules": [
-    //         "hyprland/workspaces",
-    //         "hyprland/window"
-    //     ]
-    // },
-
-    "user": {
-        "format": " {user}"
-    },
-
-    // "mpd": {
-    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    //     "format-disconnected": "Disconnected ",
-    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    //     "unknown-tag": "N/A",
-    //     "interval": 5,
-    //     "consume-icons": {
-    //         "on": " "
-    //     },
-    //     "random-icons": {
-    //         "off": "<span color=\"#f53c3c\"></span> ",
-    //         "on": " "
-    //     },
-    //     "repeat-icons": {
-    //         "on": " "
-    //     },
-    //     "single-icons": {
-    //         "on": "1 "
-    //     },
-    //     "state-icons": {
-    //         "paused": "",
-    //         "playing": ""
-    //     },
-    //     "tooltip-format": "MPD (connected)",
-    //     "tooltip-format-disconnected": "MPD (disconnected)"
-    // },
-    
     "tray": {
         "icon-size": 20,
         "spacing": 10
@@ -141,33 +98,12 @@
         "on-click": "nm-connection-editor"
     },
 
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": " {temperatureC}°C"
-        // "format-icons": ["", "", ""]
-    },
-
-    "wireplumber": {
+   "wireplumber": {
         "format": "{icon}",
         "format-muted": "",
         "format-icons": ["", "", ""],
         "on-click": "pavucontrol"
     },
-
-    // "custom/media": {
-    //     "format": "{icon} {text}",
-    //     "return-type": "json",
-    //     "max-length": 40,
-    //     "format-icons": {
-    //         "spotify": "",
-    //         "default": "🎜"
-    //     },
-    //     "escape": true,
-    //     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // },
 
     "group/power": {
         "orientation": "horizontal",
