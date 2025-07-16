@@ -1,2 +1,3 @@
 ./tmux/plugins/*
 ./nvim/test.cpp
+./pipewire/
