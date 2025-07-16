@@ -1,0 +1,24 @@
+{
+    "window.titleBarStyle": "native",
+    "editor.fontFamily": "'Noto Sans Mono', 'Font Awesome 6 Free'",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDragAndDrop": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.location": "hidden",
+    "editor.minimap.enabled": false,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "window.customTitleBarVisibility": "never",
+    "qt-core.additionalQtPaths": [
+    
+    ],
+    "qt-qml.qmlls.useQmlImportPathEnvVar": true,
+    "github.copilot.nextEditSuggestions.enabled": true
+}
