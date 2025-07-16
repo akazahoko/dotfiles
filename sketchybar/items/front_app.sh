@@ -8,10 +8,8 @@ COMPONENT=(
 
 CONFIG=(
   script="$PLUGIN_DIR/front_app.sh"
+  icon.drawing=off
   label.font.style=Bold
-  label.padding_left=5
-  label.padding_right=5
-  background.drawing=off
 )
 
 SUBSCRIBE=(

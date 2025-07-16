@@ -25,7 +25,8 @@ case "${PERCENTAGE}" in
 esac
 
 if [[ "$CHARGING" != "" ]]; then
-  ICON="􀢋" COLOR=0xff00ca48
+  ICON="􀢋" 
+  COLOR=0xff00ca48
 fi
 
 if [ "$LOW" = " lowpowermode         1" ]; then
@@ -35,7 +36,11 @@ fi
 CONFIG=(
   icon="$ICON"
   icon.color="$COLOR"
-  label="${PERCENTAGE}%"
 )
 
-sketchybar --set "$NAME" "${CONFIG[@]}"
+# POP_CONFIG=(
+#   label="${PERCENTAGE}%"
+# )
+
+sketchybar  --set "$NAME" "${CONFIG[@]}"  \
+            # --set "$NAME"_POP "${POP_CONFIG[@]}"

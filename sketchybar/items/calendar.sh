@@ -3,13 +3,11 @@
 COMPONENT=(
   item
   calendar
-  right
+  e
 )
 
 CONFIG=(
   icon.drawing=off
-  label.padding_left=5
-  label.padding_right=5
   script="$PLUGIN_DIR/calendar.sh"
   click_script="open -a calendar"
   update_freq=30

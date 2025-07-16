@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/variables.sh"
 source "$CONFIG_DIR/events.sh"
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
@@ -8,45 +8,60 @@ ITEM_DIR="$CONFIG_DIR/items"
 
 ##### Bar Appearance #####
 bar=(
+  color="$BAR_COLOR"
   position=top
-  height=35
-  blur_radius=25
-  margin=-11
-  corner_radius=10
-  y_offset=7
-  notch_width=200
-  color="$BAR_BG_COLOR"
+  # height=45
+  notch_display_height=45
+  margin=-10
+  # y_offset=-1
+  # corner_radius=20
+  # blur_radius=50
+  notch_width=250
 )
+
+##### Variables #####
 
 ##### Defaults #####
 default=(
-  icon.font="SF Pro:Regular:16.0"
-  icon.color=$BAR_COLOR
-  label.font="SF Pro:Regular:14.0"
-  label.color=$BAR_COLOR
-  label.padding_left=5
-  label.padding_right=5
-  background.color=$ITEM_BG_COLOR
-  background.corner_radius=10
-  background.padding_left=2
-  background.padding_right=2
   blur_radius=40
+
+  icon.color="$ITEM_COLOR"
+  icon.highlight_color=$ACCENT_COLOR
+  icon.padding_left="$I_PAD_L"
+  icon.padding_right="$I_PAD_R"
+  icon.font="SF Pro:Regular:16.0"
+
+  label.color="$ITEM_COLOR"
+  label.padding_left="$L_PAD_L"
+  label.padding_right="$L_PAD_R"
+  label.font="SF Pro:Regular:16.0"
+
+  background.height=45
+  background.color="$ITEM_BG_COLOR"
+  background.corner_radius=10
+  background.padding_left="$BG_PAD_L"
+  background.padding_right="$BG_PAD_R"
 )
 
 sketchybar --bar "${bar[@]}" --default "${default[@]}"
 
-#### Left Side Items ####
-source "$ITEM_DIR/front_app.sh"
+##### Left Side Items #####
 source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/app_menu.sh"
 
-#### Right Side Items ####
+##### Notch #####
+source "$ITEM_DIR/meta.sh"
 source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/weather.sh"
+
+##### Right Side Items #####
 source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/IME.sh"
-source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/brew.sh"
-source "$ITEM_DIR/control.sh"
+source "$ITEM_DIR/systray.sh"
 
-#### Force all scripts to run the first time (never do this in a script) #####
+##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --hotload true --update --trigger volume_change

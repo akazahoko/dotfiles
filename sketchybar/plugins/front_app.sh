@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONFIG=(
-  label="lain"
+  label="$INFO"
 )
 
 if [ "$SENDER" = "front_app_switched" ]; then

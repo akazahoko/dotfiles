@@ -1,26 +1,26 @@
 #!/bin/bash
 
-sketchybar  --add item sep left           \
-            --set sep icon="|"            \
-                  label.drawing=off       \
-                  background.drawing=off  \
-                  icon.font.style=regular
+ICON="􀀁"
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "0" "-" "=")
+SPACE_ICONS=("$ICON" "$ICON" "$ICON" "$ICON" "$ICON" "$ICON" "$ICON" "$ICON" "$ICON" "$ICON" "$ICON" "$ICON")
+
+# SPACE_COUNT="$(yabai -m query --spaces | jq length)"
 
 for i in "${!SPACE_ICONS[@]}"; do
-  SID="$(($i + 1))"
+  SID="$((i + 1))"
   CONFIG=(
     space="$SID"
-    icon="${SPACE_ICONS[i]}:"
-    icon.padding_left=7
+    icon="${SPACE_ICONS[i]}"
     script="$PLUGIN_DIR/space.sh"
+    icon.font="SF Pro:Regular:10.0"
+    icon.padding_left=0
+    icon.padding_right=0
+    background.drawing=off
     click_script="yabai -m space --focus $SID"
   )
   sketchybar  --add space space."$SID" left \
               --set space."$SID" "${CONFIG[@]}" \
-              --subscribe space."$SID" space_windows_change space_change
+              # --subscribe space."$SID" space_change
 done
+sketchybar  --add bracket spaces '/space\..*/'
 
-sketchybar  --add bracket spaces front_app sep '/space\..*/' \
-            --set spaces background.height=35

@@ -2,14 +2,16 @@
 
 COMPONENT=(
   bracket
-  control
+  systray
+  wifi
   volume
-  IME
+  # IME
   battery
 )
 
 CONFIG=(
-  background.height=35
+  # click_scipt="open -a calendar"
+  # background.color=0xffffffff
 )
 
 SUBSCRIBE=(

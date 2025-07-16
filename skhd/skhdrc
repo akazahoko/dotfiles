@@ -1,13 +1,13 @@
 # Change Window Focus
-alt - h                   : yabai -m window --focus west
 alt - j                   : yabai -m window --focus south
 alt - k                   : yabai -m window --focus north
+alt - h                   : yabai -m window --focus west
 alt - l                   : yabai -m window --focus east
 
 # Move Window
-ctrl + alt - h            : yabai -m window --warp west
 ctrl + alt - j            : yabai -m window --warp south
 ctrl + alt - k            : yabai -m window --warp north
+ctrl + alt - h            : yabai -m window --warp west
 ctrl + alt - l            : yabai -m window --warp east
 
 # Resize window
@@ -18,6 +18,9 @@ ctrl + cmd + alt - l      : yabai -m window --resize right:20:0   2>/dev/null ||
 
 # Window Toggle Float
 ctrl + alt - f            : yabai -m window --toggle float
+
+# Window Toggle Sticky
+ctrl + alt - s            : yabai -m window --toggle sticky
 
 # Maximize Window
 ctrl + alt - m            : yabai -m window --toggle zoom-fullscreen
@@ -56,32 +59,32 @@ alt - 0x1B                : yabai -m space --focus 11
 alt - 0x18                : yabai -m space --focus 12
 
 # MOVE window to space
-shift + alt - 1           : yabai -m window --space 1
-shift + alt - 2           : yabai -m window --space 2
-shift + alt - 3           : yabai -m window --space 3
-shift + alt - 4           : yabai -m window --space 4
-shift + alt - 5           : yabai -m window --space 5
-shift + alt - 6           : yabai -m window --space 6
-shift + alt - 7           : yabai -m window --space 7
-shift + alt - 8           : yabai -m window --space 8
-shift + alt - 9           : yabai -m window --space 9
-shift + alt - 0           : yabai -m window --space 10
-shift + alt - 0x1B        : yabai -m window --space 11
-shift + alt - 0x18        : yabai -m window --space 12
+shift + alt - 1           : yabai -m window --space 1   --focus
+shift + alt - 2           : yabai -m window --space 2   --focus
+shift + alt - 3           : yabai -m window --space 3   --focus
+shift + alt - 4           : yabai -m window --space 4   --focus     
+shift + alt - 5           : yabai -m window --space 5   --focus
+shift + alt - 6           : yabai -m window --space 6   --focus
+shift + alt - 7           : yabai -m window --space 7   --focus
+shift + alt - 8           : yabai -m window --space 8   --focus
+shift + alt - 9           : yabai -m window --space 9   --focus
+shift + alt - 0           : yabai -m window --space 10  --focus
+shift + alt - 0x1B        : yabai -m window --space 11  --focus
+shift + alt - 0x18        : yabai -m window --space 12  --focus
 
-# MOVE and FOCUS window to space
-shift + cmd + alt - 1     : yabai -m window --space --focus 1
-shift + cmd + alt - 2     : yabai -m window --space --focus 2
-shift + cmd + alt - 3     : yabai -m window --space --focus 3
-shift + cmd + alt - 4     : yabai -m window --space --focus 4
-shift + cmd + alt - 5     : yabai -m window --space --focus 5
-shift + cmd + alt - 6     : yabai -m window --space --focus 6
-shift + cmd + alt - 7     : yabai -m window --space --focus 7
-shift + cmd + alt - 8     : yabai -m window --space --focus 8
-shift + cmd + alt - 9     : yabai -m window --space --focus 9
-shift + cmd + alt - 0     : yabai -m window --space --focus 10
-shift + cmd + alt - 0x1B  : yabai -m window --space --focus 11
-shift + cmd + alt - 0x18  : yabai -m window --space --focus 12
+# MOVE without FOCUS window to space
+shift + cmd + alt - 1     : yabai -m window --space 1 
+shift + cmd + alt - 2     : yabai -m window --space 2 
+shift + cmd + alt - 3     : yabai -m window --space 3 
+shift + cmd + alt - 4     : yabai -m window --space 4 
+shift + cmd + alt - 5     : yabai -m window --space 5 
+shift + cmd + alt - 6     : yabai -m window --space 6 
+shift + cmd + alt - 7     : yabai -m window --space 7 
+shift + cmd + alt - 8     : yabai -m window --space 8 
+shift + cmd + alt - 9     : yabai -m window --space 9 
+shift + cmd + alt - 0     : yabai -m window --space 10
+shift + cmd + alt - 0x1B  : yabai -m window --space 11
+shift + cmd + alt - 0x18  : yabai -m window --space 12
 
 ##### CONFIG #####
 # Modifier: ctrl + cmd
@@ -90,8 +93,14 @@ shift + cmd + alt - 0x18  : yabai -m window --space --focus 12
 ctrl + cmd + alt - 0x1B   : yabai -m config window_opacity on
 ctrl + cmd + alt - 0x18   : yabai -m config window_opacity off
 
+# Software Shortcut
+ctrl + cmd - t            : open -a iterm
+ctrl + cmd - e            : open -a finder
+ctrl + cmd - f            : open -a firefox
+ctrl + cmd - o            : open -a obsidian
+
 # Rule
-# ctrl + cmd + alt - r      : yabai -m rule --apply && yabai -m space --focus 1
+# ctrl + cmd + alt - r    : yabai -m rule --apply && yabai -m space --focus 1
 
 # RESTART
 shift + cmd + alt - r     : yabai --restart-service

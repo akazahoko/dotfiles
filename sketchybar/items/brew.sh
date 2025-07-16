@@ -8,10 +8,11 @@ COMPONENT=(
 
 CONFIG=(
   script="$PLUGIN_DIR/brew.sh"
+  icon.padding_right=0
 )
 
 SUBSCRIBE=(
-  is_unlock
+  # is_unlock
   mouse.clicked
 )
 
