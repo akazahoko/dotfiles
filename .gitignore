@@ -1,3 +1,6 @@
 tmux/plugins/*
 nvim/test.cpp
 pipewire/*
+
+.vscode
+sketchybar/cache
