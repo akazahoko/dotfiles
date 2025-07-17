@@ -1,0 +1,6 @@
+{
+    "custom/systeminfo": {
+        "format": "",
+        "on-click": "hyprsysteminfo"
+    }
+}

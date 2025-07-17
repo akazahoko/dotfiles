@@ -1,0 +1,10 @@
+{
+    "hyprland/workspaces": {
+    },
+
+    "hyprland/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 20
+    }
+}

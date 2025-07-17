@@ -1,0 +1,7 @@
+{
+    "custom/waypaper": {
+        "format": "",
+        "on-click": "waypaper",
+        "tooltip-format": "Change Wallpaper"
+    }
+}

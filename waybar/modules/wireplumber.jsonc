@@ -1,0 +1,8 @@
+{
+    "wireplumber": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol"
+    }
+}
