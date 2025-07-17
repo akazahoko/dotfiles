@@ -22,45 +22,29 @@ window#waybar.empty #window
     opacity: 0;
 }
 
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: rgb(205, 214, 244);
+    padding: 0 0px;
+    background-color: @overlay0;
+    border-radius: 100;
+    color: transparent;
 }
 
 #workspaces button:hover {
-    background: rgb(49, 50, 68);
+    background-color: @overlay2;
 }
 
 #workspaces button.focused {
     color: rgb(203, 166, 247);
     background-color: #64727D;
-    box-shadow: inset 0 -3px rgb(203, 166, 247);
 }
 
 #workspaces button.active {
-    color: rgb(203, 166, 247)
+    padding: 0 20px;
+    background-color: @mauve;
 }
 
 #workspaces button.urgent {
     background-color: rgb(243, 139, 168);
-}
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #clock,
@@ -87,7 +71,7 @@ button:hover {
 #submap
 {
     /* background-color: @overlay1; */
-    /* border-radius: 100; */
+    border-radius: 100;
     padding: 0 5px;
     color: @text;
 }
@@ -141,28 +125,20 @@ label:focus {
     background-color: #51a37a;
 }
 
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
+#idle_inhibitor.activated {
+    color: rgb(203, 166, 247);
 }
 
 #privacy-item.screenshare {
-    background-color: #cf5700;
+    color: @base;
+    background-color: @mauve;
 }
 
 #privacy-item.audio-in {
-    background-color: #a6d189;
-    padding: 0 0px;
-    color: transparent;
+    color: @base;
+    background-color: @peach;
 }
 
 #privacy-item.audio-out {
     background-color: #0069d4;
-}
-
-#idle_inhibitor.activated {
-    color: rgb(203, 166, 247);
 }

@@ -2,6 +2,7 @@
     "position": "top",
     "height": 35,
     "spacing": 5,
+    "include": [ "~/.config/waybar/modules/*" ],
 
     "modules-left": [
         "hyprland/workspaces",
@@ -10,61 +11,22 @@
     ],
 
     "modules-center": [
-        "clock"
+        "clock",
+        "privacy"
     ],
 
     "modules-right": [
-        "privacy",
-        "group/hardware",
-        "wireplumber",
         "tray",
-        "group/power"
+        "group/pinned"
     ],
-    
-    "custom/system": {
-        "format": "",
-        "on-click": "hyprsysteminfo"
-    },
-
-    // Hyprland
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "default": ""
-        }
-    },
-
-    "hyprland/window": {
-        "format": "{title}",
-        "icon": true
-    },
-
-    "tray": {
-        "icon-size": 20,
-        "spacing": 10
-    },
-
-    "clock": {
-        "interval": 30,
-        "locale": "zh_HK.UTF-8",
-        "format": "{:L%b%d日 週%a\t%H:%M}",
-        "tooltip-format": "<span size='16pt' font='Noto Sans Mono CJK HK'>{calendar}</span>",
-        "calendar": {
-                    "mode"          : "month",
-                    "mode-mon-col"  : 3,
-                    "on-scroll"     : 1,
-                    "format": {
-                                "months":     "<span color='#cdd6f4'><b>{}</b></span>",
-                                "days":       "<span color='#cdd6f4'>{}</span>",
-                                "weekdays":   "<span color='#cdd6f4'><b>{}</b></span>",
-                                "today":      "<span color='#cba6f7'><b>{}</b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-scroll-up": "shift_down",
-                    "on-scroll-down": "shift_up"
-                    }
+   
+    "group/pinned": {
+        "orientation": "horizontal",
+        "modules": [
+            "network", 
+            "wireplumber",
+            "group/power"
+        ]
     },
 
     "group/hardware": {
@@ -79,32 +41,6 @@
         }
     },
 
-    "cpu": {
-        "format": "{usage}%",
-        "tooltip": true
-    },
-
-    "memory": {
-        "format": "{}%"
-    },
-    
-    "network": {
-        // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "",
-        // "format-linked": "{ifname} (No IP)",
-        // "format-alt": "{bandwidthDownBits}|{bandwidthUpBits}",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-disconnected": "⚠無網絡",
-        "on-click": "nm-connection-editor"
-    },
-
-   "wireplumber": {
-        "format": "{icon}",
-        "format-muted": "",
-        "format-icons": ["", "", ""],
-        "on-click": "pavucontrol"
-    },
-
     "group/power": {
         "orientation": "horizontal",
         "modules": [
@@ -115,25 +51,5 @@
         "drawer": {
             "transition-left-to-right": false
         }
-    },
-
-    "custom/wlogout": {
-	    "format" : "",
-		"tooltip": false,
-        "on-click": "wlogout -b 1"
-    },
-    
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-
-    "custom/waypaper": {
-        "format": "",
-        "on-click": "waypaper",
-        "tooltip-format": "Change Wallpaper"
     }
 }
