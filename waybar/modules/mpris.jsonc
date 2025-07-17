@@ -1,0 +1,10 @@
+{
+    "mpris": {
+        "format": "{player_icon} <b>{title}</b>",
+        "player-icons": {
+            "mpv": "",
+            "firefox": ""
+        }
+
+    }
+}

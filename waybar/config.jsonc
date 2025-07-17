@@ -12,7 +12,8 @@
 
     "modules-center": [
         "clock",
-        "privacy"
+        "privacy",
+        "mpris"
     ],
 
     "modules-right": [
@@ -24,7 +25,7 @@
         "orientation": "horizontal",
         "modules": [
             "network", 
-            "wireplumber",
+            "pulseaudio", 
             "group/power"
         ]
     },

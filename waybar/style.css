@@ -2,101 +2,102 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: otf-font-awesome, "Noto Sans";
+    font-family: "Noto Sans", otf-font-awesome, ttf-noto-nerd;
     font-size: 14px;
 }
 
 window#waybar {
-    background: transparent;
-    background-color: alpha(@base, 0.9);
+    background-color: alpha(@base, 0.5);
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 1.5s;
 }
 
 window#waybar.fullscreen {
     opacity: 0;
 }
 
-window#waybar.empty #window
-{
+window#waybar.empty #window{
     opacity: 0;
 }
 
-#workspaces button {
-    padding: 0 0px;
-    background-color: @overlay0;
-    border-radius: 100;
-    color: transparent;
-}
-
-#workspaces button:hover {
-    background-color: @overlay2;
-}
-
-#workspaces button.focused {
-    color: rgb(203, 166, 247);
-    background-color: #64727D;
-}
-
-#workspaces button.active {
-    padding: 0 20px;
-    background-color: @mauve;
-}
-
-#workspaces button.urgent {
-    background-color: rgb(243, 139, 168);
+window#waybar.floating #window{
+    opacity: 0;
 }
 
 #clock,
 #cpu,
 #memory,
-#disk,
-#temperature,
-#network,
 #wireplumber,
 #custom-media,
 #tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
 #mpd,
-#custom-wlogout,
-#workspaces,
 #window,
 #user,
 #privacy-item,
-#custom-waypaper,
-#hyprland,
-#power,
-#submap
+#submap,
+#workspaces,
+#mpris,
+#pinned
 {
-    /* background-color: @overlay1; */
-    border-radius: 100;
-    padding: 0 5px;
+    border-radius: 16;
+    background-color: alpha(@base, 0.55);
+    margin: 4 0px;
+    padding: 0 7px;
     color: @text;
+    /* box-shadow: 0 0 2 1px @mauve, inset 0 0 0 2px @mauve; */
 }
 
 tooltip {
-    background-color: alpha(@base, 0.9);
+    color: @text;
+    background-color: alpha(@base, 0.5);
 }
 
-label:focus {
-    background-color: #000000;
+#pinned {
+    margin-right: 12px;
 }
 
-#wireplumber.muted {
-    color: @base;
+#workspaces {
+    margin-left: 12px;
+}
+
+#idle_inhibitor,
+#custom-wlogout,
+#custom-waypaper,
+#pulseaudio,
+#network
+{
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+#workspaces label {
+    font-size: 16px;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: @overlay0;
+    border-radius: 20;
+    margin: 0 -7px;
+}
+
+#workspaces button.active {
+    margin: 0 5px;
+    color: #8839ef;
+    background-color: @mauve;
+}
+
+#workspaces button.urgent {
     background-color: @red;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+#wireplumber.muted,
+#pulseaudio.muted,
+#mpris.paused
+{
+    color: @base;
+    background-color: @red;
+    border-radius: 20px;
 }
 
 #tray > .passive {
@@ -108,25 +109,8 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
 #idle_inhibitor.activated {
-    color: rgb(203, 166, 247);
+    color: @mauve;
 }
 
 #privacy-item.screenshare {
