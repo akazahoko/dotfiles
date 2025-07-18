@@ -70,6 +70,11 @@ tooltip {
     padding: 0 5px;
 }
 
+#custom-tray_chevron {
+    color: @overlay0;
+    padding: 0 0px
+}
+
 #workspaces label {
     font-size: 16px;
 }
@@ -78,13 +83,18 @@ tooltip {
     background-color: transparent;
     color: @overlay0;
     border-radius: 20;
-    margin: 0 -7px;
+    margin: 0 -8px;
+}
+
+#workspaces button.active label{
+    padding: 0 10px;
+    border-radius: 30px;
+    background-color: @mauve;
 }
 
 #workspaces button.active {
-    margin: 0 5px;
     color: #8839ef;
-    background-color: @mauve;
+    background-color: transparent;
 }
 
 #workspaces button.urgent {
@@ -115,10 +125,11 @@ tooltip {
 
 #privacy-item.screenshare {
     color: @base;
-    background-color: @mauve;
+    background-color: @lavendar;
 }
 
 #privacy-item.audio-in {
+    margin: 4 0px;
     color: @base;
     background-color: @peach;
 }

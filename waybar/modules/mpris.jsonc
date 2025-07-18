@@ -1,6 +1,8 @@
 {
     "mpris": {
-        "format": "{player_icon} <b>{title}</b>",
+        "format": "{player_icon} <b>{title} - {artist}</b>",
+        "title-len": 35,
+        "artist-len": 20,
         "player-icons": {
             "mpv": "",
             "firefox": ""

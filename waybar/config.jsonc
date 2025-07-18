@@ -12,18 +12,35 @@
 
     "modules-center": [
         "clock",
-        "privacy",
         "mpris"
     ],
 
     "modules-right": [
-        "tray",
+        "privacy",
         "group/pinned"
     ],
+
+    "group/tray_hidden": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/tray_chevron",
+            "tray"
+        ],
+        "drawer": {
+            "transition-left-to-right": false
+        }
+    },
+
+    "custom/tray_chevron": {
+        "format": "",
+        "tooltip": false,
+        "click-to-reveal": true
+    },
    
     "group/pinned": {
         "orientation": "horizontal",
         "modules": [
+            "group/tray_hidden",
             "network", 
             "pulseaudio", 
             "group/power"

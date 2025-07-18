@@ -1,16 +1,23 @@
 {
     "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
     },
 
     "hyprland/window": {
         "format": "<b>{class}</b> - {title}",
+        "tooltip": false,
+        "max-length": 30,
         "rewrite": {
             "<b>Code</b> - (.*) - Visual Studio Code": "<b>󰨞 Code</b> - <span color='#a5adce'>$1</span>",
             "<b>firefox</b> - (.*) — Mozilla Firefox": "<b> Firefox</b> - <span color='#a5adce'>$1</span>",
             "<b>kitty</b> - (.*)": "<b> Kitty</b> - <span color='#a5adce'>$1</span>",
             "<b>org.kde.dolphin</b> - (.*) — Dolphin": "<b>󱢴 Dolphin</b> - <span color='#a5adce'>$1</span>",
             "<b>mpv</b> - (.*) - mpv": "<b> mpv</b> - <span color='#a5adce'>$1</span>",
-            "<b>org.pulseaudio.pavucontrol</b> - (.*)": "<b> Pavucontrol</b> - <span color='#a5adce'>$1</span>"
+            "<b>org.pulseaudio.pavucontrol</b> - (.*)": "<b> Pavucontrol</b> - <span color='#a5adce'>$1</span>",
+            "<b>discord</b> - (.*) - Discord": "<b> Discord</b> - <span color='#a5adce'>$1</span>",
+            "<b>libreoffice-calc</b> - (.*) — LibreOffice Calc": "<b> LibreOffice Calc</b> - <span color='#a5adce'>$1</span>",
+            "<b>org.gnome.Nautilus</b> - (.*)": "<b> 檔案</b> - <span color='#a5adce'>$1</span>"
         }
     }
 }
