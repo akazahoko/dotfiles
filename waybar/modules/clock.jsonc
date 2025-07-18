@@ -2,7 +2,7 @@
     "clock": {
         "interval": 30,
         "locale": "zh_HK.UTF-8",
-        "format": "<b>{:L%b%d日 週%a\t%H:%M}</b>",
+        "format": "<b>{:L%b%d日 週%a %H:%M}</b>",
         "tooltip-format": "<span size='16pt' font='Noto Sans Mono CJK HK'>{calendar}</span>",
         "calendar": {
                     "mode"          : "month",

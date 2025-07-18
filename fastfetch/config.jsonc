@@ -44,7 +44,7 @@
     {
       "type": "cpu",
       "key": "CPU",
-      "format": "{name} ({cores-physical}C/{cores-logical}T @ {freq-max})"
+      "format": "{name}"
     },
     {
       "type": "gpu",
@@ -56,7 +56,7 @@
     {
       "type": "disk",
       "key": "Disk",
-      "format": "{size-percentage-bar} {size-used} / {size-total} - {mountpoint}"
+      "format": "{size-percentage-bar} {size-used} / {size-total}"
     },
     "separator",
     {
@@ -65,7 +65,7 @@
       "format": "{ipv4}"
     },
     "locale",
-    "break",
+    "break"
     // "colors"
   ]
 }

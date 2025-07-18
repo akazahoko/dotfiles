@@ -11,6 +11,7 @@
         "rewrite": {
             "<b>Code</b> - (.*) - Visual Studio Code": "<b>󰨞 Code</b> - <span color='#a5adce'>$1</span>",
             "<b>firefox</b> - (.*) — Mozilla Firefox": "<b> Firefox</b> - <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> - 子母畫面": "<b> Firefox</b> - <span color='#a5adce'>子母畫面</span>",
             "<b>kitty</b> - (.*)": "<b> Kitty</b> - <span color='#a5adce'>$1</span>",
             "<b>org.kde.dolphin</b> - (.*) — Dolphin": "<b>󱢴 Dolphin</b> - <span color='#a5adce'>$1</span>",
             "<b>mpv</b> - (.*) - mpv": "<b> mpv</b> - <span color='#a5adce'>$1</span>",
