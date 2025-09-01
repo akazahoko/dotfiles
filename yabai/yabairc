@@ -6,8 +6,9 @@ skhd --start-service
 
 # Variables
 PADDING=15
+OPACITY=0.9
 ACTIVE_OPACITY=0.95
-NORMAL_OPACITY=0.9
+NORMAL_OPACITY=0.90
 
 # Menu bar
 # yabai -m config menubar_opacity 0.5
@@ -18,7 +19,7 @@ yabai -m config window_placement second_child
 yabai -m config auto_balance on
 
 # Windows Modifications
-yabai -m config window_opacity on
+yabai -m config window_opacity off
 yabai -m config active_window_opacity       "$ACTIVE_OPACITY"
 yabai -m config normal_window_opacity       "$NORMAL_OPACITY"
 
@@ -50,3 +51,7 @@ yabai -m rule --add app="計算機"            manage=off
 yabai -m rule --add app="系統設定"          manage=off
 yabai -m rule --add app="活動監視器"        manage=off
 yabai -m rule --add app="日曆"              manage=off
+
+# Rules Opacity
+yabai -m rule --add app="Code"    opacity="$OPACITY"
+yabai -m rule --add app="iTerm2"  opacity="$OPACITY"
