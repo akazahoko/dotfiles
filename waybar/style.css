@@ -1,13 +1,34 @@
-@import "palette.css";
+/* BRO WAYBAR DOESN'T FUCKING SUPPORT ROOT VARIABLE DECLARE JUST USE GTK SHIT*/
+/* RIGHT NOW IDC ABOUT THE THEME TS SO FUCKED COLOR PALETTE IS FROM CATPPUCCIN DARKEST SHIT */
+
+@define-color floating-box-color        rgba(30, 30, 46, 0.95);
+@define-color text-color                rgb(205, 214, 244);
+@define-color subtext-color             rgb(108, 112, 134);
+@define-color tooltip-bg-color          rgba(30, 30, 46, 0.5);
+@define-color highlight-color           rgb(203, 166, 247);
+
+/* widget */
+@define-color label-color               rgb(69, 71, 90);
+@define-color label-color-hover         rgb(88, 91, 112);
+@define-color alert-color               rgb(243, 139, 168);
+@define-color alert-color-text          rgb(30, 30, 46);
+@define-color workspace-color-active    rgb(136, 57, 239);
+@define-color workspace-color-special   rgb(147, 153, 178);
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Noto Sans", otf-font-awesome, ttf-noto-nerd;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+#waybar>box {
+    margin: 10px 10px 0px 10px;
+    background-color: @floating-box-color;
+    border-radius: 10px;
 }
 
 window#waybar {
-    background-color: alpha(@base, 0.5);
+    background-color: transparent;
     transition-property: background-color;
     transition-duration: 1.5s;
 }
@@ -16,11 +37,11 @@ window#waybar.fullscreen {
     opacity: 0;
 }
 
-window#waybar.empty #window{
+window#waybar.empty #window {
     opacity: 0;
 }
 
-window#waybar.floating #window{
+window#waybar.floating #window {
     opacity: 0;
 }
 
@@ -35,92 +56,102 @@ window#waybar.floating #window{
 #user,
 #privacy-item,
 #submap,
-#workspaces,
 #mpris,
-#pinned
-{
-    border-radius: 16;
-    background-color: alpha(@base, 0.55);
-    margin: 4 0px;
-    padding: 0 7px;
-    color: @text;
+#pinned,
+#custom-swaync,
+#custom-sysmenu,
+#workspaces {
+    border-radius: 16px;
+    background-color: transparent;
+    margin: 0px 2.5px;
+    color: @text-color;
     /* box-shadow: 0 0 2 1px @mauve, inset 0 0 0 2px @mauve; */
 }
 
-tooltip {
-    color: @text;
-    background-color: alpha(@base, 0.5);
+#custom-sysmenu {
+    margin-left: 10px;
 }
 
-#pinned {
+#custom-swaync {
+    margin-right: 10px;
+}
+
+tooltip {
+    color: @text-color;
+    background-color: @tooltip-bg-color;
+}
+
+/* #pinned {
     margin-right: 12px;
 }
 
 #workspaces {
     margin-left: 12px;
-}
+} */
 
-#idle_inhibitor,
-#custom-wlogout,
-#custom-waypaper,
 #pulseaudio,
-#network
-{
+#network {
     font-size: 16px;
     padding: 0 5px;
 }
 
 #custom-tray_chevron {
-    color: @overlay0;
+    color: @subtext-color;
     padding: 0 0px
 }
 
+/* Hyprland Workspace */
+
+#workspaces button {
+    color: @text-color;
+    border-radius: 20px;
+    margin: 0 -7px;
+}
+
+#workspaces button:hover label{
+    background-color: @label-color-hover;
+}
+
 #workspaces label {
+    background-color: @label-color;
+    border-radius: 30px;
+    padding: 0 10px;
     font-size: 16px;
 }
 
-#workspaces button {
-    background-color: transparent;
-    color: @overlay0;
-    border-radius: 20;
-    margin: 0 -8px;
+#workspaces button.active label {
+    color: @workspace-color-active;
+    background-color: @highlight-color;
 }
 
-#workspaces button.active label{
-    padding: 0 10px;
-    border-radius: 30px;
-    background-color: @mauve;
+#workspaces button.urgent label {
+    color: @alert-color-text;
+    background-color: @alert-color;
 }
 
-#workspaces button.active {
-    color: #8839ef;
-    background-color: transparent;
-}
+/* Audio */
 
-#workspaces button.urgent {
-    background-color: @red;
-}
-
-#wireplumber.muted,
-#pulseaudio.muted,
-#mpris.paused
-{
-    color: @base;
-    background-color: @red;
+#pulseaudio.muted {
+    color: @alert-color-text;
+    background-color: @alert-color;
     border-radius: 20px;
 }
 
-#tray > .passive {
+#mpris.paused {
+    color: @alert-color-text;
+    background-color: @alert-color;
+    border-radius: 12px;
+    margin: 4px 0px;
+    padding: 0 10px;
+}
+
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-}
-
-#idle_inhibitor.activated {
-    color: @mauve;
 }
 
 #privacy-item.screenshare {
@@ -129,7 +160,7 @@ tooltip {
 }
 
 #privacy-item.audio-in {
-    margin: 4 0px;
+    margin: 4px 0px;
     color: @base;
     background-color: @peach;
 }

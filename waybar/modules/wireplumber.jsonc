@@ -1,8 +1,11 @@
 {
     "wireplumber": {
         "format": "{icon}",
-        "format-muted": "",
-        "format-icons": ["", "", ""],
+        // "format-muted": "",
+        "format-icons": {
+            "alsa_output.usb-GuangZhou_FiiO_Electronics_Co._Ltd_FiiO_K5_Pro-00.analog-stereo": "",
+            "default": ["", "", ""]
+        },
         "on-click": "pavucontrol"
     }
 }

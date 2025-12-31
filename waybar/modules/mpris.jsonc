@@ -1,12 +1,12 @@
 {
     "mpris": {
-        "format": "{player_icon} <b>{title} - {artist}</b>",
-        "title-len": 35,
-        "artist-len": 20,
+        "format": "{player_icon} {title}",
+        "title-len": 50,
+        "artist-len": 35,
         "player-icons": {
+            "default": "▶",
             "mpv": "",
             "firefox": ""
-        }
-
+        },
     }
 }

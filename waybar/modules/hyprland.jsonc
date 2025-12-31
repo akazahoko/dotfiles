@@ -1,24 +1,76 @@
 {
     "hyprland/workspaces": {
+        "show-special": true,
+        "format": "<sup>{icon}</sup>{windows}",
+        "format-window-separator": " ",
+        "format-icons": {
+            "10": "0",
+            "special": "S"
+        },
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "title<.*github.*>": "󰊤", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "class<firefox>": "", // Windows whose classes are "firefox"
+            "code": "󰨞",
+            "okular": "󰊪",
+            "nautilus": "󰪶",
+            "kitty": "",
+            "qbittorrent": "",
+            "mpv": "",
+            "discord": "",
+            "steam": "",
+            "libreoffice-calc": "",
+            "dolphin": "󱢴"
+	    },
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1"
     },
 
     "hyprland/window": {
-        "format": "<b>{class}</b> - {title}",
+        "format": "<b>{class}</b> — {title}",
         "tooltip": false,
-        "max-length": 30,
         "rewrite": {
-            "<b>Code</b> - (.*) - Visual Studio Code": "<b>󰨞 Code</b> - <span color='#a5adce'>$1</span>",
-            "<b>firefox</b> - (.*) — Mozilla Firefox": "<b> Firefox</b> - <span color='#a5adce'>$1</span>",
-            "<b>firefox</b> - 子母畫面": "<b> Firefox</b> - <span color='#a5adce'>子母畫面</span>",
-            "<b>kitty</b> - (.*)": "<b> Kitty</b> - <span color='#a5adce'>$1</span>",
-            "<b>org.kde.dolphin</b> - (.*) — Dolphin": "<b>󱢴 Dolphin</b> - <span color='#a5adce'>$1</span>",
-            "<b>mpv</b> - (.*) - mpv": "<b> mpv</b> - <span color='#a5adce'>$1</span>",
-            "<b>org.pulseaudio.pavucontrol</b> - (.*)": "<b> Pavucontrol</b> - <span color='#a5adce'>$1</span>",
-            "<b>discord</b> - (.*) - Discord": "<b> Discord</b> - <span color='#a5adce'>$1</span>",
-            "<b>libreoffice-calc</b> - (.*) — LibreOffice Calc": "<b> LibreOffice Calc</b> - <span color='#a5adce'>$1</span>",
-            "<b>org.gnome.Nautilus</b> - (.*)": "<b> 檔案</b> - <span color='#a5adce'>$1</span>"
+            "<b>Code</b> — (.*) - (.*) - Visual Studio Code": "<b>󰨞 Code</b> — <span color='#a5adce'>$1 :: $2</span>",
+
+            "<b>firefox</b> — Mozilla Firefox": "<b> Firefox</b>",
+            "<b>firefox</b> — (.*) — Mozilla Firefox": "<b> Firefox</b> — <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> — 子母畫面": "<b> Firefox</b> — <span color='#a5adce'>子母畫面</span>",
+            "<b>firefox</b> — (.*) - YouTube — Mozilla Firefox": "<b>󰗃 YouTube</b> — <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> — (.*) - Deepseek — Mozilla Firefox": "<b> Deepseek</b> — <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> — (.*) » nhentai: hentai doujinshi and manga — Mozilla Firefox": "<b> nhentai</b> — <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> — (.*) :: Sukebei — Mozilla Firefox": "<b> Sukebei</b> — <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> — (.*) · GitHub — Mozilla Firefox": "<b>󰊤 Github</b> — <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> — (.*) - Google 搜尋 — Mozilla Firefox": "<b> Google 搜尋</b> — <span color='#a5adce'>$1</span>",
+            "<b>firefox</b> — (.*) - FC2PPVDB — Mozilla Firefox": "<b> FC2PPVDB</b> — <span color='#a5adce'>$1</span>",
+
+            "<b>kitty</b> — (.*)": "<b> Kitty Terminal</b>",
+            "<b>mpv</b> — (.*) - mpv": "<b> mpv</b> — <span color='#a5adce'>$1</span>",
+            "<b>discord</b> — (.*) - Discord": "<b> Discord</b> — <span color='#a5adce'>$1</span>",
+            "<b>steam</b> — (.*)": "<b> Steam</b> — <span color='#a5adce'>$1</span>",
+            
+            "<b>org.pulseaudio.pavucontrol</b> — (.*)": "<b> Pavucontrol</b> — <span color='#a5adce'>$1</span>",
+            "<b>nm-connection-editor</b> — (.*)": "<b>󱫋 NetworkManager</b> — <span color='#a5adce'>$1</span>",
+            "<b>blueman-manager</b> — (.*)": "<b>󰂯 Blueman</b> — <span color='#a5adce'>$1</span>",
+
+            "<b>org.gnome.Nautilus</b> — (.*)": "<b>󰪶 Nautilus</b> — <span color='#a5adce'>$1</span>",
+            "<b>org.gnome.eog</b> — (.*)": "<b>󰈈 Eye of GNOME</b> — <span color='#a5adce'>$1</span>",
+
+            "<b>org.kde.dolphin</b> — (.*) — Dolphin": "<b>󱢴 Dolphin</b> — <span color='#a5adce'>$1</span>",
+            "<b>org.kde.okular</b> — (.*)  — Okular": "<b>󰊪 Okular</b> — <span color='#a5adce'>$1</span>",
+            "<b>org.kde.kwrite</b> — (.*)  — KWrite": "<b>󰂮 KWrite</b> — <span color='#a5adce'>$1</span>",
+            "<b>org.qbittorrent.qBittorrent</b> — (.*)": "<b>qBittorent</b> — <span color='#a5adce'>$1</span>",
+
+            "<b>libreoffice-calc</b> — (.*) — LibreOffice Calc": "<b> LibreOffice Calc</b> — <span color='#a5adce'>$1</span>",
+
+            "<b>calibre-gui</b> — calibre — \\|\\| (.*) \\|\\|": "<b> Calibre</b> — <span color='#a5adce'>$1</span>",
+            "<b>calibre-gui</b> — ((?:(?!calibre).)*)": "<b> Calibre</b> — <span color='#a5adce'>$1</span>",
+            "<b>calibre-ebook-viewer</b> — (.*) — 電子書閱讀器": "<b> Calibre 閱讀器</b> — <span color='#a5adce'>$1</span>",
+            "<b>calibre-ebook-edit</b> — (.*) :: 編輯書本": "<b> Calibre 編輯器</b> — <span color='#a5adce'>$1</span>",
+
+            "<b>waypaper</b> — (.*)": "<b>󰸉 Waypaper</b> — <span color='#a5adce'>$1</span>",
+
+            "<b>org.mozilla.Thunderbird</b> — (.*) - Mozilla Thunderbird": "<b> Thunderbird</b> — <span color='#a5adce'>$1</span>",
         }
     }
 }

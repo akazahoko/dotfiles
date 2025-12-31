@@ -1,23 +1,45 @@
 {
     "position": "top",
-    "height": 35,
+    "height": 46,
     "spacing": 5,
-    "include": [ "~/.config/waybar/modules/*" ],
+    "include": [ 
+        "./modules/clock.jsonc",
+        "./modules/cpu.jsonc",
+        "./modules/hyprland.jsonc",
+        "./modules/idle_inhibitor.jsonc",
+        "./modules/memory.jsonc",
+        "./modules/mpris.jsonc",
+        "./modules/network.jsonc",
+        "./modules/privacy.jsonc",
+        "./modules/pulseaudio.jsonc",
+        "./modules/systeminfo.jsonc",
+        "./modules/tray.jsonc",
+        "./modules/waypaper.jsonc",
+        "./modules/wireplumber.jsonc",
+        "./modules/wlogout.jsonc",
+        "./modules/image.jsonc",
+        "./modules/swaync.jsonc",
+        "./modules/sysmenu.jsonc"
+    ],
 
     "modules-left": [
+        "custom/sysmenu",
         "hyprland/workspaces",
-        "hyprland/window",
-        "hyprland/submap"
+        "hyprland/window"
     ],
-
+    
     "modules-center": [
-        "clock",
+        // "clock"
+        // "hyprland/window"
         "mpris"
     ],
-
+    
     "modules-right": [
         "privacy",
-        "group/pinned"
+        "mpris",
+        "group/pinned",
+        "clock",
+        "custom/swaync"
     ],
 
     "group/tray_hidden": {
@@ -42,8 +64,10 @@
         "modules": [
             "group/tray_hidden",
             "network", 
-            "pulseaudio", 
-            "group/power"
+            "pulseaudio"
+            // "pulseaudio/slider",
+            // "wireplumber",
+            // "group/power"
         ]
     },
 

@@ -1,0 +1,6 @@
+{
+    "custom/swaync": {
+        "format": "󰂚",
+        "on-click": "swaync-client -t"
+    }
+}

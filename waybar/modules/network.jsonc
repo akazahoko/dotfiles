@@ -1,7 +1,7 @@
 {
     "network": {
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "",
+        "format-ethernet": "󰌘",
         // "format-linked": "{ifname} (No IP)",
         // "format-alt": "{bandwidthDownBits}|{bandwidthUpBits}",
         "tooltip-format": "{ifname} via {gwaddr}",
