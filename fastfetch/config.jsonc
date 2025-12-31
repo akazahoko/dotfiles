@@ -8,8 +8,10 @@
       "type": "both"
     },
     "bar": {
-      "charElapsed": "■",
-      "charTotal": "-"
+      "char": {
+        "elapsed": "■",
+        "total": "-"
+      }
     },
     "percent": {
       "type": 2
