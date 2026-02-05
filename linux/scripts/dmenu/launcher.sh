@@ -26,7 +26,7 @@ function exec_term() {
     fi
     
     pkill -f "foot -a menu -T $CALLER:$ARG" || \
-    foot -a menu -T $CALLER:$ARG ~/.scripts/dmenu/$CALLER.sh $ARG
+    foot -a menu -T $CALLER:$ARG ~/.dotfiles/linux/scripts/dmenu/$CALLER.sh $ARG
 }
 
 function pacman() {
