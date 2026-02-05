@@ -2,13 +2,13 @@
 
 ## linux
 
+- fuzzel
 - hyprland
 - fuzzel
 - waybar
-- wlogout
 
-## mac-os
-
-- sketchybar
-- skhd
-- yabai
+Dropped:
+- Walker + Elephant -> fuzzel
+- Rofi -> fuzzel
+- wlogout -> fuzzel + scripts
+- 

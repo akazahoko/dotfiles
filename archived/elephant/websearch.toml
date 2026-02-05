@@ -1,0 +1,22 @@
+always_show_default = false
+history = false
+
+[[entries]]
+name    = "Google"
+url     = "https://www.google.com/search?q=%TERM%"
+prefix  = "g"
+
+[[entries]]
+name    = "Sukebei"
+url     = "https://sukebei.nyaa.si/?f=0&c=0_0&q=%TERM%"
+prefix  = "sukebei"
+
+[[entries]]
+name    = "FC2PPVDB"
+url     = "https://fc2ppvdb.com/search?stype=title&keyword=%TERM%"
+prefix  = "fc2"
+
+[[entries]]
+name    = "YouTube"
+url     = "https://www.youtube.com/results?search_query=%TERM%"
+prefix  = "yt"

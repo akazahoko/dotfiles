@@ -1,8 +1,0 @@
-{
-    "image#album-art": {
-		"exec": "./scripts/get-album-art.sh",
-		"size": 100,
-		"interval": 5
-	// "on-click": "mpc toggle"
-    }
-}

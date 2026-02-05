@@ -1,0 +1,29 @@
+{
+    "window.titleBarStyle": "native",
+    "editor.fontFamily": "'FiraCode Nerd Font'",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "explorer.confirmDragAndDrop": false,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "qt-core.additionalQtPaths": [
+        {
+            "name": "Qt-5.15.18-linux-g++_from_PATH",
+            "path": "/usr/bin/qmake"
+        }
+    ],
+    "qt-qml.qmlls.useQmlImportPathEnvVar": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "editor.unicodeHighlight.allowedCharacters": {
+        " ": true
+    },
+    "qt-qml.doNotAskForQmllsDownload": true,
+    "[properties]": {}
+}

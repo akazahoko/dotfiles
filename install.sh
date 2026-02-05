@@ -1,38 +1,22 @@
-#!/bin/bash
+#!/bin/sh
 
-OS="$(uname -s)"
+UNAME="$(uname -s)"
 CONFIG_DIR="$(echo $HOME)/.config/"
-DOTFILES_DIR="$(pwd)"
+DOTFILES_DIR="$(echo $HOME)/.dotfiles"
 
-LINUX_DOTFILES=(
-    "hypr"
-    "wlogout"
-    "waybar"
-    "fuzzel"
-)
+LINUX_DOTFILES=($DOTFILES_DIR/linux/*)
+SHARED_DOTFILES=($DOTFILES_DIR/shared/*)
 
-MAC_DOTFILES=(
-    "yabai"
-    "skhd"
-    "sketchybar"
-)
-
-UNI_DOTFILES=(
-    "nvim"
-    "tmux"
-    "fastfetch"
-)
-
-if [ "$OS" == "Linux" ]; then
+if [ "$UNAME" == "Linux" ]; then
     for i in "${LINUX_DOTFILES[@]}"; do
-        ln -s "$DOTFILES_DIR/$i" "$CONFIG_DIR" 
-    done
-elif [ "$OS" == "Darwin" ]; then
-    for i in "${MAC_DOTFILES[@]}"; do
-        ln -s "$DOTFILES_DIR/$i" "$CONFIG_DIR" 
+        ln -sf $i $CONFIG_DIR
+    done    
+elif [ "$UNAME" == "Darwin" ]; then
+    for i in "${MACOS_DOTFILES[@]}"; do
+        ln -sf $i $CONFIG_DIR
     done
 fi
 
-for i in "${UNI_DOTFILES[@]}"; do
-    ln -s "$DOTFILES_DIR/$i" "$CONFIG_DIR" 
+for i in "${SHARED_DOTFILES[@]}"; do
+    ln -sf $i $CONFIG_DIR
 done

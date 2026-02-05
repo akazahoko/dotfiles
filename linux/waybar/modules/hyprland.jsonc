@@ -1,0 +1,42 @@
+// https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+{
+    "hyprland/workspaces": {
+        "show-special": true,
+        "format": "{icon} {windows}",
+        "format-window-separator": " ",
+        "format-icons": {
+            "10": "0",
+            "special": "S"
+        },
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<firefox>"                        : "",
+            "class<code>"                           : "󰨞",
+            "class<okular>"                         : "󰍅",
+            "class<org.gnome.nautilus>"             : "󰪶",
+            "class<kitty>"                          : "",
+            "class<foot>"                           : "",
+            "class<org.qbittorrent.qBittorrent>"    : "",
+            "class<mpv>"                            : "",
+            "class<discord>"                        : "",
+            "class<steam>"                          : "",
+            "class<libreoffice-calc>"               : "",
+            "class<org.kde.dolphin>"                : "󰪶",
+            "class<menu> title<clipboard.*>"        : "󰅇",
+            "class<menu> title<pacman.*"            : "󰏗",
+            "class<font-manager>"                   : "",
+            "class<WebApp-WhatsApp0559>"            : "󰖣",
+            "class<cr.fr.bionus.Grabber>"           : "",
+            "class<nm-connection-editor>"           : "󰛳",
+            "class<audacious>"                      : "󰎆",
+            "class<obsidian>"                       : "󰠮"
+	    },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "tooltip": false
+    }
+}

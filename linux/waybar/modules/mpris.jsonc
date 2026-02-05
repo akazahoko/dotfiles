@@ -1,0 +1,15 @@
+// Reference: https://github.com/Alexays/Waybar/wiki/Module:-MPRIS
+{
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "tooltip-format": "Title:\t{title}\nArtist:\t{artist}\nLength:\t{length}\nPlayer:\t{player}",
+        "title-len": 50,
+        "artist-len": 35,
+        "player-icons": {
+            "default"   : "▶",
+            "mpv"       : "",
+            "firefox"   : "",
+            "audacious" : "󰎇"
+        },
+    }
+}
