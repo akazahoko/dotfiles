@@ -2,13 +2,33 @@
 
 ## linux
 
+- fbterm
+- foot
 - fuzzel
-- hyprland
-- fuzzel
+- hypr
+- keyd
+- mako
+- pipewire
 - waybar
 
-Dropped:
+Archived:
 - Walker + Elephant -> fuzzel
 - Rofi -> fuzzel
 - wlogout -> fuzzel + scripts
-- 
+
+## macOS
+
+- sketchybar
+- yabai
+- skhd
+
+## Shared
+
+- vscode (idk how)
+- fastfetch
+- fzf
+- mpv (mac have?)
+- nvim
+- tmux (useless -> prep ditch)
+- vim
+- zsh
