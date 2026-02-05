@@ -1,2 +1,6 @@
 tmux/plugins/*
 mpv/shaders/*
+
+zsh/.zsh_history
+zsh/.zcompdump-*
+zsh/.p10k.zsh
