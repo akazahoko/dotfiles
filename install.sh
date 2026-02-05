@@ -5,6 +5,7 @@ CONFIG_DIR="$(echo $HOME)/.config/"
 DOTFILES_DIR="$(echo $HOME)/.dotfiles"
 
 LINUX_DOTFILES=($DOTFILES_DIR/linux/*)
+MACOS_DOTFILES=($DOTFILES_DIR/macos/*)
 SHARED_DOTFILES=($DOTFILES_DIR/shared/*)
 
 if [ "$UNAME" == "Linux" ]; then

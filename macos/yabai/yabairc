@@ -1,0 +1,68 @@
+# https://github.com/asmvik/yabai/wiki
+
+# Start
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+skhd --start-service
+
+yabai -m config external_bar main:20:0
+
+# Variables
+PADDING=15
+OPACITY=0.9
+ACTIVE_OPACITY=0.95
+NORMAL_OPACITY=0.90
+
+# Menu bar
+# yabai -m config menubar_opacity 0.5
+
+# Layout
+yabai -m config layout bsp
+yabai -m config window_placement second_child
+yabai -m config auto_balance on
+
+# Windows Modifications
+yabai -m config window_opacity              off
+yabai -m config active_window_opacity       "$ACTIVE_OPACITY"
+yabai -m config normal_window_opacity       "$NORMAL_OPACITY"
+
+# yabai -m config window_shadow on
+yabai -m config window_animation_duration   0
+
+# Paddings & Gaps
+yabai -m config top_padding                 "$PADDING"
+yabai -m config bottom_padding              "$PADDING"
+yabai -m config left_padding                "$PADDING"
+yabai -m config right_padding               "$PADDING"
+yabai -m config window_gap                  "$PADDING"
+
+# Mouse
+yabai -m config focus_follows_mouse         autofocus
+yabai -m config mouse_follows_focus         on
+yabai -m config mouse_modifier              alt
+yabai -m config mouse_action1               move
+yabai -m config mouse_action2               resize
+yabai -m mouse_drop_action                  swap
+
+# Rules - Manage
+yabai -m rule --add app="Wacom Center"      manage=off
+yabai -m rule --add app="Final2x"           manage=off
+yabai -m rule --add app="Shottr"            manage=off
+yabai -m rule --add app="Raycast"           manage=off
+yabai -m rule --add app="CrossOver"         manage=off
+yabai -m rule --add app="計算機"            manage=off
+yabai -m rule --add app="系統設定"          manage=off
+yabai -m rule --add app="活動監視器"        manage=off
+# yabai -m rule --add app="日曆"              manage=off
+
+# Rules Opacity
+# yabai -m rule --add app="Code"    opacity="$OPACITY"
+# yabai -m rule --add app="iTerm2"  opacity="$OPACITY"
+# yabai -m rule --add app="Obsidian" opacity="$OPACITY"
+
+# https://github.com/FelixKratz/SketchyBar/discussions/245
+
+# Signal
+yabai -m signal --add event=window_focused        action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_title_changed  action="sketchybar --trigger title_changed"
