@@ -1,7 +1,7 @@
 {
     "custom/weather": {
-        "exec": "~/.scripts/waybar/weather.sh",
-        "on-click": "~/.scripts/waybar/weather.sh",
+        "exec": "~/.dotfiles/linux/scripts/waybar/weather.sh",
+        "on-click": "~/.dotfiles/linux/scripts/waybar/weather.sh",
         "on-click-middle": "xdg-open https://www.hko.gov.hk",
         "format": "<b>{}</b>",
         "tooltip": false,
