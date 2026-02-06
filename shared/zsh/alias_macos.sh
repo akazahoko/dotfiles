@@ -1,0 +1,5 @@
+alias brews="brew install"
+alias brewu="brew upgrade; brew cu -a"
+alias brewc="brew autoremove"
+alias brewr="brew uninstall"
+alias brewx="brew cleanup"

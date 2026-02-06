@@ -56,7 +56,6 @@ plugins=(
 	fzf	
 	z
 	zsh-autosuggestions
-	zsh-bat
 	zsh-syntax-highlighting
 )
 
@@ -64,31 +63,19 @@ source $ZSH/oh-my-zsh.sh
 
 ##### Alias #####
 
+if [[ "$(uname -s)" == "Linux"  ]]; then
+    source $ZDOTDIR/alias_linux.sh
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+    source $ZDOTDIR/alias_macos.sh
+fi
+
 # Application
 alias vi="vim"
 alias ff="fastfetch"
 alias nv="nvim"
 alias warp="warp-cli"
 
-# Pacman
-alias pac="pacman"					# Pacman Alias
-alias pacf="pacman -Ss"					# Search Packages
-alias pacs="sudo pacman -S"				# Install Package
-alias pacu="sudo pacman -Syu"
-alias pacr="sudo pacman -Rns"				# Remove Package
-alias pacq="pacman -Q"					# Query Packages
-alias pacc="sudo pacman -Rns $(pacman -Qdtq)"		# Remove Orphans
-
-# Yay
-alias yays="yay -S"
-alias yayr="yay -Rns"
-alias yayc="yay -Yc"
-
-# ddcutil
-alias set-brightness="ddcutil setvcp 10"
-
 # export MANPATH="/usr/local/man:$MANPATH"
-
 export EDITOR="vim"
 
 # Compilation flags
@@ -103,16 +90,9 @@ export QML_IMPORT_PATH="/usr/lib/qt/qml/QtQuick/"
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Created by `pipx` on 2025-11-17 15:27:53
-export PATH="$PATH:/home/lain/.local/bin"
-
-# Export
-source ~/.config/fzf/fzf.sh
-
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/git/dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/git/dotfiles/zsh/.p10k.zsh ]] || source ~/git/dotfiles/zsh/.p10k.zsh
+source /Users/lain/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
