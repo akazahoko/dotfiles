@@ -1,5 +1,16 @@
+Code/User/globalStorage
+Code/User/History
+Code/User/snippets
+Code/User/workspaceStorage
+Code/User/chatLanguageModels.json
+
+kitty/kitty.conf.bak
+
+mpv/shaders
+
 tmux/plugins/*
-mpv/shaders/*
+
+vim/.netrwhist
 
 zsh/.zsh_history
 zsh/.zcompdump-*

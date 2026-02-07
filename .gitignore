@@ -1,6 +1,2 @@
-tmux/plugins/*
-nvim/test.cpp
-pipewire/*
-
 .vscode
-sketchybar/cache
+.DS_Store

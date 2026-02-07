@@ -64,9 +64,9 @@ source $ZSH/oh-my-zsh.sh
 ##### Alias #####
 
 if [[ "$(uname -s)" == "Linux"  ]]; then
-    source $ZDOTDIR/alias_linux.sh
+    source $ZDOTDIR/aliases/linux.zsh
 elif [[ "$(uname -s)" == "Darwin" ]]; then
-    source $ZDOTDIR/alias_macos.sh
+    source $ZDOTDIR/aliases/macos.zsh
 fi
 
 # Application
@@ -92,7 +92,3 @@ export QML_IMPORT_PATH="/usr/lib/qt/qml/QtQuick/"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/git/dotfiles/zsh/.p10k.zsh.
-[[ ! -f ~/git/dotfiles/zsh/.p10k.zsh ]] || source ~/git/dotfiles/zsh/.p10k.zsh
-source /Users/lain/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

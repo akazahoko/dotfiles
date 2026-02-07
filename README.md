@@ -32,3 +32,8 @@ Archived:
 - tmux (useless -> prep ditch)
 - vim
 - zsh
+
+# Terminal emulator
+linux: foot (./linux/foot)
+macos: iterm2 (./macos/iterm2)
+alternatives: kitty (./shared/kitty)
