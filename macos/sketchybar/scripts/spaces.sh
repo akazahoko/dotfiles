@@ -13,9 +13,11 @@ for i in "${WID[@]}"; do
     case $APP in 
         "WhatsApp")             WINDOWS+=" ";;
         "Firefox")              WINDOWS+=" ";;
+        "Zen")                  WINDOWS+=" ";;
         "Code")                 WINDOWS+=" ";;
         "Finder")               WINDOWS+="󰀶 ";;
         "iTerm2")               WINDOWS+=" ";;
+        "kitty")                WINDOWS+="󰄛 ";;
         "Microsoft Word")       WINDOWS+="󱎒 ";;
         "Microsoft Excel")      WINDOWS+="󱎏 ";;
         "Microsoft PowerPoint") WINDOWS+="󱎐 ";;
