@@ -1,29 +1,40 @@
+# skhd - rift config
+
 # Change Window Focus
-alt - j                   : yabai -m window --focus south
-alt - k                   : yabai -m window --focus north
-alt - h                   : yabai -m window --focus west
-alt - l                   : yabai -m window --focus east
+alt - j                     : rift-cli execute window focus up
+alt - k                     : rift-cli execute window focus down
+alt - h                     : rift-cli execute window focus left
+alt - l                     : rift-cli execute window focus right
+
+# alt - up                    : rift-cli execute window focus up
+# alt - down                  : rift-cli execute window focus down
+# alt - left                  : rift-cli execute window focus left
+# alt - right                 : rift-cli execute window focus right
 
 # Move Window
-ctrl + alt - j            : yabai -m window --warp south
-ctrl + alt - k            : yabai -m window --warp north
-ctrl + alt - h            : yabai -m window --warp west
-ctrl + alt - l            : yabai -m window --warp east
+shift + alt - j             : rift-cli execute layout move-node up
+shift + alt - k             : rift-cli execute layout move-node down
+shift + alt - h             : rift-cli execute layout move-node left
+shift + alt - l             : rift-cli execute layout move-node right
+
+# shift + alt - up            : rift-cli execute layout move-node up
+# shift + alt - down          : rift-cli execute layout move-node down
+# shift + alt - left          : rift-cli execute layout move-node left
+# shift + alt - right         : rift-cli execute layout move-node right
 
 # Resize window
-ctrl + cmd + alt - h      : yabai -m window --resize right:-20:0  2>/dev/null || yabai -m window --resize left:-20:0  2>/dev/null
-ctrl + cmd + alt - j      : yabai -m window --resize bottom:0:20  2>/dev/null || yabai -m window --resize top:0:20    2>/dev/null
-ctrl + cmd + alt - k      : yabai -m window --resize bottom:0:-20 2>/dev/null || yabai -m window --resize top:0:-20   2>/dev/null
-ctrl + cmd + alt - l      : yabai -m window --resize right:20:0   2>/dev/null || yabai -m window --resize left:20:0   2>/dev/null
+shift + alt - 0x1B          : rift-cli execute window resize-shrink
+shift + alt - 0x18          : rift-cli execute window resize-grow
 
 # Window Toggle Float
-ctrl + alt - f            : yabai -m window --toggle float
+alt - f                     : rift-cli execute window toggle-float
 
 # Window Toggle Sticky
 ctrl + alt - s            : yabai -m window --toggle sticky
 
 # Maximize Window
-alt - m                   : yabai -m window --toggle zoom-fullscreen
+f11                         : rift-cli execute window toggle-fullscreen
+alt - return                : rift-cli execute window toggle-fullscreen
 
 ##### SPACE #####
 ### Modifier: shift
@@ -44,52 +55,42 @@ shift + alt - b           : yabai -m space --balance
 shift + alt - d           : yabai -m space --layout bsp
 shift + alt - f           : yabai -m space --layout float
 
-# FOCUS space
-alt - 0x32                : yabai -m space --focus recent
-alt - 1                   : yabai -m space --focus 1
-alt - 2                   : yabai -m space --focus 2
-alt - 3                   : yabai -m space --focus 3
-alt - 4                   : yabai -m space --focus 4
-alt - 5                   : yabai -m space --focus 5
-alt - 6                   : yabai -m space --focus 6
-alt - 7                   : yabai -m space --focus 7
-alt - 8                   : yabai -m space --focus 8
-alt - 9                   : yabai -m space --focus 9
-alt - 0                   : yabai -m space --focus 10
-alt - 0x1B                : yabai -m space --focus 11
-alt - 0x18                : yabai -m space --focus 12
+# Switch to workspaces
+alt - 1                     : rift-cli execute workspace switch 1
+alt - 2                     : rift-cli execute workspace switch 2
+alt - 3                     : rift-cli execute workspace switch 3
+alt - 4                     : rift-cli execute workspace switch 4
+alt - 5                     : rift-cli execute workspace switch 5
+alt - 6                     : rift-cli execute workspace switch 6
+alt - 7                     : rift-cli execute workspace switch 7
+alt - 8                     : rift-cli execute workspace switch 8
+alt - 9                     : rift-cli execute workspace switch 9
+alt - 0                     : rift-cli execute workspace switch 0
 
-# MOVE window to space
-shift + alt - 1           : yabai -m window --space 1 --focus  
-shift + alt - 2           : yabai -m window --space 2 --focus  
-shift + alt - 3           : yabai -m window --space 3 --focus 
-shift + alt - 4           : yabai -m window --space 4 --focus       
-shift + alt - 5           : yabai -m window --space 5 --focus  
-shift + alt - 6           : yabai -m window --space 6 --focus  
-shift + alt - 7           : yabai -m window --space 7 --focus 
-shift + alt - 8           : yabai -m window --space 8 --focus  
-shift + alt - 9           : yabai -m window --space 9 --focus  
-shift + alt - 0           : yabai -m window --space 10 --focus 
-shift + alt - 0x1B        : yabai -m window --space 11 --focus 
-shift + alt - 0x18        : yabai -m window --space 12 --focus
+# Move window to workspace
+# need sleep 0.1 otherwise it won't work
+shift + alt - 1             : rift-cli execute workspace move-window 1; sleep 0.1; rift-cli execute workspace switch 1
+shift + alt - 2             : rift-cli execute workspace move-window 2; sleep 0.1; rift-cli execute workspace switch 2
+shift + alt - 3             : rift-cli execute workspace move-window 3; sleep 0.1; rift-cli execute workspace switch 3
+shift + alt - 4             : rift-cli execute workspace move-window 4; sleep 0.1; rift-cli execute workspace switch 4
+shift + alt - 5             : rift-cli execute workspace move-window 5; sleep 0.1; rift-cli execute workspace switch 5
+shift + alt - 6             : rift-cli execute workspace move-window 6; sleep 0.1; rift-cli execute workspace switch 6
+shift + alt - 7             : rift-cli execute workspace move-window 7; sleep 0.1; rift-cli execute workspace switch 7
+shift + alt - 8             : rift-cli execute workspace move-window 8; sleep 0.1; rift-cli execute workspace switch 8
+shift + alt - 9             : rift-cli execute workspace move-window 9; sleep 0.1; rift-cli execute workspace switch 9
+shift + alt - 0             : rift-cli execute workspace move-window 0; sleep 0.1; rift-cli execute workspace switch 0
 
-# MOVE without FOCUS window to space
-shift + cmd + alt - 1     : yabai -m window --space 1 
-shift + cmd + alt - 2     : yabai -m window --space 2 
-shift + cmd + alt - 3     : yabai -m window --space 3 
-shift + cmd + alt - 4     : yabai -m window --space 4 
-shift + cmd + alt - 5     : yabai -m window --space 5 
-shift + cmd + alt - 6     : yabai -m window --space 6 
-shift + cmd + alt - 7     : yabai -m window --space 7 
-shift + cmd + alt - 8     : yabai -m window --space 8 
-shift + cmd + alt - 9     : yabai -m window --space 9 
-shift + cmd + alt - 0     : yabai -m window --space 10
-shift + cmd + alt - 0x1B  : yabai -m window --space 11
-shift + cmd + alt - 0x18  : yabai -m window --space 12
-
-# Window Opacity
-ctrl + cmd + alt - 0x1B   : yabai -m config window_opacity on
-ctrl + cmd + alt - 0x18   : yabai -m config window_opacity off
+# Move window to workspace (without switch)
+ctrl + shift + alt - 1      : rift-cli execute workspace move-window 1
+ctrl + shift + alt - 2      : rift-cli execute workspace move-window 2
+ctrl + shift + alt - 3      : rift-cli execute workspace move-window 3
+ctrl + shift + alt - 4      : rift-cli execute workspace move-window 4
+ctrl + shift + alt - 5      : rift-cli execute workspace move-window 5
+ctrl + shift + alt - 6      : rift-cli execute workspace move-window 6
+ctrl + shift + alt - 7      : rift-cli execute workspace move-window 7
+ctrl + shift + alt - 8      : rift-cli execute workspace move-window 8
+ctrl + shift + alt - 9      : rift-cli execute workspace move-window 9
+ctrl + shift + alt - 0      : rift-cli execute workspace move-window 0
 
 ##### Software Shortcut
 # Modifier: hyper (caps lock)
@@ -98,6 +99,7 @@ hyper - e             : open -a finder
 hyper - f             : open -a firefox
 hyper - o             : open -a obsidian
 hyper - c             : open -a "Visual Studio Code"
+
 # Rule
 # ctrl + cmd + alt - r    : yabai -m rule --apply && yabai -m space --focus 1
 

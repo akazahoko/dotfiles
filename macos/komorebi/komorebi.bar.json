@@ -1,0 +1,72 @@
+{
+    "$schema": "komorebi.bar.0.1.0.schema.json",
+    "font_family": "FiraCode Nerd Font",
+    "height": 43,
+    "theme": {
+        "palette": "Catppuccin",
+        "name": "Mocha",
+        "accent": "Mauve"
+    },
+    "left_widgets": [
+        {
+            "Komorebi": {
+                "workspaces": {
+                    "enable": true,
+                    "hide_empty_workspaces": true,
+                    "display": "AllIconsAndText"
+                },
+                "layout": {
+                    "enable": false
+                },
+                "focused_container": {
+                    "enable": true,
+                    "show_icon": false
+                }
+            }
+        }
+    ],
+    "right_widgets": [
+        {
+            "Update": {
+                "enable": false
+            }
+        },
+        {
+            "Storage": {
+                "enable": false
+            }
+        },
+        {
+            "Memory": {
+                "enable": false
+            }
+        },
+        {
+            "Network": {
+                "enable": true,
+                "label_prefix": "Icon",
+                "show_activity": false,
+                "show_total_activity": false
+            }
+        },
+        {
+            "Battery": {
+                "enable": true
+            }
+        },
+        {
+            "Date": {
+                "enable": true,
+                "format": {"Custom": "%m/%d"},
+                "label_prefix": "None"
+            }
+        },
+        {
+            "Time": {
+                "enable": true,
+                "format": "TwentyFourHourWithoutSeconds",
+                "label_prefix": "None"
+            }
+        }
+    ]
+}

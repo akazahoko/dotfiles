@@ -9,7 +9,7 @@ PROPERTIES=(
 
 SUBSCRIBE=(
     front_app_switched
-    window_focused
+    rift_window_focused
     title_changed
     is_unlock
 )

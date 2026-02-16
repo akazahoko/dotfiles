@@ -1,0 +1,66 @@
+[settings]
+animate = false
+animation_duration = 0.3
+animation_fps = 120.0
+animation_easing = "ease_in_out"
+
+default_disable = false
+
+focus_follows_mouse = true
+mouse_follows_focus = true
+mouse_hides_on_focus = true
+
+hot_reload = true
+
+run_on_start = [
+    "rift-cli subscribe cli --event workspace_changed --command sh --args -c --args 'sketchybar --trigger rift_workspace_changed RIFT_WORKSPACE_NAME=\"$RIFT_WORKSPACE_NAME\" RIFT_WORKSPACE_ID=\"$RIFT_WORKSPACE_ID\"'",
+    "rift-cli subscribe cli --event windows_changed --command sh --args -c --args 'sketchybar --trigger rift_windows_changed RIFT_WORKSPACE_NAME=\"$RIFT_WORKSPACE_NAME\" RIFT_WINDOW_COUNT=\"$RIFT_WINDOW_COUNT\"'",
+    "rift-cli subscribe cli --event window_title_changed --command sh --args -c --args 'sketchybar --trigger rift_window_title_changed RIFT_WINDOW_ID=\"$RIFT_WINDOW_ID\" RIFT_WINDOW_TITLE=\"$RIFT_WINDOW_TITLE\"'"
+]
+
+[settings.layout]
+mode = "bsp"
+
+[settings.layout.gaps.outer]
+top = 10
+left = 10
+bottom = 10
+right = 10
+
+[settings.layout.gaps.inner]
+horizontal = 10
+vertical = 10
+
+[settings.gestures]
+enabled = true
+invert_horizontal_swipe = false
+swipe_vertical_tolerance = 0.4
+distance_pct = 0.08
+fingers = 4
+
+[virtual_workspaces]
+enabled = true
+default_workspace_count = 9
+
+app_rules = [
+    { app_id = "com.apple.systempreferences", floating = true },
+    { app_id = "com.apple.calculator", floating = true },
+    { app_id = "cc.ffitch.shottr", floating = true }
+]
+
+default_workspace = 1
+
+workspace_names = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+]
+
+[keys]

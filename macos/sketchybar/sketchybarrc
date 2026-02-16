@@ -46,11 +46,15 @@ sketchybar  --add event is_unlock "com.apple.screenIsUnlocked" \
             --add event input_changed "AppleSelectedInputSourcesChangedNotification" \
             --add event aerospace_workspace_change \
             --add event window_focused \
-            --add event title_changed
+            --add event title_changed \
+            --add event rift_workspace_changed \
+            --add event rift_window_title_changed \
+            --add event rift_windows_changed
 
 # Components
-source "$CONFIG_DIR/components/spaces.sh"
-source "$CONFIG_DIR/components/window.sh"
+# source "$CONFIG_DIR/components/spaces.sh"
+source "$CONFIG_DIR/components/rift/spaces.sh"
+source "$CONFIG_DIR/components/rift/window.sh"
 
 source "$CONFIG_DIR/components/clock.sh"
 source "$CONFIG_DIR/components/weather.sh"
@@ -60,4 +64,4 @@ source "$CONFIG_DIR/components/volume.sh"
 source "$CONFIG_DIR/components/input.sh"
 # source "$CONFIG_DIR/components/brew.sh"
 
-sketchybar --hotload false
+sketchybar --hotload true --update
