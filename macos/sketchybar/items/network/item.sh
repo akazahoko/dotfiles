@@ -1,14 +1,15 @@
 #!/bin/bash
 
-NAME="window"
-POSITION="left"
+NAME="network"
+POSITION="right"
 
 PROPERTIES=(
-    script="$CONFIG_DIR/scripts/komorebi/$NAME.sh"
+    script="$CONFIG_DIR/items/$NAME/script.sh"
+    click_script="open "x-apple.systempreferences:com.apple.preference.wifi""
 )
 
 SUBSCRIBE=(
-    front_app_switched
+    wifi_change
     is_unlock
 )
 

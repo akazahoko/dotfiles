@@ -3,6 +3,7 @@
 # https://felixkratz.github.io/SketchyBar/config/bar
 
 source "$CONFIG_DIR/variables.sh"
+WM="rift"
 
 # Bar apperance
 bar=(
@@ -20,16 +21,16 @@ bar=(
 default=(
     blur_radius=40
 
-    icon.color="$ITEM_COLOR"
-    icon.highlight_color=$ACCENT_COLOR
+    icon.color="$ICON_COLOR"
+    icon.highlight_color="$HIGHLIGHT_COLOR"
     icon.padding_left="$I_PAD_L"
-    icon.padding_right="$I_PAD_R"
-    icon.font="FiraCode Nerd Font:Medium:16.0"
+    # icon.padding_right="$I_PAD_R"
+    icon.font="$ICON_FONT"
 
-    label.color="$ITEM_COLOR"
-    label.padding_left="$L_PAD_L"
+    label.color="$LABEL_COLOR"
+    # label.padding_left="$L_PAD_L"
     label.padding_right="$L_PAD_R"
-    label.font="FiraCode Nerd Font:Medium:16.0"
+    label.font="$LABEL_FONT"
 
     background.height=42
     background.color="$ITEM_BG_COLOR"
@@ -44,24 +45,32 @@ sketchybar  --bar "${bar[@]}" \
 # Events
 sketchybar  --add event is_unlock "com.apple.screenIsUnlocked" \
             --add event input_changed "AppleSelectedInputSourcesChangedNotification" \
-            --add event aerospace_workspace_change \
-            --add event window_focused \
-            --add event title_changed \
-            --add event rift_workspace_changed \
-            --add event rift_window_title_changed \
-            --add event rift_windows_changed
 
-# Components
-# source "$CONFIG_DIR/components/spaces.sh"
-source "$CONFIG_DIR/components/rift/spaces.sh"
-source "$CONFIG_DIR/components/rift/window.sh"
+case $WM in
+    aerospace)
+        sketchybar  --add event aerospace_workspace_change
+    ;;
+    rift)
+        sketchybar  --add event rift_workspace_changed  \
+                    --add event rift_window_title_changed   \
+                    --add event rift_windows_change
+    ;;
+    yabai)
+        sketchyBar  --add event yabai_window_focused    \
+                    --add event yabai_title_changed
+    ;;
+esac
 
-source "$CONFIG_DIR/components/clock.sh"
-source "$CONFIG_DIR/components/weather.sh"
-source "$CONFIG_DIR/components/network.sh"
-source "$CONFIG_DIR/components/battery.sh"
-source "$CONFIG_DIR/components/volume.sh"
-source "$CONFIG_DIR/components/input.sh"
-# source "$CONFIG_DIR/components/brew.sh"
+# Items (Left)
+source "$CONFIG_DIR/items/$WM/spaces/item.sh"
+source "$CONFIG_DIR/items/$WM/window/item.sh"
+
+# Item (Right)
+source "$CONFIG_DIR/items/clock/item.sh"
+source "$CONFIG_DIR/items/weather/item.sh"
+source "$CONFIG_DIR/items/network/item.sh"
+source "$CONFIG_DIR/items/battery/item.sh"
+source "$CONFIG_DIR/items/volume/item.sh"
+source "$CONFIG_DIR/items/input/item.sh"
 
 sketchybar --hotload true --update

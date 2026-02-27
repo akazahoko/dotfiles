@@ -1,17 +1,25 @@
 #!/bin/bash
 
+NAME=spaces
+
+source "$CONFIG_DIR/variables.sh"
+
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "0")
 
 for i in "${!SPACE_ICONS[@]}"; do
-    SID="$((i + 1))"
+    if [[ ${SPACE_ICONS[$i]} == "0" ]]; then
+        SID="0"
+    else
+        SID="$((i + 1))"
+    fi
+
     PROPERTIES=(
         icon="${SPACE_ICONS[i]}"
-        icon.padding_left=10
-        icon.padding_right=0
-        background.color=0xffbd59bd \
+        icon.padding_right=5
+        background.color=$HIGHLIGHT_COLOR \
         background.corner_radius=0 \
         background.y_offset=-36 \
-        script="$CONFIG_DIR/scripts/rift/spaces.sh"
+        script="$CONFIG_DIR/items/rift/$NAME/script.sh"
         click_script="rift-cli execute workspace switch $SID"
     )
 
@@ -25,4 +33,4 @@ for i in "${!SPACE_ICONS[@]}"; do
                 --subscribe space."$SID" "${SUBSCRIBE[@]}"
 done
 
-sketchybar  --add bracket spaces '/space\..*/'
+sketchybar  --add bracket $NAME '/space\..*/'

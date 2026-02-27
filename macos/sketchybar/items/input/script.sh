@@ -13,7 +13,6 @@ case "$INPUT" in
 esac
 
 PROPERTIES=(
-    icon="󰌌"
     label="$IME"
 )
 

@@ -1,16 +1,15 @@
 #!/bin/bash
 
-NAME="input"
+NAME="volume"
 POSITION="right"
 
 PROPERTIES=(
-    script="$CONFIG_DIR/scripts/$NAME.sh"
-    click_script="open "x-apple.systempreferences:com.apple.preference.keyboard""
+    icon.width=24
+    script="$CONFIG_DIR/items/$NAME/script.sh"
 )
 
 SUBSCRIBE=(
-    input_changed
-    is_unlock
+    volume_change
 )
 
 sketchybar  --add item "$NAME" "$POSITION" \

@@ -1,17 +1,16 @@
 #!/bin/bash
 
-NAME="window"
-POSITION="left"
+NAME="clock"
+POSITION="right"
 
 PROPERTIES=(
-    script="$CONFIG_DIR/scripts/rift/$NAME.sh"
+    icon.drawing=off
+    script=$CONFIG_DIR/items/$NAME/script.sh
+    click_script="open -a calendar"
+    update_freq=30
 )
 
 SUBSCRIBE=(
-    front_app_switched
-    rift_workspace_changed
-    rift_window_title_changed
-    rift_windows_changed
     is_unlock
 )
 

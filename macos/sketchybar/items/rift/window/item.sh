@@ -1,15 +1,18 @@
 #!/bin/bash
 
-NAME="network"
-POSITION="right"
+NAME="window"
+POSITION="left"
 
 PROPERTIES=(
-    script="$CONFIG_DIR/scripts/$NAME.sh"
-    click_script="open "x-apple.systempreferences:com.apple.preference.wifi""
+    width=40
+    script="$CONFIG_DIR/items/rift/$NAME/script.sh"
 )
 
 SUBSCRIBE=(
-    wifi_change
+    front_app_switched
+    rift_workspace_changed
+    rift_window_title_changed
+    rift_windows_changed
     is_unlock
 )
 

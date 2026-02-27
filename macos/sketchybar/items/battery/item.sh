@@ -4,7 +4,7 @@ NAME="battery"
 POSITION="right"
 
 PROPERTIES=(
-    script="$CONFIG_DIR/scripts/$NAME.sh"
+    script="$CONFIG_DIR/items/$NAME/script.sh"
     click_script="open "x-apple.systempreferences:com.apple.preference.battery""
     update_freq=120
 )

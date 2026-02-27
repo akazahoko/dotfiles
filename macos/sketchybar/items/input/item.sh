@@ -1,17 +1,17 @@
 #!/bin/bash
 
-NAME="clock"
+NAME="input"
 POSITION="right"
 
 PROPERTIES=(
-    icon.drawing=off
-    script=$CONFIG_DIR/scripts/clock.sh
-    click_script="open -a calendar"
-    update_freq=30
+    icon="󰌌"
+    label.width=22
+    script="$CONFIG_DIR/items/$NAME/script.sh"
+    click_script="open "x-apple.systempreferences:com.apple.preference.keyboard""
 )
 
 SUBSCRIBE=(
-    is_unlock
+    input_changed
 )
 
 sketchybar  --add item "$NAME" "$POSITION" \
