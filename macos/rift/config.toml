@@ -1,8 +1,8 @@
 [settings]
 animate = false
-animation_duration = 0.3
-animation_fps = 120.0
-animation_easing = "ease_in_out"
+# animation_duration = 0.3
+# animation_fps = 120.0
+# animation_easing = "ease_in_out"
 
 default_disable = false
 
@@ -40,12 +40,14 @@ fingers = 4
 
 [virtual_workspaces]
 enabled = true
-default_workspace_count = 9
+default_workspace_count = 10
 
 app_rules = [
     { app_id = "com.apple.systempreferences", floating = true },
     { app_id = "com.apple.calculator", floating = true },
-    { app_id = "cc.ffitch.shottr", floating = true }
+    { app_id = "cc.ffitch.shottr", floating = true },
+    { app_id = "com.biochill.PDF-Images", floating = true },
+    { app_id = "com.microsoft.Outlook", title_substring = "設定", floating = true }
 ]
 
 default_workspace = 1

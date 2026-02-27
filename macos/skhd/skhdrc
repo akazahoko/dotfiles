@@ -1,59 +1,57 @@
+#!/bin/bash
+
 # skhd - rift config
 
 # Change Window Focus
-alt - j                     : rift-cli execute window focus up
-alt - k                     : rift-cli execute window focus down
-alt - h                     : rift-cli execute window focus left
-alt - l                     : rift-cli execute window focus right
-
 # alt - up                    : rift-cli execute window focus up
 # alt - down                  : rift-cli execute window focus down
 # alt - left                  : rift-cli execute window focus left
 # alt - right                 : rift-cli execute window focus right
 
-# Move Window
-shift + alt - j             : rift-cli execute layout move-node up
-shift + alt - k             : rift-cli execute layout move-node down
-shift + alt - h             : rift-cli execute layout move-node left
-shift + alt - l             : rift-cli execute layout move-node right
+# Change Window Focus (VIM-Key)
+alt - j                     : rift-cli execute window focus up
+alt - k                     : rift-cli execute window focus down
+alt - h                     : rift-cli execute window focus left
+alt - l                     : rift-cli execute window focus right
 
+# Move Window
 # shift + alt - up            : rift-cli execute layout move-node up
 # shift + alt - down          : rift-cli execute layout move-node down
 # shift + alt - left          : rift-cli execute layout move-node left
 # shift + alt - right         : rift-cli execute layout move-node right
 
+# Move Window (VIM-key)
+shift + alt - j             : rift-cli execute layout move-node up
+shift + alt - k             : rift-cli execute layout move-node down
+shift + alt - h             : rift-cli execute layout move-node left
+shift + alt - l             : rift-cli execute layout move-node right
+
 # Resize window
 shift + alt - 0x1B          : rift-cli execute window resize-shrink
 shift + alt - 0x18          : rift-cli execute window resize-grow
 
-# Window Toggle Float
-alt - f                     : rift-cli execute window toggle-float
-
-# Window Toggle Sticky
-ctrl + alt - s            : yabai -m window --toggle sticky
-
 # Maximize Window
 f11                         : rift-cli execute window toggle-fullscreen
-alt - return                : rift-cli execute window toggle-fullscreen
+alt - f                     : rift-cli execute window toggle-fullscreen
+
+# Toggle Float
+alt - t                     : rift-cli execute window toggle-float
 
 ##### SPACE #####
-### Modifier: shift
-
 # MOD Window tree
-shift + alt - x           : yabai -m space --mirror x-axis
-shift + alt - y           : yabai -m space --mirror y-axis
-shift + alt - r           : yabai -m space --rotate 90
+shift + alt - x             : yabai -m space --mirror x-axis
+shift + alt - y             : yabai -m space --mirror y-axis
+shift + alt - r             : yabai -m space --rotate 90
 
 # CREATE or DESTROY space
-shift + alt - c           : yabai -m space --create
-shift + alt - 0x33        : yabai -m space --destroy
+shift + alt - c             : yabai -m space --create
+shift + alt - 0x33          : yabai -m space --destroy
 
 # BALANCE space
-shift + alt - b           : yabai -m space --balance
+shift + alt - b             : yabai -m space --balance
 
 # SWITCH space LAYOUT
-shift + alt - d           : yabai -m space --layout bsp
-shift + alt - f           : yabai -m space --layout float
+shift + alt - d             : yabai -m space --layout bsp
 
 # Switch to workspaces
 alt - 1                     : rift-cli execute workspace switch 1
@@ -94,14 +92,12 @@ ctrl + shift + alt - 0      : rift-cli execute workspace move-window 0
 
 ##### Software Shortcut
 # Modifier: hyper (caps lock)
-hyper - t             : open -a iterm
-hyper - e             : open -a finder
-hyper - f             : open -a firefox
-hyper - o             : open -a obsidian
-hyper - c             : open -a "Visual Studio Code"
+hyper - t                   : open -n -b net.kovidgoyal.kitty
+hyper - e                   : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to set target of front window to home'
+hyper - f                   : open -b org.mozilla.firefox
+hyper - o                   : open -b md.obsidian
+hyper - c                   : open -b com.microsoft.VSCode
 
-# Rule
-# ctrl + cmd + alt - r    : yabai -m rule --apply && yabai -m space --focus 1
-
-# RESTART
-hyper - escape        : yabai --restart-service
+# Reload skhd
+alt - f5                    : skhd --reload; brew services reload sketchybar
+alt + shift - f5            : skhd --reload; brew services reload sketchybar; rift service restart

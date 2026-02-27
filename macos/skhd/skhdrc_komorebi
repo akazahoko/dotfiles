@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Focus windows
 alt - h                 : komorebic focus left
 alt - j                 : komorebic focus down
