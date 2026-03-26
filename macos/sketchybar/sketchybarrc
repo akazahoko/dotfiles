@@ -9,7 +9,7 @@ WM="rift"
 bar=(
     color="$BAR_COLOR"
     position=top
-    # height=45
+    height=45
     notch_display_height=42
     margin=-10
     # y_offset=-1
@@ -24,7 +24,7 @@ default=(
     icon.color="$ICON_COLOR"
     icon.highlight_color="$HIGHLIGHT_COLOR"
     icon.padding_left="$I_PAD_L"
-    # icon.padding_right="$I_PAD_R"
+    icon.padding_right="$I_PAD_R"
     icon.font="$ICON_FONT"
 
     label.color="$LABEL_COLOR"
@@ -34,7 +34,7 @@ default=(
 
     background.height=42
     background.color="$ITEM_BG_COLOR"
-    background.corner_radius=10
+    background.y_offset=10
     background.padding_left="$BG_PAD_L"
     background.padding_right="$BG_PAD_R"
 )
@@ -53,7 +53,7 @@ case $WM in
     rift)
         sketchybar  --add event rift_workspace_changed  \
                     --add event rift_window_title_changed   \
-                    --add event rift_windows_change
+                    --add event rift_windows_changed
     ;;
     yabai)
         sketchyBar  --add event yabai_window_focused    \
@@ -61,16 +61,26 @@ case $WM in
     ;;
 esac
 
-# Items (Left)
-source "$CONFIG_DIR/items/$WM/spaces/item.sh"
-source "$CONFIG_DIR/items/$WM/window/item.sh"
+LEFT_ITEMS=(
+    $WM/spaces
+    $WM/window
+)
 
-# Item (Right)
-source "$CONFIG_DIR/items/clock/item.sh"
-source "$CONFIG_DIR/items/weather/item.sh"
-source "$CONFIG_DIR/items/network/item.sh"
-source "$CONFIG_DIR/items/battery/item.sh"
-source "$CONFIG_DIR/items/volume/item.sh"
-source "$CONFIG_DIR/items/input/item.sh"
+RIGHT_ITEMS=(
+    clock
+    weather
+    network
+    battery
+    volume
+    input
+)
+
+for i in "${LEFT_ITEMS[@]}"; do
+    source "$CONFIG_DIR/items/$i/item.sh"
+done
+
+for i in "${RIGHT_ITEMS[@]}"; do
+    source "$CONFIG_DIR/items/$i/item.sh"
+done
 
 sketchybar --hotload true --update

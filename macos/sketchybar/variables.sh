@@ -8,7 +8,7 @@ export LABEL_FONT="FiraCode Nerd Font:Medium:16.0"
 export BAR_COLOR=0xff000000
 export BAR_BG_COLOR=0x00000000
 
-export ITEM_BG_COLOR=0x00000000
+export ITEM_BG_COLOR=0xff000000
 export LABEL_COLOR=0xffcdd6f4
 export ICON_COLOR=0xffcdd6f4
 export HIGHLIGHT_COLOR=0xffcba6f7

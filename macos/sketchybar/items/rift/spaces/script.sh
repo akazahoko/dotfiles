@@ -38,9 +38,11 @@ for i in "${BUNDLE_IDS[@]}"; do
         "net.whatsapp.WhatsApp")            WINDOWS+=" ";;
         "org.mozilla.firefox")              WINDOWS+=" ";;
         "org.mozilla.floorp")               WINDOWS+=" ";;
+        "org.localsend.localsendApp")       WINDOWS+="󰒗 ";;
+        "com.bitwarden.desktop")            WINDOWS+=" ";;
 
         # Defaults
-        *) WINDOWS+="$i "
+        *) WINDOWS+=" "
     esac
 done
 

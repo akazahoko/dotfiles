@@ -8,6 +8,7 @@ PROPERTIES=(
     script=$CONFIG_DIR/items/$NAME/script.sh
     click_script="open -a calendar"
     update_freq=30
+    label.padding_right=10
 )
 
 SUBSCRIBE=(

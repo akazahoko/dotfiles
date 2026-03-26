@@ -6,7 +6,7 @@ animate = false
 
 default_disable = false
 
-focus_follows_mouse = true
+focus_follows_mouse = false
 mouse_follows_focus = true
 mouse_hides_on_focus = true
 
