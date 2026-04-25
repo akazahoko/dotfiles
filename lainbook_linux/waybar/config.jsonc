@@ -1,0 +1,41 @@
+// Reference: https://github.com/Alexays/Waybar/wiki/Configuration
+{
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+    "include": [ 
+        "./modules/battery.jsonc",
+        "./modules/bluetooth.jsonc",
+        "./modules/clock.jsonc",
+        "./modules/cpu.jsonc",
+        "./modules/hyprland.jsonc",
+        "./modules/mpris.jsonc",
+        "./modules/network.jsonc",
+        "./modules/privacy.jsonc",
+        "./modules/pulseaudio.jsonc",
+        "./modules/tray.jsonc",
+        "./modules/menu.jsonc",
+        "./modules/weather.jsonc"
+    ],
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    
+    "modules-center": [
+    ],
+    
+    "modules-right": [
+        // "mpris",
+        // "privacy",
+        "tray",
+        "bluetooth",
+        "temperature",
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock"
+    ]
+}

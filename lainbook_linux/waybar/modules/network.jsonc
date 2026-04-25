@@ -1,0 +1,15 @@
+// Reference: https://github.com/Alexays/Waybar/wiki/Module:-Network
+{
+    "network": {
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀 ",
+        "format-alt": " {bandwidthDownBits}  {bandwidthUpBits}",
+        "format-wifi": "󰖩 {essid}",
+        "format-disconnected": "󰌙 Disconnected",
+        "tooltip-format-ethernet": "Interface:\t{ifname}\nIP:\t\t{ipaddr}\nGateway:\t{gwaddr}\nDownload:\t{bandwidthDownBits}\nUpload:\t\t{bandwidthUpBits}",
+        "tooltip-format-wifi": "Interface:\t{ifname}\nIP:\t\t{ipaddr}\nGateway:\t{gwaddr}\nDownload:\t{bandwidthDownBits}\nUpload:\t\t{bandwidthUpBits}",
+        "on-click-right": "nm-connection-editor"
+        // "format-disconnected": "󰌙 未連綫",
+        // "tooltip-format-ethernet": "裝置:\t{ifname}\n位址:\t{ipaddr}\n閘道:\t{gwaddr}\n下載:\t{bandwidthDownBits}\n上載:\t{bandwidthUpBits}",
+    }
+}

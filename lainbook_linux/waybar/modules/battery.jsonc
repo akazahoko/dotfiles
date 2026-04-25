@@ -1,0 +1,12 @@
+// https://github.com/Alexays/Waybar/wiki/Module:-Battery
+
+{
+    "battery": {
+        "bat": "macsmc-battery",
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        }
+    }
+}

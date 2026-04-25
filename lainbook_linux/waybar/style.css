@@ -1,0 +1,156 @@
+/* BRO WAYBAR DOESN'T FUCKING SUPPORT ROOT VARIABLE DECLARE JUST USE GTK SHIT*/
+@import url("themes/catppuccin_mocha.css");
+
+/* https://github.com/Alexays/Waybar/wiki/Styling */
+
+* {
+    font-family: FiraCode Nerd Font;
+    font-weight: bold;
+    font-size: 12px;
+    color: @text-color;
+}
+
+/* #waybar>box {
+    margin: 10px 10px 5px 10px;
+    background-color: @bg-color;
+    box-shadow: 0 0 2 2px @shadow-color;
+    border-radius: 10px;
+} */
+
+window#waybar {
+    background-color: black;
+    /* background-color: alpha(@bg-color, 0.7); */
+    transition-property: background-color;
+    transition-duration: 1.5s;
+}
+
+tooltip {
+    border-radius: 0px;
+    background-color: @tooltip-bg-color;
+}
+
+tooltip label {
+    font-family: FiraCode Nerd Font;
+    font-weight: Normal;
+    font-size: 20px;
+}
+
+/* Widgets */
+#clock,
+#battery,
+#backlight,
+#bluetooth,
+#tray,
+#temperature,
+#network,
+#pulseaudio,
+#custom-weather,
+#mpris,
+#window,
+#workspaces button {
+    /* background-color: alpha(@widget-bg-color, 0.5); */
+    padding: 0px 0px;
+    margin: 0px 5px;
+    border-radius: 0px;
+    border-bottom: 2px solid @highlight-color;
+}
+
+#custom-menu {
+    margin: 0px 10px;
+}
+
+#clock {
+    margin-right: 10px;
+}
+
+/* Hyprland Workspace */
+/* Style */
+/* #workspaces */
+/* #workspaces button */
+/* #workspaces button.active */
+/* #workspaces button.empty */
+/* #workspaces button.persistent */
+/* #workspaces button.special */
+/* #workspaces button.visible */
+/* #workspaces button.urgent */
+/* #workspaces button.hosting-monitor */
+/* #workspaces .workspace-label */
+/* #workspaces .taskbar-window */
+/* #workspaces .taskbar-window.active */
+
+#workspaces {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#workspaces button {
+    margin: 0px 5px;
+    border-bottom: 0px;
+}
+
+#workspaces button.active {
+    border-bottom: 2px solid @highlight-color;
+    background-color: @workspace-color-active;
+}
+
+#workspaces button.urgent {
+    border-radius: 0px;
+    background-color: @alert-color;
+}
+
+#workspaces button.urgent label {
+    color: @alert-color-text;
+}
+
+/* Hyprland Window */
+/* Style */
+/* window#waybar.empty */
+/* window#waybar.solo */
+/* window#waybar.<app_id> */
+/* window#waybar.floating */
+/* window#waybar.fullscreen */
+/* window#waybar.swallowing */
+
+window#waybar.empty #window {
+    opacity: 0;
+}
+
+#pulseaudio.muted {
+    color: @alert-color;
+    /* background-color: @alert-color; */
+}
+
+#mpris.paused {
+    color: @alert-color-text;
+    background-color: @alert-color;
+}
+
+/* System Tray */
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @alert-color;
+}
+
+/* Privacy */
+
+#privacy-item {
+    margin: 8px 0px;
+}
+
+#privacy-item.screenshare {
+    background-color: @privacy-screen-color;
+}
+
+#privacy-item.audio-in {
+    background-color: @privacy-mic-color;
+    /* border-bottom: 5px solid @privacy-mic-color; */
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
