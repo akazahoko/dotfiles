@@ -1,48 +1,15 @@
 #!/bin/zsh
 
-install_pkg() {
-    pacman -Ssq | \
-    fzf --multi \
-        --reverse \
-        --preview "pacman -Si {}" \
-        --bind 'enter:execute(sudo pacman -S --needed {+} && read -k 1 -q "?Press any key to continue")+accept' \
-        --bind 'alt-h:preview(echo -e "Tab:\tSelect package\nEnter:\tInstall selected package(s)")'
-}
+source "${0:A:h}/.helper.sh"
 
-install_aur() {
-    yay -Slaq | \
-    fzf --reverse \
-        -m \
-        --preview "yay -Si {} " \
-        --bind 'enter:execute(yay -S --needed {+} && read -k 1 -q "?Press any key to continue")+accept' \
-        --bind 'ctrl-o:execute(xdg-open https://aur.archlinux.org/packages/{})'
-}
+LIST=(
+    "install_pkg:󱧕\tInstall package(s)"
+    "install_aur:\tInstall AUR package(s)"
+    "manage_pkg:󰏖\tManage local packages"
+    "update_pkg:󰚰\tUpdate package(s)"
+    "update_aur:\tUpdate AUR package(s)"
+    "version:󰮯\tPacman info"
+)
 
-manage_pkg() {
-    pacman -Qq | \
-    fzf --reverse \
-        -m \
-        --preview "pacman -Qi {}"       \
-        --bind 'delete:execute(clear; sudo pacman -Rns {+}; read -k1 -q "?Press any key to continue")+reload(pacman -Qq)' \
-        --bind 'ctrl-c:execute(clear; sudo pacman -Rns $(pacman -Qtdq); read -k1 -q "?Press any key to continue")+reload(pacman -Qq)' \
-        --bind 'ctrl-r:execute(clear; sudo pacman -Syu; read -k1 -q "?Press any key to continue")+reload(pacman -Qq)'    \
-        --bind 'ctrl-a:execute(clear; yay -Syua; read -k1 -q "?Press any key to continue")+reload(pacman -Qq)'   \
-        --bind 'alt-h:preview(echo -e "Del:\tDelete selected package(s)\nC-c:\tClear orphans\nC-r:\tUpdate system\nC-a:\tUpdate AUR")'
-}
-
-update_pkg() {
-    sudo pacman -Syu; \
-    read -k 1 -q "?Press any key to continue"
-}
-
-update_aur() {
-    yay -Syua; \
-    read -k 1 -q "?Press any key to continue"
-}
-
-show_version() {
-    pacman --version; \
-    read -k 1 -q "?Press any key to continue"
-}
-
-$1
+prompt_opt "${LIST[@]}"
+open_terminal "$OPTION" "${0:A:h:h}/${0:t}" "$OPTION"

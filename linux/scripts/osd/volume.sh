@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-ICON_DIR="$HOME/.icons/osd"
+source "${0:A:h}/.helper.sh"
 
 function set_sink() {
     VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}')
@@ -67,12 +67,4 @@ case "$1" in
     ;;
 esac
 
-notify-send -e \
-            -a osd \
-            -u low \
-            -h string:x-canonical-private-synchronous:osd-volume \
-            -i "$ICON" \
-            -h int:value:"$SLIDER" \
-            -t 1000 \
-            "$TITLE" \
-            "$VOLUME"
+notify_slider "volume" "$ICON" "$TITLE" "$VOLUME" "$SLIDER"
