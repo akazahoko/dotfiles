@@ -1,9 +1,6 @@
-require("hyprland.listener")
-
+require("hyprland.general")
 require("hyprland.init")
-require("hyprland.monitors")
 require("hyprland.binds")
 require("hyprland.apperance")
 require("hyprland.rules")
-require("hyprland.layout")
-require("hyprland.input")
+require("hyprland.layouts")

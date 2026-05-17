@@ -7,22 +7,23 @@
 
 -- Variables
 
-SCRIPT = "~/.dotfiles/linux/scripts"
+SCRIPT_DIR = "~/.dotfiles/linux/scripts"
 
-local layout = hl.get_active_workspace().tiled_layout
+local active_ws = hl.get_active_workspace()
+local layout = (active_ws and active_ws.tiled_layout) or "scrolling"
 
 local directions = {
     -- Arrow Keys
-    { "UP",    "up" },
-    { "DOWN",  "down" },
-    { "LEFT",  "left" },
-    { "RIGHT", "right" },
+    UP = "up",
+    DOWN = "down",
+    LEFT = "left",
+    RIGHT = "right",
 
     -- VIM Keys
-    { "k",     "up" },
-    { "j",     "down" },
-    { "h",     "left" },
-    { "l",     "right" },
+    K = "up",
+    J = "down",
+    H = "left",
+    L = "right",
 }
 
 -- Helper
@@ -40,8 +41,8 @@ local function get_colsize(x)
     end
 end
 
-
 local function move_to_workspace(i)
+    if hl.get_active_window() == nil then return end
     local size = hl.get_active_window().size
     hl.dispatch(hl.dsp.window.move({ workspace = i }))
     if layout == "scrolling" then
@@ -90,21 +91,21 @@ end
 -- Scrolling
 
 if layout == "scrolling" then
-    hl.bind("SUPER + UP", hl.dsp.focus({ workspace = "r-1" }))
-    hl.bind("SUPER + DOWN", hl.dsp.focus({ workspace = "r+1" }))
-    hl.bind("SUPER + LEFT", hl.dsp.layout("focus left"))
-    hl.bind("SUPER + RIGHT", hl.dsp.layout("focus right"))
+    hl.bind("SUPER + UP", hl.dsp.focus({ workspace = "r-1" }), { repeating = true })
+    hl.bind("SUPER + DOWN", hl.dsp.focus({ workspace = "r+1" }), { repeating = true })
+    hl.bind("SUPER + LEFT", hl.dsp.layout("focus left"), { repeating = true })
+    hl.bind("SUPER + RIGHT", hl.dsp.layout("focus right"), { repeating = true })
 
-    hl.bind("SHIFT + SUPER + UP", function() move_to_workspace("r-1") end)
-    hl.bind("SHIFT + SUPER + DOWN", function() move_to_workspace("r+1") end)
-    hl.bind("SHIFT + SUPER + LEFT", hl.dsp.layout("swapcol l"))
-    hl.bind("SHIFT + SUPER + RIGHT", hl.dsp.layout("swapcol r"))
+    hl.bind("SHIFT + SUPER + UP", function() move_to_workspace("r-1") end, { repeating = true })
+    hl.bind("SHIFT + SUPER + DOWN", function() move_to_workspace("r+1") end, { repeating = true })
+    hl.bind("SHIFT + SUPER + LEFT", hl.dsp.layout("swapcol l"), { repeating = true })
+    hl.bind("SHIFT + SUPER + RIGHT", hl.dsp.layout("swapcol r"), { repeating = true })
 
-    hl.bind("SUPER + COMMA", hl.dsp.layout("focus left"))
-    hl.bind("SUPER + PERIOD", hl.dsp.layout("focus right"))
+    hl.bind("SUPER + COMMA", hl.dsp.layout("focus left"), { repeating = true })
+    hl.bind("SUPER + PERIOD", hl.dsp.layout("focus right"), { repeating = true })
 
-    hl.bind("SHIFT + SUPER + COMMA", hl.dsp.layout("swapcol l"))
-    hl.bind("SHIFT + SUPER + PERIOD", hl.dsp.layout("swapcol r"))
+    hl.bind("SHIFT + SUPER + COMMA", hl.dsp.layout("swapcol l"), { repeating = true })
+    hl.bind("SHIFT + SUPER + PERIOD", hl.dsp.layout("swapcol r"), { repeating = true })
 
     hl.bind("SUPER + R", hl.dsp.layout("colresize +conf"))
 
@@ -113,62 +114,92 @@ if layout == "scrolling" then
 
     hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.focus({ workspace = "r+1" }))
     hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.focus({ workspace = "r-1" }))
+
+    hl.bind("SUPER + W", hl.dsp.layout("consume"))
+    hl.bind("SUPER + S", hl.dsp.layout("expel"))
 end
+
+-- ext: change gaps
+hl.bind("SUPER + G", function()
+    local gaps_in = hl.get_config("general.gaps_in")
+    local gaps_out = hl.get_config("general.gaps_out")
+    local border_size = hl.get_config("general.border_size")
+
+    if gaps_out.top > 0 then
+        hl.config({
+            general = { gaps_out = 0 }
+        })
+    else
+        hl.config({
+            general = { gaps_out = 20 }
+        })
+    end
+
+    if gaps_in.top > 0 then
+        hl.config({
+            general = { gaps_in = 0 }
+        })
+    else
+        hl.config({
+            general = { gaps_in = 10 }
+        })
+    end
+end)
 
 -- Multimedia Control
 
 -- Volume Control (Sink)
 
 hl.bind("XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh sink up 0.05"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink up 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh sink down 0.05"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink down 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("SHIFT + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh sink up 0.01"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink up 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("SHIFT + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh sink down 0.01"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink down 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("XF86AudioMute",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh sink mute"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink mute"),
     { locked = true }
 )
 
 -- Volume Control (Source)
 
 hl.bind("CTRL + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh source up 0.05"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source up 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh source down 0.05"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source down 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + SHIFT + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh source up 0.01"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source up 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + SHIFT + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh source down 0.01"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source down 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + XF86AudioMute",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/volume.sh source mute"),
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source mute"),
     { locked = true }
 )
 
 -- Monitor Brightness Control (DDC/CI)
 hl.bind("XF86MonBrightnessUp",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/brightness.sh up")
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/brightness.sh up")
 )
 hl.bind("XF86MonBrightnessDown",
-    hl.dsp.exec_cmd(SCRIPT .. "/osd/brightness.sh down")
+    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/brightness.sh down")
 )
 
 -- Applications
@@ -178,7 +209,9 @@ local app = {
     terminal = "foot",
     fileManager = "dolphin",
     btop = "foot --app-id=btop btop",
-    screenshot = "hyprshot -m region -o $(xdg-user-dir PICTURES)/Screenshots",
+    screenshot = SCRIPT_DIR .. "/scrshot.sh region",
+    browser = "firefox",
+    clipboard = SCRIPT_DIR .. "/terminal.sh " .. SCRIPT_DIR .. "/picker.sh clipboard"
 }
 
 hl.bind("SUPER + Q", hl.dsp.window.close())
@@ -187,20 +220,25 @@ hl.bind("SHIFT + SUPER + Q", hl.dsp.window.kill())
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd(app.menu))
 hl.bind("SUPER + T", hl.dsp.exec_cmd(app.terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(app.fileManager))
-hl.bind("SHIFT + SUPER + S", hl.dsp.exec_cmd(app.screenshot))
 hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd(app.btop))
+hl.bind("SUPER + B", hl.dsp.exec_cmd(app.browser))
 
 -- dmenu
 
-hl.bind("SUPER + P", hl.dsp.exec_cmd(SCRIPT .. "/dmenu/launcher.sh pacman"))
-hl.bind("SUPER + V", hl.dsp.exec_cmd(SCRIPT .. "/dmenu/launcher.sh clipboard clipboard"))
-hl.bind("SHIFT + SUPER + V", hl.dsp.exec_cmd(SCRIPT .. "/dmenu/launcher.sh clipboard"))
+hl.bind("SUPER + P", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/pacman.sh"))
+hl.bind("SUPER + V", hl.dsp.exec_cmd(app.clipboard))
+
+hl.bind("SHIFT + SUPER + S", hl.dsp.exec_cmd(app.screenshot))
+hl.bind("SHIFT + CTRL + SUPER + S", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/scrshot.sh"))
+
+hl.bind("ALT + SUPER + V", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/picker.sh"))
+hl.bind("ALT + SUPER + SPACE", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/launcher.sh"))
 
 -- Power Options
 
-hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd(SCRIPT .. "/dmenu/launcher.sh power"))
-hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd(SCRIPT .. "/inhibitor.sh"))
+hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/power.sh"))
+hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd(SCRIPT_DIR .. "/power.sh toggle_inhibitor"))
 
 -- Reload Waybar
 
-hl.bind("SUPER + F5", hl.dsp.exec_cmd(SCRIPT .. "/reload.sh waybar"))
+hl.bind("SUPER + F5", hl.dsp.exec_cmd(SCRIPT_DIR .. "/reload.sh reload_waybar"))

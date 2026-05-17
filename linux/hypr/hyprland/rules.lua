@@ -58,7 +58,7 @@ local floating_windows = {
 }
 
 for i, name in ipairs(opaque_windows) do hl.window_rule({ match = { class = name }, opacity = 0.9 }) end
-for i, name in ipairs(floating_windows) do hl.window_rule({ match = { class = name }, float = true, size = { 1020, 765 } }) end
+for i, name in ipairs(floating_windows) do hl.window_rule({ match = { class = name }, float = true }) end
 
 hl.window_rule({
     name = "pinned",
@@ -73,8 +73,22 @@ hl.window_rule({
     pin = true,
     float = true,
     no_anim = true,
-    size = {1020, 765},
+    size = { 1020, 765 },
     opacity = 0.9,
+})
+
+hl.window_rule({
+    match = { class = "mpv" },
+    pseudo = true,
+})
+
+hl.window_rule({ match = { class = "python3", title = "Choose Video Folder" }, size = { 1020, 765 } })
+hl.window_rule({ match = { class = "xdg-desktop-portal-gtk" }, size = { 1020, 765 } })
+
+hl.window_rule({
+    name = "free space",
+    match = { workspace = "10" },
+    float = true,
 })
 
 ---------------------
@@ -87,7 +101,7 @@ hl.layer_rule({
     name = "fuzzel",
     match = { namespace = "fuzzel" },
     blur = true,
-    dim_around = true,
+    dim_around = false,
     no_anim = true
 })
 
@@ -96,3 +110,9 @@ hl.layer_rule({
 -------------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+
+hl.workspace_rule({
+    workspace = "special:special",
+    gaps_out = 150,
+    gaps_in = 20,
+})

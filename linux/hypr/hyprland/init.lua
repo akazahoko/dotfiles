@@ -13,11 +13,13 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("mako")
 
     -- Clipboard
+
     hl.exec_cmd("wl-paste --type text --watch cliphist store")  -- Stores only text data
     hl.exec_cmd("wl-paste --type image --watch cliphist store") -- Stores only image data
     hl.exec_cmd("wl-clip-persist --clipboard regular")
 
     -- Screen Sharing
+
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
     -- Fix KDE6 StatusNotifierWatcher stopping Waybar
@@ -29,6 +31,7 @@ hl.on("hyprland.start", function()
 end)
 
 hl.on("hyprland.shutdown", function()
+    -- Fix KDE6 StatusNotifierWatcher stopping Waybar
     hl.exec_cmd("rm $HOME/.local/share/dbus-1/services/org.kde.kded6.service")
 end)
 
@@ -65,7 +68,7 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 
 hl.env("XDG_MENU_PREFIX", "arch-")
 
--- IDK
+-- VIM
 
 hl.env("EDITOR", "vim")
 
@@ -74,3 +77,7 @@ hl.env("EDITOR", "vim")
 hl.env("GTK_IM_MODULE", "fcitx")
 hl.env("QT_IM_MODULE", "fcitx")
 hl.env("XMODIFIERS", "@im=fcitx")
+
+-- hyprshot
+
+hl.env("HYPRSHOT_DIR", "/home/lain/Pictures/Screenshots")
