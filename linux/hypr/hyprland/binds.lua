@@ -7,7 +7,9 @@
 
 -- Variables
 
-SCRIPT_DIR = "~/.dotfiles/linux/scripts"
+SCRIPT_DIR = "~/Scripts"
+DMENU_DIR = SCRIPT_DIR .. "/.dmenu"
+OSD_DIR = SCRIPT_DIR .. "/.osd"
 
 local active_ws = hl.get_active_workspace()
 local layout = (active_ws and active_ws.tiled_layout) or "scrolling"
@@ -151,55 +153,55 @@ end)
 -- Volume Control (Sink)
 
 hl.bind("XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink up 0.05"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh sink up 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink down 0.05"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh sink down 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("SHIFT + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink up 0.01"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh sink up 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("SHIFT + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink down 0.01"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh sink down 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("XF86AudioMute",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh sink mute"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh sink mute"),
     { locked = true }
 )
 
 -- Volume Control (Source)
 
 hl.bind("CTRL + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source up 0.05"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh source up 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source down 0.05"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh source down 0.05"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + SHIFT + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source up 0.01"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh source up 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + SHIFT + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source down 0.01"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh source down 0.01"),
     { locked = true, repeating = true }
 )
 hl.bind("CTRL + XF86AudioMute",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/volume.sh source mute"),
+    hl.dsp.exec_cmd(OSD_DIR .. "/volume.sh source mute"),
     { locked = true }
 )
 
 -- Monitor Brightness Control (DDC/CI)
 hl.bind("XF86MonBrightnessUp",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/brightness.sh up")
+    hl.dsp.exec_cmd(OSD_DIR .. "/brightness.sh up")
 )
 hl.bind("XF86MonBrightnessDown",
-    hl.dsp.exec_cmd(SCRIPT_DIR .. "/osd/brightness.sh down")
+    hl.dsp.exec_cmd(OSD_DIR .. "/brightness.sh down")
 )
 
 -- Applications
@@ -225,18 +227,18 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd(app.browser))
 
 -- dmenu
 
-hl.bind("SUPER + P", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/pacman.sh"))
+hl.bind("SUPER + P", hl.dsp.exec_cmd(DMENU_DIR .. "/pacman.sh"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd(app.clipboard))
 
 hl.bind("SHIFT + SUPER + S", hl.dsp.exec_cmd(app.screenshot))
-hl.bind("SHIFT + CTRL + SUPER + S", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/scrshot.sh"))
+hl.bind("SHIFT + CTRL + SUPER + S", hl.dsp.exec_cmd(DMENU_DIR .. "/scrshot.sh"))
 
-hl.bind("ALT + SUPER + V", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/picker.sh"))
-hl.bind("ALT + SUPER + SPACE", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/launcher.sh"))
+hl.bind("ALT + SUPER + V", hl.dsp.exec_cmd(DMENU_DIR .. "/picker.sh"))
+hl.bind("ALT + SUPER + SPACE", hl.dsp.exec_cmd(DMENU_DIR .. "/launcher.sh"))
 
 -- Power Options
 
-hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd(SCRIPT_DIR .. "/dmenu/power.sh"))
+hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd(DMENU_DIR .. "/power.sh"))
 hl.bind("CTRL + ALT + L", hl.dsp.exec_cmd(SCRIPT_DIR .. "/power.sh toggle_inhibitor"))
 
 -- Reload Waybar

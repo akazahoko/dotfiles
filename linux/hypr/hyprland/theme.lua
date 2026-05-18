@@ -1,0 +1,1 @@
+/home/lain/.dotfiles/linux/themes/catppuccin/mocha/hyprland.lua

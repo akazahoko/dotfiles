@@ -18,8 +18,8 @@ idk_function() {
     if functions "$1" > /dev/null; then
         "$1" # Dynamically execute the function matching the string in $1
     else
-        echo "Error: Unknown picker option '$1'." >&2
-        echo "Valid modules: clipboard, emojis, glyphs" >&2
+        # echo "Error: Unknown picker option '$1'." >&2
+        # echo "Valid modules: clipboard, emojis, glyphs" >&2
         exit 1
     fi
 }

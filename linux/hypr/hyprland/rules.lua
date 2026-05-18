@@ -1,4 +1,4 @@
-local color = require("themes.catppuccin_mocha")
+local color = require("hyprland.theme")
 
 ----------------------
 ---- WINDOW RULES ----
@@ -84,6 +84,7 @@ hl.window_rule({
 
 hl.window_rule({ match = { class = "python3", title = "Choose Video Folder" }, size = { 1020, 765 } })
 hl.window_rule({ match = { class = "xdg-desktop-portal-gtk" }, size = { 1020, 765 } })
+hl.window_rule({ match = { class = "kvantummanager", title = "Open Kvantum Theme Folder..." }, size = { 1020, 765 } })
 
 hl.window_rule({
     name = "free space",

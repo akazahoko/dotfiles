@@ -8,7 +8,7 @@ reload_waybar() {
     waybar > /dev/null 2>&1 &
     disown
     TITLE=Waybar
-    "${SCRIPT_DIR}"/osd/reload.sh waybar
+    "${SCRIPT_DIR}"/.osd/reload.sh waybar
 }
 
 idk_function $1

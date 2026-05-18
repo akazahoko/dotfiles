@@ -44,7 +44,7 @@ toggle_inhibitor() {
         off_inhibitor
     fi
 
-    "${SCRIPT_DIR}"/osd/inhibitor.sh $STATUS
+    "${SCRIPT_DIR}"/.osd/inhibitor.sh $STATUS
 }
 
 idk_function $1

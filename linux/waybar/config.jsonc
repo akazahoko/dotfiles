@@ -1,27 +1,31 @@
 // Reference: https://github.com/Alexays/Waybar/wiki/Configuration
 {
     "position": "top",
-    "height": 42,
+    "height": 30,
     "spacing": 0,
     "include": [ 
         "./modules/clock.jsonc",
         "./modules/cpu.jsonc",
         "./modules/hyprland.jsonc",
+        "./modules/menu.jsonc",
         "./modules/mpris.jsonc",
         "./modules/network.jsonc",
         "./modules/privacy.jsonc",
         "./modules/pulseaudio.jsonc",
+        "./modules/separator.jsonc",
         "./modules/tray.jsonc",
-        "./modules/menu.jsonc",
-        "./modules/weather.jsonc"
+        "./modules/weather.jsonc",
+        "./modules/window_sep.jsonc"
     ],
 
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/submap",
+        "hyprland/workspaces",
+        "custom/window_sep",
+        "hyprland/window"
     ],
     
     "modules-center": [
-        "hyprland/window"
     ],
     
     "modules-right": [
@@ -30,7 +34,9 @@
         "tray",
         "network",
         "pulseaudio",
+        "custom/separator",
         "custom/weather",
+        "custom/separator",
         "clock"
     ]
 }

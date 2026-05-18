@@ -1,4 +1,4 @@
-local colors = require("themes.catppuccin_mocha")
+local colors = require("hyprland.theme")
 
 hl.config({
 
