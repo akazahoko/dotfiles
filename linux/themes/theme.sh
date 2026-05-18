@@ -57,21 +57,6 @@ change_kvantum() {
     sed -i "s/^theme=.*/theme=$NEW_THEME/" $KVANTUM_CONFIG
 }
 
-change_gtk_4() {
-    local GTK_4_DIR="$CONFIG_DIR/gtk-4.0"
-    ln -sf "$THEME_DIR/gtk-4.0/$HIGHLIGHT_COLOR/assets" "$GTK_4_DIR"
-    ln -sf "$THEME_DIR/gtk-4.0/$HIGHLIGHT_COLOR/gtk-dark.css" "$GTK_4_DIR"
-    ln -sf "$THEME_DIR/gtk-4.0/$HIGHLIGHT_COLOR/gtk.css" "$GTK_4_DIR"
-}
-
-change_gtk_3() {
-    local GTK_3_DIR="$HOME/.themes/theme/gtk-3.0"
-
-    ln -sf "$THEME_DIR/gtk-3.0/$HIGHLIGHT_COLOR/assets" "$GTK_3_DIR/"
-    ln -sf "$THEME_DIR/gtk-3.0/$HIGHLIGHT_COLOR/gtk-dark.css" "$GTK_3_DIR/"
-    ln -sf "$THEME_DIR/gtk-3.0/$HIGHLIGHT_COLOR/gtk.css" "$GTK_3_DIR/"
-}
-
 # change_waybar
 # change_fuzzel
 # change_code
@@ -79,5 +64,5 @@ change_gtk_3() {
 # change_foot
 # change_fzf
 
-change_kvantum $1 $2
+# change_kvantum
 # change_gtk_3
