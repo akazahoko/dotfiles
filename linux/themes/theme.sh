@@ -51,9 +51,10 @@ change_fzf() {
 }
 
 change_kvantum() {
-    local KVANTUM_DIR="$CONFIG_DIR/Kvantum"
-    ln -sf $THEME_DIR/kvantum/$HIGHLIGHT_COLOR.kvconfig $KVANTUM_DIR/theme/theme.kvconfig
-    ln -sf $THEME_DIR/kvantum/$HIGHLIGHT_COLOR.svg $KVANTUM_DIR/theme/theme.svg
+    local KVANTUM_CONFIG="$CONFIG_DIR/Kvantum/kvantum.kvconfig"
+    local NEW_THEME="${THEME_NAME/\//-}${HIGHLIGHT_COLOR:+-$HIGHLIGHT_COLOR}"
+
+    sed -i "s/^theme=.*/theme=$NEW_THEME/" $KVANTUM_CONFIG
 }
 
 change_gtk_4() {
@@ -78,5 +79,5 @@ change_gtk_3() {
 # change_foot
 # change_fzf
 
-# change_kvantum
-change_gtk_3
+change_kvantum $1 $2
+# change_gtk_3
