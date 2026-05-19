@@ -45,7 +45,7 @@ nerdglyphs() {
 }
 
 pipette() {
-    hyprpicker -a -f rgb
+    hyprpicker -a
 }
 
 idk_function $1

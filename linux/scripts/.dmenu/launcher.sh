@@ -6,13 +6,12 @@ LIST=(
     "app:󰀻\tApps"
     "pacman:󰏗\tPackages"
     "rclone:󰅟\tRclone"
-    "picker:󰅇\tPicker"
-    "capture:󰹑\tCapture"
+    "picker:󰜬\tPicker"
+    "capture:󰄀\tCapture"
     "search:󰍉\tFiles"
-    "styler:󰸉\tStyling"
-    # "tools:󱁤\t工具"
-    # "settings:󰆍\t系統設定"
-    "reload:󰑓\tReload"
+    "styler:󰃣\tStyle"
+    "toggle:󰔡\tToggle"
+    # "settings:\tSettings"
     "power:󰐥\tPower"
 )
 

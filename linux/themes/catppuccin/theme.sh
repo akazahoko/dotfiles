@@ -18,10 +18,6 @@ KVANTUM_THEME="catppuccin-$FLAVOR-$HIGHLIGHT"
 
 typeset -A LOOKUP_RGB
 
-LOOKUP_RGB=(
-
-)
-
 case $FLAVOR in
     latte)
         LOOKUP_RGB=(

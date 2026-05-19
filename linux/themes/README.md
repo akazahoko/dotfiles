@@ -25,3 +25,4 @@
 - fzf: https://github.com/rose-pine/fzf
 - gtk: https://github.com/rose-pine/gtk
 - kvantum: https://github.com/rose-pine/kvantum
+- fuzzel: https://github.com/bomgar/rose-pine-fuzzel

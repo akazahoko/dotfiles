@@ -5,9 +5,9 @@ source "${0:A:h}/.helper.sh"
 LIST=(
     "region:\tRegion"
     "window:\tWindow"
-    "monitor:\tMonitorV"
+    "monitor:\tMonitor"
     "preview:\tPreview"
-    "open_dir:\tHyprshot directory"
+    "open_dir:\tHyprshot"
 )
 
 prompt_opt "${LIST[@]}"

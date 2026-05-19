@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-source "${0:A:h}/.helper.sh"
+SCRIPT_DIR="${0:A:h}"
+source "$SCRIPT_DIR/.helper.sh"
 
 wallpaper() {
 
@@ -13,7 +14,7 @@ wallpaper() {
 }
 
 theme() {
-
+    "$SCRIPT_DIR"/.dmenu/theme.sh
 }
 
 idk_function $1

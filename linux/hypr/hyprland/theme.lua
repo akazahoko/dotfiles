@@ -1,1 +1,1 @@
-/home/lain/.dotfiles/linux/themes/catppuccin/mocha/hyprland.lua
+/home/lain/.dotfiles/linux/themes/rose-pine/main/hyprland.lua

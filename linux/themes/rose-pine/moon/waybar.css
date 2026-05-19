@@ -1,0 +1,36 @@
+
+@define-color base            #232136;
+@define-color surface         #2a273f;
+@define-color overlay         #393552;
+@define-color muted           #6e6a86;
+@define-color subtle          #908caa;
+@define-color text            #e0def4;
+@define-color love            #eb6f92;
+@define-color gold            #f6c177;
+@define-color rose            #ea9a97;
+@define-color pine            #3e8fb0;
+@define-color foam            #9ccfd8;
+@define-color iris            #c4a7e7;
+@define-color highlightLow    #2a283e;
+@define-color highlightMed    #44415a;
+@define-color highlightHigh   #56526e;
+
+@define-color bg-color @base;
+@define-color text-color @text;
+@define-color subtext-color @overlay;
+@define-color tooltip-bg-color @base;
+@define-color highlight-color @rose;
+@define-color shadow-color @base;
+
+@define-color label-color @surface1;
+@define-color label-color-hover @surface2;
+@define-color alert-color @love;
+@define-color alert-color-text @base;
+@define-color widget-bg-color @surface0;
+
+@define-color workspace-bg-color @widget-bg-color;
+@define-color workspace-color-active @surface1;
+@define-color workspace-color-special @overlay2;
+
+@define-color privacy-screen-color @lavender;
+@define-color privacy-mic-color @peach;
