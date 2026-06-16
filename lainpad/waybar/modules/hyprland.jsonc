@@ -1,0 +1,51 @@
+// https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+{
+    "hyprland/workspaces": {
+        "format": "{icon} {windows}",
+        "format-window-separator": " ",
+        "format-icons": {
+            "special": "S"
+        },
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<firefox>": "",
+            "class<floorp>": "",
+            "class<code>": "󰨞",
+            "class<org.kde.okular>": "󰍅",
+            "class<org.gnome.nautilus>": "󰪶",
+            "class<org.kde.dolphin>": "󰪶",
+            "class<kitty>": "󰄛",
+            "class<foot>": "",
+            "class<org.qbittorrent.qBittorrent>": "",
+            "class<mpv>": "",
+            "class<discord>": "",
+            "class<steam>": "",
+            "class<libreoffice-calc>": "",
+            "class<libreoffice-writer>": "",
+            "class<libreoffice-math>": "",
+            "class<menu> title<clipboard.*>": "󰅇",
+            "class<menu> title<pacman.*": "󰏗",
+            "class<font-manager>": "",
+            "class<WebApp-WhatsApp0559>": "󰖣",
+            "class<cr.fr.bionus.Grabber>": "",
+            "class<nm-connection-editor>": "󰛳",
+            "class<audacious>": "󰎆",
+            "class<obsidian>": "󰠮",
+            "class<localsend>": ""
+        },
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+        "workspace-taskbar": {
+            "enable": true,
+            "format": "{icon}",
+            "icon-size": 14
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "tooltip": false
+    },
+    "hyprland/submap": {
+        "format": "{}"
+    }
+}
