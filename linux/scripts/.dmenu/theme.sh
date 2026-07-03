@@ -1,10 +1,8 @@
 #!/bin/zsh
 
-source "${0:A:h}/.helper.sh"
-
+NAME="theme"
 THEME_DIR="${0:A:h:h:h}/themes"
-
-LIST=(
+PROMPTS=(
     "catppuccin/latte:Catppuccin Latte"
     "catppuccin/frappe:Catppuccin Frappe"
     "catppuccin/macchiato:Catppuccin Macchiato"
@@ -14,7 +12,7 @@ LIST=(
     "rose-pine/dawn:Rosé Pine Dawn"
 )
 
-prompt_opt "${LIST[@]}"
+source "${0:A:h}/.helper.sh"
 
 THEME_NAME="${OPTION%/*}"
 THEME_FLAVOR="${OPTION#*/}"

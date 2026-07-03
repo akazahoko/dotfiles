@@ -1,24 +1,30 @@
 #!/bin/zsh
 
-SCRIPT_DIR="${${(%):-%x}:A:h}"
+SCRIPT="${${(%):-%x}:A:h:h}/$NAME.sh"
 
-open_dmenu() {
-    fuzzel  --dmenu \
-            --width=20  \
-            --nth-delimiter=:   \
-            --with-nth=2    \
-            --accept-nth=1  \
-            --hide-prompt
+open_in_term() {
+    foot -a menu -T $TITLE $SCRIPT $OPTION
 }
 
-open_terminal() {
-    foot -a menu -T $1 $2 $3
+open_direct() {
+    $SCRIPT $OPTION
 }
 
-prompt_opt() {
-    OPTION=$(printf '%b\n' "$@" | open_dmenu)
-    
-    if [[ -z "$OPTION" ]]; then
-        exit 0
-    fi
+open_prompt() {
+    echo $(
+        printf '%b\n' "${PROMPTS[@]}" | \
+        fuzzel  --dmenu \
+        --width=22  \
+        --nth-delimiter=:   \
+        --with-nth=2    \
+        --accept-nth=1  \
+        --hide-prompt
+    )
 }
+
+OPTION=$(open_prompt)
+TITLE=$NAME_$OPTION
+
+if [[ -z $OPTION ]]; then
+    exit 0
+fi

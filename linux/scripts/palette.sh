@@ -48,4 +48,4 @@ pipette() {
     hyprpicker -a
 }
 
-idk_function $1
+$1

@@ -24,4 +24,4 @@ sync_remote_local() {
     eval "$CONTINUE"
 }
 
-idk_function $1
+$1

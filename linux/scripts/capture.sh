@@ -23,4 +23,8 @@ open_dir() {
     xdg-open $HYPRSHOT_DIR &
 }
 
-idk_function $1
+open_last() {
+    xdg-open $(ls -td /home/lain/Pictures/Screenshots/* | head -n 1) &
+}
+
+$1

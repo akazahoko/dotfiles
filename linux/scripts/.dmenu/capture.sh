@@ -1,19 +1,18 @@
 #!/bin/zsh
 
-source "${0:A:h}/.helper.sh"
-
-LIST=(
+NAME="capture"
+PROMPTS=(
     "region:\tRegion"
     "window:\tWindow"
     "monitor:\tMonitor"
     "preview:\tPreview"
     "open_dir:\tHyprshot"
+    "open_last:\tView"
 )
 
-prompt_opt "${LIST[@]}"
+source "${0:A:h}/.helper.sh"
 
-if [[ "$OPTION" == "preview" ]]; then
-    open_terminal "$OPTION" "${0:A:h:h}/${0:t}" "$OPTION"
-else
-    "${0:A:h:h}/${0:t}" $OPTION
-fi
+case $OPTION in
+    preview)open_in_term;;
+    *)open_direct;;
+esac

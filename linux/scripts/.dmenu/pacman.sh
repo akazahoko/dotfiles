@@ -1,8 +1,7 @@
 #!/bin/zsh
 
-source "${0:A:h}/.helper.sh"
-
-LIST=(
+NAME="pacman"
+PROMPTS=(
     "install_pkg:󱧕\tInstall"
     "update_pkg:󰚰\tUpdate"
     "install_aur:\tAUR"
@@ -12,5 +11,8 @@ LIST=(
     "print_version:󰮯\tInfo"
 )
 
-prompt_opt "${LIST[@]}"
-open_terminal "$OPTION" "${0:A:h:h}/${0:t}" "$OPTION"
+source "${0:A:h}/.helper.sh"
+
+case $OPTION in
+    *)open_in_term;;
+esac

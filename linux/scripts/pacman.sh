@@ -49,4 +49,4 @@ print_version() {
     eval "$CONTINUE"
 }
 
-idk_function $1
+$1

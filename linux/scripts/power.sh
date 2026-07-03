@@ -47,4 +47,9 @@ toggle_inhibitor() {
     "${SCRIPT_DIR}"/.osd/inhibitor.sh $STATUS
 }
 
-idk_function $1
+toggle_dpms() {
+    sleep 0.5 &&
+    hyprctl dispatch "hl.dsp.dpms({ action = "off" })"
+}
+
+$1

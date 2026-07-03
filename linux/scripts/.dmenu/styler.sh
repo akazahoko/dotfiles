@@ -1,16 +1,14 @@
 #!/bin/zsh
 
-source "${0:A:h}/.helper.sh"
-
-LIST=(
+NAME="styler"
+PROMPTS=(
     "wallpaper:󰸉\tWallpaper"
     "theme:󰏘\tTheme"
 )
 
-prompt_opt "${LIST[@]}"
+source "${0:A:h}/.helper.sh"
 
-if [[ "$OPTION" == "wallpaper" ]]; then
-    open_terminal "$OPTION" "${0:A:h:h}/${0:t}" "$OPTION"
-else
-    "${0:A:h:h}/${0:t}" $OPTION
-fi
+case $OPTION in
+    wallpaper)open_in_term;;
+    theme)${0:A:h}/theme.sh;;
+esac
