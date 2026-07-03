@@ -1,7 +1,6 @@
-// Reference: https://github.com/Alexays/Waybar/wiki/Module:-PulseAudio
 {
-    "pulseaudio": {
-        "format": "{icon}",
+    "pulseaudio#sidebar": {
+        "format": "{icon}{volume}",
         "format-icons": {
             "default": ["󰕿","󰖀","󰕾"]
         },

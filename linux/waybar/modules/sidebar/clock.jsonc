@@ -1,9 +1,8 @@
-// https://github.com/Alexays/Waybar/wiki/Module:-Clock
 {
-    "clock": {
+    "clock#sidebar": {
         "interval": 30,
         "locale": "zh_HK.UTF-8",
-        "format": "{:L%m/%d 星期%a %H:%M}",
+        "format": "{:L%m/%d\n星期%a\n%H:%M}",
         "tooltip-format": "<span size='16pt'>{calendar}</span>",
         "calendar": {
             "mode": "month",

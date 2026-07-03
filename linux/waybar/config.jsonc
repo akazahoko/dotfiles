@@ -1,42 +1,77 @@
 // Reference: https://github.com/Alexays/Waybar/wiki/Configuration
-{
-    "position": "top",
-    "height": 30,
-    "spacing": 0,
-    "include": [ 
-        "./modules/clock.jsonc",
-        "./modules/cpu.jsonc",
-        "./modules/hyprland.jsonc",
-        "./modules/menu.jsonc",
-        "./modules/mpris.jsonc",
-        "./modules/network.jsonc",
-        "./modules/privacy.jsonc",
-        "./modules/pulseaudio.jsonc",
-        "./modules/separator.jsonc",
-        "./modules/tray.jsonc",
-        "./modules/weather.jsonc",
-        "./modules/window_sep.jsonc"
-    ],
-
-    "modules-left": [
-        "hyprland/submap",
-        "hyprland/workspaces",
-        "custom/window_sep",
-        "hyprland/window"
-    ],
-    
-    "modules-center": [
-    ],
-    
-    "modules-right": [
-        "mpris",
-        "privacy",
-        "tray",
-        "network",
-        "pulseaudio",
-        "custom/separator",
-        "custom/weather",
-        "custom/separator",
-        "clock"
-    ]
-}
+[
+    {
+        "name": "main",
+        "include": [
+            "./modules/bluetooth.jsonc",
+            "./modules/clock.jsonc",
+            "./modules/cpu.jsonc",
+            "./modules/hyprland.jsonc",
+            "./modules/mpris.jsonc",
+            "./modules/network.jsonc",
+            "./modules/privacy.jsonc",
+            "./modules/pulseaudio.jsonc",
+            "./modules/separator.jsonc",
+            "./modules/tray.jsonc"
+        ],
+        "output": "DP-1",
+        "position": "bottom",
+        "height": 30,
+        "modules-left": [
+            "ext/workspaces",
+            "custom/vsep#ws",
+            "hyprland/window"
+        ],
+        "modules-center": [
+            "mpris"
+        ],
+        "modules-right": [
+            "tray",
+            "custom/vsep",
+            "privacy",
+            "bluetooth",
+            "network",
+            "pulseaudio",
+            "custom/vsep",
+            "clock"
+        ]
+    },
+    {
+        "name": "sidebar",
+        "output": "HDMI-A-1",
+        "position": "left",
+        "include": [
+            "./modules/separator.jsonc",
+            "./modules/sidebar/bluetooth.jsonc",
+            "./modules/sidebar/clock.jsonc",
+            "./modules/sidebar/cpu.jsonc",
+            "./modules/sidebar/hyprland.jsonc",
+            "./modules/sidebar/memory.jsonc",
+            "./modules/sidebar/mpris.jsonc",
+            "./modules/sidebar/network.jsonc",
+            "./modules/sidebar/pulseaudio.jsonc",
+            "./modules/sidebar/tray.jsonc"
+        ],
+        "modules-left": [
+            "ext/workspaces#sidebar",
+            "custom/hsep#ws",
+            "hyprland/window#sidebar"
+        ],
+        "modules-center": [
+            "mpris#sidebar"
+        ],
+        "modules-right": [
+            "tray#sidebar",
+            "privacy",
+            "custom/hsep",
+            "network#sidebar",
+            "cpu#sidebar",
+            "memory#sidebar",
+            "temperature#cpu-sidebar",
+            "custom/hsep",
+            "pulseaudio#sidebar",
+            "custom/hsep",
+            "clock#sidebar"
+        ]
+    }
+]

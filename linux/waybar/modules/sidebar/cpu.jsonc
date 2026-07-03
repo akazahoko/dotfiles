@@ -1,0 +1,5 @@
+{
+    "cpu#sidebar": {
+        "format": "{usage:2}%󰍛"
+    }
+}

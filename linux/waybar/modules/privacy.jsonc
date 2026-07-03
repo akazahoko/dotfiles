@@ -1,5 +1,6 @@
 {
     "privacy": {
-        "icon-size": 14
+        "icon-spacing": 0,
+        "icon-size": 12
     } 
 }

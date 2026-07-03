@@ -1,0 +1,16 @@
+{
+    "mpris#sidebar": {
+        "rotate": 270,
+        "format": "{status_icon} {player_icon} {player}\n{title} - {artist}",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "",
+            "firefox": "",
+            "audacious": "󰎇"
+        },
+        "status-icons": {
+            "playing": "󰐊",
+            "paused": "󰏤"
+        }
+    }
+}
