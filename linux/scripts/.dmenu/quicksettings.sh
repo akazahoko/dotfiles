@@ -141,8 +141,8 @@ set_status_icons
 
 NAME="quicksettings"
 PROMPTS=(
-    "wifi:$WIFI_STATUS\tWi-Fi 󰖩"
-    "bluetooth:$BT_STATUS\tBluetooth 󰂯"
+    "wifi:$WIFI_STATUS\tWi-Fi"
+    "bluetooth:$BT_STATUS\tBluetooth"
     "vol_out:$VOL_OUT_STATUS\tAudio (Output)"
     "vol_in:$VOL_IN_STATUS\tAudio (Input)"
     "inhibitor:$INHIBITOR_STATUS\tSleep Inhibitor"

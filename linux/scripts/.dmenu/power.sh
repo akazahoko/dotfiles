@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+NAME="power"
+
 INHIBITOR=$(systemd-inhibit --list --no-pager | grep -i "DONTFUCKINGSLEEP")
 
 if [[ -z "$INHIBITOR" ]] ; then
