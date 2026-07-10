@@ -1,0 +1,7 @@
+{
+    "memory": {
+        "format-alt": "   {percentage}%",
+        "format": "   {used:0.1f}G"
+        // "format-alt": "   {used:0.1f}GB"
+    }
+}

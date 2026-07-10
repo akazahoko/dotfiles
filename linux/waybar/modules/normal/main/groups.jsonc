@@ -1,0 +1,10 @@
+{
+    "group/hardware": {
+        "orientation": "vertical",
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    }
+}

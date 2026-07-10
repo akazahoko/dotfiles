@@ -1,7 +1,7 @@
 {
-    "bluetooth#sidebar": {
+    "bluetooth": {
         "format": "󰂯",
-        "format-off": "󰂲",
+        "format-off": "",
         "on-click-right": "blueman-manager" 
     }
 }

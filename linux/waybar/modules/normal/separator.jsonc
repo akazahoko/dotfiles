@@ -1,18 +1,18 @@
 {
     "custom/vsep": {
-        "format": "|",
+        "format": "│",
         "tooltip-format": ""
     },
     "custom/hsep": {
-        "format": "----",
+        "format": "-----",
         "tooltip-format": ""
     },
     "custom/vsep#ws": {
-        "format": "|",
+        "format": "│",
         "tooltip-format": ""
     },
     "custom/hsep#ws": {
-        "format": "----",
+        "format": "-----",
         "tooltip-format": ""
     }
 }

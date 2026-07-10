@@ -1,0 +1,32 @@
+@import url("styles/default.css");
+@import url("theme.css");
+
+* {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#pulseaudio.input.source-muted {
+    color: @alert-color;
+}
+
+#pulseaudio.output.muted {
+    color: @alert-color;
+}
+
+#cpu,
+#memory,
+#temperature {
+    font-size: 9.5px;
+}
+
+#pulseaudio,
+#clock {
+    font-size: 14px;
+}
+
+#cpu.side,
+#memory.side,
+#temperature.side {
+    font-size: 12px;
+}

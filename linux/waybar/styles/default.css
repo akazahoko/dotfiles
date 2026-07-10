@@ -1,12 +1,7 @@
-/* BRO WAYBAR DOESN'T FUCKING SUPPORT ROOT VARIABLE DECLARE JUST USE GTK SHIT*/
-@import url("theme.css");
-
 /* https://github.com/Alexays/Waybar/wiki/Styling */
 
 * {
     font-family: FiraCode Nerd Font;
-    font-weight: bold;
-    font-size: 14px;
     color: @text-color;
 }
 
@@ -37,10 +32,13 @@ tooltip label {
 
 #bluetooth,
 #clock,
+#cpu,
+#memory,
 #mpris,
 #network,
 #privacy-item,
 #pulseaudio,
+#temperature,
 #tray,
 #window,
 #workspaces button {
@@ -54,7 +52,7 @@ tooltip label {
 #clock.sidebar,
 #mpris.sidebar,
 #network.sidebar,
-#pulseaudio.sidebar,
+#pulseaudio.side,
 #tray.sidebar { 
     padding: 5px 0px;
     border-radius: 0px;
@@ -113,20 +111,28 @@ tooltip label {
 /* window#waybar.fullscreen */
 /* window#waybar.swallowing */
 
-#pulseaudio.muted {
-    color: @alert-color;
-}
-
 #mpris.paused {
-    color: @alert-color;
-}
-
-#bluetooth.off {
     color: @alert-color;
 }
 
 #network.disconnected {
     color: @alert-color;
+}
+
+#network.disabled {
+    color: @subtext-color;
+}
+
+#network.linked {
+    color: @yellow;
+}
+
+#privacy-item.screenshare image {
+    color: @privacy-screen-color;
+}
+
+#privacy-item.audio-in image {
+    color: @privacy-mic-color;
 }
 
 #tray>.passive {
@@ -136,12 +142,4 @@ tooltip label {
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: @alert-color;
-}
-
-#privacy-item.screenshare image {
-    color: @privacy-screen-color;
-}
-
-#privacy-item.audio-in image {
-    color: @privacy-mic-color;
 }

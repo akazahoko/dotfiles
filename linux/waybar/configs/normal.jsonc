@@ -1,0 +1,83 @@
+// Reference: https://github.com/Alexays/Waybar/wiki/Configuration
+[
+    {
+        "name": "main",
+        "include": [
+            "./modules/normal/separator.jsonc",
+            "./modules/normal/main/groups.jsonc",
+            "./modules/normal/main/bluetooth.jsonc",
+            "./modules/normal/main/clock.jsonc",
+            "./modules/normal/main/cpu.jsonc",
+            "./modules/normal/main/hyprland.jsonc",
+            "./modules/normal/main/memory.jsonc",
+            "./modules/normal/main/mpris.jsonc",
+            "./modules/normal/main/network.jsonc",
+            "./modules/normal/main/privacy.jsonc",
+            "./modules/normal/main/pulseaudio.jsonc",
+            "./modules/normal/main/temperature.jsonc",
+            "./modules/normal/main/tray.jsonc"
+        ],
+        "output": "DP-1",
+        "position": "bottom",
+        "height": 40,
+        "modules-left": [
+            "ext/workspaces",
+            "custom/vsep#ws",
+            "hyprland/window"
+        ],
+        "modules-center": [
+            "mpris"
+        ],
+        "modules-right": [
+            "tray",
+            "custom/vsep",
+            "group/hardware",
+            "custom/vsep",
+            "privacy",
+            "bluetooth",
+            "network",
+            "group/pulseaudio",
+            "custom/vsep",
+            "clock"
+        ]
+    },
+    {
+        "name": "side",
+        "output": "HDMI-A-1",
+        "position": "left",
+        "width": 60,
+        "include": [
+            "./modules/normal/separator.jsonc",
+            "./modules/normal/side/groups.jsonc",
+            "./modules/normal/side/bluetooth.jsonc",
+            "./modules/normal/side/clock.jsonc",
+            "./modules/normal/side/cpu.jsonc",
+            "./modules/normal/side/hyprland.jsonc",
+            "./modules/normal/side/memory.jsonc",
+            "./modules/normal/side/mpris.jsonc",
+            "./modules/normal/side/network.jsonc",
+            "./modules/normal/side/pulseaudio.jsonc",
+            "./modules/normal/side/temperature.jsonc",
+            "./modules/normal/side/tray.jsonc"
+        ],
+        "modules-left": [
+            "ext/workspaces#sidebar",
+            "custom/hsep#ws",
+            "hyprland/window#sidebar"
+        ],
+        "modules-center": [
+            "mpris#sidebar"
+        ],
+        "modules-right": [
+            "tray#sidebar",
+            "privacy",
+            "custom/hsep",
+            "network#sidebar",
+            "group/hardware",
+            "custom/hsep",
+            "group/pulseaudio#side",
+            "custom/hsep",
+            "clock#sidebar"
+        ]
+    }
+]
