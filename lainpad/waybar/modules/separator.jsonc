@@ -1,5 +1,12 @@
 {
-    "custom/separator": {
-        "format": "|"
+    "custom/vsep": {
+        "justify": "center",
+        "format": "|",
+        "tooltip-format": ""
+    },
+    "custom/vsep#ws": {
+        "justify": "center",
+        "format": "|",
+        "tooltip-format": ""
     }
 }

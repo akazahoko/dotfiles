@@ -1,0 +1,8 @@
+{
+    "temperature": {
+        "format": "{icon}",
+        "format-icons": ["󱃃", "󰔏", "󱃂"],
+        "warning-threshold": 50,
+        "critical-threshold": 70
+    }
+}

@@ -1,7 +1,0 @@
-{
-    "custom/menu": {
-        "format": "󰣇",
-        "tooltip": false,
-        "on-click": "~/.scripts/dmenu/launcher.sh"
-    }
-}

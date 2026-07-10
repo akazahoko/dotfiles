@@ -1,0 +1,52 @@
+// Reference: https://github.com/Alexays/Waybar/wiki/Configuration
+{
+    "position": "bottom",
+    "height": 40,
+    "spacing": 0,
+    "include": [ 
+        "./modules/groups.jsonc",
+        "./styles/big/modules/groups.jsonc",
+        "./styles/big/modules/backlight.jsonc",
+        "./styles/big/modules/battery.jsonc",
+        "./styles/big/modules/bluetooth.jsonc",
+        "./styles/big/modules/clock.jsonc",
+        "./styles/big/modules/cpu.jsonc",
+        "./styles/big/modules/disk.jsonc",
+        "./modules/hyprland.jsonc",
+        "./styles/big/modules/memory.jsonc",
+        "./modules/mpris.jsonc",
+        "./styles/big/modules/network.jsonc",
+        "./modules/privacy.jsonc",
+        "./modules/power-profiles-daemon.jsonc",
+        "./styles/big/modules/pulseaudio.jsonc",
+        "./modules/separator.jsonc",
+        "./styles/big/modules/temperature.jsonc",
+        "./styles/big/modules/tray.jsonc"
+    ],
+
+    "modules-left": [
+        "ext/workspaces",
+        "custom/vsep#ws",
+        "hyprland/window"
+    ],
+    
+    "modules-center": [
+        "mpris"
+    ],
+    
+    "modules-right": [
+        "privacy",
+        "tray",
+        "custom/vsep",
+        "group/hardware",
+        "custom/vsep",
+        "temperature",
+        "network",
+        "bluetooth",
+        "backlight",
+        "pulseaudio",
+        "group/power",
+        "custom/vsep",
+        "clock"
+    ]
+}

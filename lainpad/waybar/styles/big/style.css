@@ -6,7 +6,7 @@
 * {
     font-family: FiraCode Nerd Font;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
     color: @text-color;
 }
 
@@ -16,7 +16,8 @@ window#waybar {
     transition-duration: 1.5s;
 }
 
-window#waybar.fullscreen {
+window#waybar.empty #window,
+window#waybar.empty #custom-vsep.ws {
     opacity: 0;
 }
 
@@ -32,22 +33,35 @@ tooltip label {
 }
 
 /* Widgets */
+
+#backlight,
+#battery,
+#bluetooth,
 #clock,
-#tray,
-#network,
-#pulseaudio,
-#custom-weather,
+#memory,
 #mpris,
+#network,
+#power-profiles-daemon,
+#privacy-item,
+#pulseaudio,
+#temperature,
+#tray,
 #window,
-#custom-separator,
-#custom-window_sep,
 #workspaces button {
     padding: 0px 5px;
     border-radius: 0px;
 }
 
-#custom-menu {
-    margin: 0px 10px;
+#custom-vsep {
+    font-size: 16;
+    padding: 0px 0px;
+    color: @subtext-color
+}
+
+#cpu,
+#disk,
+#memory {
+    font-size: 14px;
 }
 
 /* Hyprland Workspace */
@@ -74,6 +88,12 @@ tooltip label {
     background-color: @workspace-color-active;
 }
 
+#workspaces.sidebar button.active {
+    border-bottom: 0px;
+    border-left: 2px solid @highlight-color;
+    background-color: @workspace-color-active;
+}
+
 #workspaces button.urgent {
     border-radius: 0px;
     background-color: @alert-color;
@@ -84,7 +104,6 @@ tooltip label {
 }
 
 /* Hyprland Window */
-/* Style */
 /* window#waybar.empty */
 /* window#waybar.solo */
 /* window#waybar.<app_id> */
@@ -92,21 +111,33 @@ tooltip label {
 /* window#waybar.fullscreen */
 /* window#waybar.swallowing */
 
-window#waybar.empty #window {
-    opacity: 0;
-}
-
 #pulseaudio.muted {
     color: @alert-color;
-    /* background-color: @alert-color; */
 }
 
 #mpris.paused {
-    color: @alert-color-text;
-    background-color: @alert-color;
+    color: @alert-color;
 }
 
-/* System Tray */
+#clock {
+    font-size: 14;
+}
+
+#bluetooth.off {
+    color: @alert-color;
+}
+
+#network.alt {
+    font-size: 14px;
+}
+
+#network.disconnected {
+    color: @warning-color;
+}
+
+#network.disabled {
+    color: @alert-color;
+}
 
 #tray>.passive {
     -gtk-icon-effect: dim;
@@ -117,25 +148,22 @@ window#waybar.empty #window {
     background-color: @alert-color;
 }
 
-/* Privacy */
-
-#privacy-item {
-    margin: 8px 0px;
+#privacy-item.screenshare image {
+    color: @privacy-screen-color;
 }
 
-#privacy-item.screenshare {
-    background-color: @privacy-screen-color;
+#privacy-item.audio-in image {
+    color: @privacy-mic-color;
 }
 
-#privacy-item.audio-in {
-    background-color: @privacy-mic-color;
-    /* border-bottom: 5px solid @privacy-mic-color; */
+#power-profiles-daemon.performance {
+    color: @power-performance-color;
 }
 
-#privacy-item.audio-out {
-    background-color: #0069d4;
+#power-profiles-daemon.balanced {
+    color: @power-balanced-color;
 }
 
-window#waybar.empty #custom-window_sep {
-    opacity: 0;
+#power-profiles-daemon.power-saver {
+    color: @power-saving-color;
 }

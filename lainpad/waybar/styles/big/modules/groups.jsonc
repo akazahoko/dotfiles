@@ -1,0 +1,18 @@
+{
+    "group/hardware": {
+        "orientation": "vertical",
+        "modules": [
+            "cpu",
+            "memory"
+        ]
+    },
+
+    "group/window": {
+        "orientation": "vertical",
+        "modules": [
+            "hyprland/window",
+            "hyprland/windowcount"
+            // "hyprland/window#alt"
+        ]
+    }
+}
