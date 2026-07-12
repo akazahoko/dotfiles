@@ -1,0 +1,18 @@
+{
+    "group/power": {
+        "orientation": "horizontal",
+        "drawer": {},
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+
+    "group/hardware": {
+        "orientation": "vertical",
+        "modules": [
+            "cpu",
+            "memory"
+        ]
+    }
+}

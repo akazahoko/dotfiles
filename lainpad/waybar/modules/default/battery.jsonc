@@ -7,15 +7,9 @@
             "default": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
             "charging": ["󰢟","󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"]
         },
-        "tooltip-format": "Capacity:\t{capacity}%\nTime:\t\t{time}"
-    },
-
-    "group/power": {
-        "orientation": "horizontal",
-        "drawer": {},
-        "modules": [
-            "battery",
-            "power-profiles-daemon"
-        ]
+        "tooltip-format": "Capacity:\t{capacity}%\nTime:\t\t{time}",
+        "states": {
+            "low": 20
+        }
     }
 }

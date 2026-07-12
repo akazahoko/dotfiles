@@ -3,39 +3,42 @@
     "position": "bottom",
     "height": 40,
     "spacing": 0,
-    "include": [
+    "include": [ 
         "./modules/separator.jsonc",
         "./modules/hyprland.jsonc",
         "./modules/mpris.jsonc",
         "./modules/power-profiles-daemon.jsonc",
         "./modules/privacy.jsonc",
         "./modules/clocks/normal.jsonc",
-        "./modules/default/backlight.jsonc",
-        "./modules/default/battery.jsonc",
-        "./modules/default/bluetooth.jsonc",
-        "./modules/default/cpu.jsonc",
-        "./modules/default/disk.jsonc",
-        "./modules/default/groups.jsonc",
-        "./modules/default/memory.jsonc",
-        "./modules/default/network.jsonc",
-        "./modules/default/pulseaudio.jsonc",
-        "./modules/default/temperature.jsonc",
-        "./modules/default/tray.jsonc"
+        "./modules/clean/backlight.jsonc",
+        "./modules/clean/battery.jsonc",
+        "./modules/clean/bluetooth.jsonc",
+        "./modules/clean/cpu.jsonc",
+        "./modules/clean/disk.jsonc",
+        "./modules/clean/groups.jsonc",
+        "./modules/clean/memory.jsonc",
+        "./modules/clean/network.jsonc",
+        "./modules/clean/pulseaudio.jsonc",
+        "./modules/clean/temperature.jsonc",
+        "./modules/clean/tray.jsonc"
     ],
+
     "modules-left": [
         "ext/workspaces",
         "custom/vsep#ws",
         "hyprland/window"
     ],
+    
     "modules-center": [
         "mpris"
     ],
+    
     "modules-right": [
         "privacy",
         "tray",
         "custom/vsep",
-        "group/hardware",
         "temperature",
+        "group/hardware",
         "custom/vsep",
         "network",
         "bluetooth",

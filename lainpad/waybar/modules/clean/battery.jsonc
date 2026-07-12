@@ -6,6 +6,9 @@
             "default": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
             "charging": ["󰢟","󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"]
         },
-        "tooltip-format": "Capacity:\t{capacity}%\nTime:\t\t{time}"
+        "tooltip-format": "Capacity:\t{capacity}%\nTime:\t\t{time}",
+        "states": {
+            "low": 20
+        }
     }
 }
