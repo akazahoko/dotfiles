@@ -1,6 +1,0 @@
-{
-    "backlight": {
-        "format": "{icon}",
-        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"]
-    }
-}

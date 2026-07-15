@@ -1,7 +1,0 @@
-{
-    "bluetooth": {
-        "format": "󰂯",
-        "format-off": "",
-        "on-click-right": "blueman-manager" 
-    }
-}

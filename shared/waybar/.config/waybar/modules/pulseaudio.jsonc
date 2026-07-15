@@ -1,0 +1,31 @@
+// https://github.com/Alexays/Waybar/wiki/Module:-PulseAudio
+{
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "format-muted": "󰖁",
+        "scroll-step": 1,
+        "on-click-right": "pavucontrol",
+        "tooltip-format": "Sink:\t{desc}\nVolume:\t{volume}%"
+    },
+    "pulseaudio#compact": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "format-muted": "󰖁",
+        "scroll-step": 1,
+        "on-click-right": "pavucontrol",
+        "tooltip-format": "Sink:\t{desc}\nVolume:\t{volume}%"
+    }
+}

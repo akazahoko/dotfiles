@@ -1,0 +1,57 @@
+// Reference: https://github.com/Alexays/Waybar/wiki/Configuration
+[
+    {
+        "name": "main",
+        "include": [
+            "./modules/*.jsonc"
+        ],
+        "output": "DP-1",
+        "position": "bottom",
+        "height": 30,
+        "modules-left": [
+            "ext/workspaces",
+            "custom/vsep#ws",
+            "hyprland/window"
+        ],
+        "modules-center": [
+            "mpris"
+        ],
+        "modules-right": [
+            "tray",
+            "custom/vsep",
+            "privacy",
+            "bluetooth",
+            "network",
+            "pulseaudio",
+            "custom/vsep",
+            "clock"
+        ]
+    },
+    {
+        "name": "side",
+        "output": "HDMI-A-1",
+        "position": "right",
+        // "width": 30,
+        "include": [
+            "./modules/*.jsonc"
+        ],
+        "modules-left": [
+            "ext/workspaces#side",
+            "custom/hsep#ws",
+            "hyprland/window#side"
+        ],
+        "modules-right": [
+            "tray",
+            "privacy",
+            "custom/hsep",
+            "cpu",
+            "memory",
+            "temperature",
+            "custom/hsep",
+            "network",
+            "pulseaudio#compact",
+            "custom/hsep",
+            "clock#side"
+        ]
+    }
+]

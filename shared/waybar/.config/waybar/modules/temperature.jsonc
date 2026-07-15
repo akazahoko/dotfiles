@@ -1,0 +1,23 @@
+// https://github.com/Alexays/Waybar/wiki/Module:-Temperature
+{
+    "temperature": {
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "󱃃",
+            "󰔏",
+            "󱃂"
+        ],
+        "warning-threshold": 50,
+        "critical-threshold": 70
+    },
+    "temperature#compact": {
+        "format": "{icon}",
+        "format-icons": [
+            "󱃃",
+            "󰔏",
+            "󱃂"
+        ],
+        "warning-threshold": 50,
+        "critical-threshold": 70
+    }
+}

@@ -1,1 +1,0 @@
-/home/lain/.dotfiles/linux/themes/rose-pine/main/hyprland.lua

@@ -63,18 +63,13 @@ source $ZSH/oh-my-zsh.sh
 
 ##### Alias #####
 
-if [[ "$(uname -s)" == "Linux"  ]]; then
-    source $ZDOTDIR/aliases/linux.zsh
-elif [[ "$(uname -s)" == "Darwin" ]]; then
-    source $ZDOTDIR/aliases/macos.zsh
-fi
-
 # Application
 alias vi="vim"
 alias ff="fastfetch"
 alias nv="nvim"
 alias warp="warp-cli"
 
+export PATH="$HOME/.local/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR="vim"
 
@@ -92,3 +87,6 @@ export QML_IMPORT_PATH="/usr/lib/qt/qml/QtQuick/"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

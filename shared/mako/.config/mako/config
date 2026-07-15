@@ -1,0 +1,12 @@
+# https://man.archlinux.org/man/mako.5.en
+
+# Style
+font=FiraCode Nerd Font
+include=~/.config/mako/themes/catppuccin_mocha
+anchor=top-right
+output=DP-1
+default-timeout=5000
+height=300
+
+[app-name=osd]
+anchor=top-center

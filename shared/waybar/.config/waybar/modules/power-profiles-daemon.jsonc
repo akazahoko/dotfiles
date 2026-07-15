@@ -1,0 +1,11 @@
+// https://github.com/Alexays/Waybar/wiki/Module:-PowerProfilesDaemon
+{
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "format-icons": {
+            "performance": "󱓞",
+            "balanced": "󰗑",
+            "power-saver": "󰌪"
+        }
+    }
+}
