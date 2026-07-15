@@ -22,6 +22,7 @@ hl.config({
 
         touchpad = {
             natural_scroll = true,
+            drag_3fg = 1,
         },
     },
 
@@ -35,7 +36,7 @@ hl.config({
         -- enable_swallow = true,
         -- swallow_regex = "^(foot|kitty|st)$",
         disable_hyprland_logo = true,
-	vrr = 2,
+        vrr = 2,
     },
 
     binds = {

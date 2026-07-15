@@ -35,7 +35,9 @@
 @define-color label-color @surface1;
 @define-color label-color-hover @surface2;
 @define-color alert-color @red;
+@define-color warning-color @yellow;
 @define-color alert-color-text @base;
+@define-color greenlight-color @green;
 @define-color widget-bg-color @surface0;
 
 @define-color workspace-bg-color @widget-bg-color;
@@ -44,3 +46,7 @@
 
 @define-color privacy-screen-color @lavender;
 @define-color privacy-mic-color @peach;
+
+@define-color power-performance-color @alert-color;
+@define-color power-balanced-color @greenlight-color;
+@define-color power-saving-color @warning-color;

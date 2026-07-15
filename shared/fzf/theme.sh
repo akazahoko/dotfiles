@@ -1,1 +1,1 @@
-/home/lain/.dotfiles/linux/themes/catppuccin/mocha/fzf.sh
+/home/lain/.dotfiles/lainpad/themes/catppuccin/mocha/fzf.sh

@@ -92,34 +92,42 @@ end
 
 -- Scrolling
 
-if layout == "scrolling" then
-    hl.bind("SUPER + UP", hl.dsp.focus({ workspace = "r-1" }), { repeating = true })
-    hl.bind("SUPER + DOWN", hl.dsp.focus({ workspace = "r+1" }), { repeating = true })
-    hl.bind("SUPER + LEFT", hl.dsp.layout("focus left"), { repeating = true })
-    hl.bind("SUPER + RIGHT", hl.dsp.layout("focus right"), { repeating = true })
+hl.bind("SUPER + UP", hl.dsp.focus({ workspace = "r-1" }), { repeating = true })
+hl.bind("SUPER + DOWN", hl.dsp.focus({ workspace = "r+1" }), { repeating = true })
+hl.bind("SUPER + LEFT", hl.dsp.layout("focus left"), { repeating = true })
+hl.bind("SUPER + RIGHT", hl.dsp.layout("focus right"), { repeating = true })
 
-    hl.bind("SHIFT + SUPER + UP", function() move_to_workspace("r-1") end, { repeating = true })
-    hl.bind("SHIFT + SUPER + DOWN", function() move_to_workspace("r+1") end, { repeating = true })
-    hl.bind("SHIFT + SUPER + LEFT", hl.dsp.layout("swapcol l"), { repeating = true })
-    hl.bind("SHIFT + SUPER + RIGHT", hl.dsp.layout("swapcol r"), { repeating = true })
+hl.bind("SUPER + K", hl.dsp.focus({ workspace = "r-1" }), { repeating = true })
+hl.bind("SUPER + J", hl.dsp.focus({ workspace = "r+1" }), { repeating = true })
+hl.bind("SUPER + H", hl.dsp.layout("focus left"), { repeating = true })
+hl.bind("SUPER + L", hl.dsp.layout("focus right"), { repeating = true })
 
-    hl.bind("SUPER + COMMA", hl.dsp.layout("focus left"), { repeating = true })
-    hl.bind("SUPER + PERIOD", hl.dsp.layout("focus right"), { repeating = true })
+hl.bind("SHIFT + SUPER + UP", function() move_to_workspace("r-1") end, { repeating = true })
+hl.bind("SHIFT + SUPER + DOWN", function() move_to_workspace("r+1") end, { repeating = true })
+hl.bind("SHIFT + SUPER + LEFT", hl.dsp.layout("swapcol l"), { repeating = true })
+hl.bind("SHIFT + SUPER + RIGHT", hl.dsp.layout("swapcol r"), { repeating = true })
 
-    hl.bind("SHIFT + SUPER + COMMA", hl.dsp.layout("swapcol l"), { repeating = true })
-    hl.bind("SHIFT + SUPER + PERIOD", hl.dsp.layout("swapcol r"), { repeating = true })
+hl.bind("SHIFT + SUPER + K", function() move_to_workspace("r-1") end, { repeating = true })
+hl.bind("SHIFT + SUPER + J", function() move_to_workspace("r+1") end, { repeating = true })
+hl.bind("SHIFT + SUPER + H", hl.dsp.layout("swapcol l"), { repeating = true })
+hl.bind("SHIFT + SUPER + L", hl.dsp.layout("swapcol r"), { repeating = true })
 
-    hl.bind("SUPER + R", hl.dsp.layout("colresize +conf"))
+hl.bind("SUPER + COMMA", hl.dsp.layout("focus left"), { repeating = true })
+hl.bind("SUPER + PERIOD", hl.dsp.layout("focus right"), { repeating = true })
 
-    hl.bind("SUPER + mouse_up", hl.dsp.layout("move +col"))
-    hl.bind("SUPER + mouse_down", hl.dsp.layout("move -col"))
+hl.bind("SHIFT + SUPER + COMMA", hl.dsp.layout("swapcol l"), { repeating = true })
+hl.bind("SHIFT + SUPER + PERIOD", hl.dsp.layout("swapcol r"), { repeating = true })
 
-    hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.focus({ workspace = "r+1" }))
-    hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.focus({ workspace = "r-1" }))
+hl.bind("SUPER + R", hl.dsp.layout("colresize +conf"))
 
-    hl.bind("SUPER + W", hl.dsp.layout("consume"))
-    hl.bind("SUPER + S", hl.dsp.layout("expel"))
-end
+hl.bind("SUPER + mouse_up", hl.dsp.layout("move +col"))
+hl.bind("SUPER + mouse_down", hl.dsp.layout("move -col"))
+
+hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.focus({ workspace = "r+1" }))
+hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.focus({ workspace = "r-1" }))
+
+hl.bind("SUPER + W", hl.dsp.layout("consume"))
+hl.bind("SUPER + S", hl.dsp.layout("expel"))
 
 -- ext: change gaps
 hl.bind("SUPER + G", function()

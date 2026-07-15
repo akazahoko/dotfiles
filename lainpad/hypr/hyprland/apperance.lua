@@ -7,8 +7,8 @@ hl.config({
 
     general = {
         border_size = 0,
-        gaps_in = 10,
-        gaps_out = 20,
+        gaps_in = 2,
+        gaps_out = 5,
         ["col.active_border"] = colors.active_border_color,
         ["col.inactive_border"] = colors.inactive_border_color,
     },

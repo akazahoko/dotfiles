@@ -11,7 +11,7 @@
         "./modules/privacy.jsonc",
         "./modules/clocks/normal.jsonc",
         "./modules/clean/backlight.jsonc",
-        "./modules/clean/battery.jsonc",
+        "./modules/default/battery.jsonc",
         "./modules/clean/bluetooth.jsonc",
         "./modules/clean/cpu.jsonc",
         "./modules/clean/disk.jsonc",
