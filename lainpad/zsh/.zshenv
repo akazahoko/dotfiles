@@ -1,1 +1,1 @@
-source ~/.config/fzf/fzf.sh
+../../shared/zsh/.zshenv

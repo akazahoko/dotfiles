@@ -1,1 +1,0 @@
-/home/lain/.dotfiles/lainpad/themes/catppuccin/mocha/hyprland.lua

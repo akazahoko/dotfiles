@@ -1,0 +1,1 @@
+../../../../../shared/themes/catppuccin-mocha/hypr/.config/hypr/hyprland/theme.lua
