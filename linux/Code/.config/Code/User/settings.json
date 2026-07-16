@@ -35,5 +35,6 @@
   "[shellscript]": {
     "files.eol": "\n",
     "editor.defaultColorDecorators": "never"
-  }
+  },
+  "explorer.confirmDelete": false
 }

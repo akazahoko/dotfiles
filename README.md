@@ -1,25 +1,19 @@
 # dotfiles
 
-## Linux
+## Linux (Desktop / Thinkpad)
 
 ### Current setup:
 
 - OS: Arch Linux
-- terminal emulator: foot
-- dmenu: fuzzel
+- Terminal: zsh / foot
+- Dmenu: fuzzel
 - WM + HD: hyprland
-- HD: keyd (remap Caps Lock)
-- Noti daemon: mako
+- Notifications: mako
 - Bar: waybar
 
-### Extra:
-- fbterm (tty)
+### Themes
 
-### Depreciated:
-
-- Walker + Elephant -> fuzzel
-- Rofi -> fuzzel
-- wlogout -> fuzzel + scripts
+[README.md](/linux/themes/README.md)
 
 ## macOS
 
@@ -34,29 +28,7 @@
 - yabai (need to disable SIP, nah I'm good)
 - komorebi (lazy to figure out how to subscribe with socket and shit)
 
-## Windows
+## Note
 
-### Current setup:
-
-(nothing...)
-
-### Planned:
-
-- WM: komorebi / GlazeWM (IDK probably choose GlazeWM)
-- Bar: idk yasb?
-
-## Shared
-
-- vscode (idk how)
-- fastfetch
-- fzf
-- mpv (mac have?)
-- nvim
-- tmux (useless -> prep ditch)
-- vim
-- zsh
-
-# Terminal emulator
-linux: foot (./linux/foot)
-macos: iterm2 (./macos/iterm2)
-alternatives: kitty (./shared/kitty)
+- Use Stow to manage dotfiles
+- "shared" folder stores some common files across different setup (not stow-like setup)

@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source ${0:A:h}/theme.sh
+source $HOME/.config/fzf/theme.sh
 
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
     --layout=reverse \

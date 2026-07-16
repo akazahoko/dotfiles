@@ -1,0 +1,1 @@
+../../../../shared/themes/catppuccin-mocha/fzf/.config/fzf/theme.sh

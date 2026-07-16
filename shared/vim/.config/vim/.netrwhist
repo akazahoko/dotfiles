@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/lain/.dotfiles/linux/hypr/hyprland'
-let g:netrw_dirhist_2='/home/lain/.dotfiles/linux/hypr'
-let g:netrw_dirhist_1='/home/lain/.dotfiles/shared/fastfetch'
