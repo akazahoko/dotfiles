@@ -1,7 +1,39 @@
 // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
 // https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 {
-    "ext/workspaces": {
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "甲",
+            "2": "乙",
+            "3": "丙",
+            "4": "丁",
+            "5": "戊",
+            "6": "己",
+            "7": "庚",
+            "8": "辛",
+            "9": "壬",
+            "10": "癸"
+        },
+        "persistent-workspaces": {
+            "*": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ]
+        },
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+    },
+    "hyprland/workspaces#side": {
         "format": "{icon}",
         "on-click": "activate",
         "format-icons": {
@@ -16,23 +48,19 @@
             "9": "九",
             "10": "十"
         },
-        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
-        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
-    },
-    "ext/workspaces#side": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
+        "persistent-workspaces": {
+            "*": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ]
         },
         "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
         "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"

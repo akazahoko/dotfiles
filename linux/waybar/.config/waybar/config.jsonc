@@ -9,7 +9,7 @@
         "position": "bottom",
         "height": 30,
         "modules-left": [
-            "ext/workspaces",
+            "hyprland/workspaces",
             "custom/vsep#ws",
             "hyprland/window"
         ],
@@ -36,7 +36,7 @@
             "./modules/*.jsonc"
         ],
         "modules-left": [
-            "ext/workspaces#side",
+            "hyprland/workspaces#side",
             "custom/hsep#ws",
             "hyprland/window#side"
         ],

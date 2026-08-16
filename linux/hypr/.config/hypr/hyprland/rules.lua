@@ -25,6 +25,7 @@ local opaque_windows = {
     "(?i)code",
     "*.kdeconnect.*",
     "audacious",
+    "blueman-manager",
     "btop",
     "calibre.*",
     "discord",
@@ -36,29 +37,13 @@ local opaque_windows = {
     "protonvpn.*",
     "qdirstat",
     "qt.*ct",
-    "waypaper",
     "webapp.*",
     "winegui",
 }
 
-local floating_windows = {
-    ".*manager.*",
-    -- ".*pavucontrol",
-    ".*printer",
-    "btop",
-    "fastfetch",
-    "firewall-config",
-    "mpv",
-    "nm-connection-editor",
-    "nwg-look",
-    "qt.*ct",
-    "waypaper",
-    "waypaper",
-    "webapp.*",
-}
-
 for i, name in ipairs(opaque_windows) do hl.window_rule({ match = { class = name }, opacity = 0.9 }) end
-for i, name in ipairs(floating_windows) do hl.window_rule({ match = { class = name }, float = true }) end
+
+-- Pinned Windows
 
 hl.window_rule({
     name = "pinned",
@@ -67,30 +52,22 @@ hl.window_rule({
     border_color = color.pinned_border_color,
 })
 
-hl.window_rule({
-    name = "menu",
-    match = { class = "menu" },
-    pin = true,
-    float = true,
-    no_anim = true,
-    size = { 1020, 765 },
-    opacity = 0.9,
-})
+-- Spawn Windows in Special
 
-hl.window_rule({
-    match = { class = "mpv" },
-    pseudo = true,
-})
+local special_windows = {
+    ".*pavucontrol",
+    "blueman-manager",
+    "btop",
+    "menu",
+    "nm-connection-editor",
+}
+
+for i, name in ipairs(special_windows) do hl.window_rule({ match = { class = name }, workspace = "special" }) end
+
+-- Fixed Size
 
 hl.window_rule({ match = { class = "python3", title = "Choose Video Folder" }, size = { 1020, 765 } })
-hl.window_rule({ match = { class = "xdg-desktop-portal-gtk" }, size = { 1020, 765 } })
 hl.window_rule({ match = { class = "kvantummanager", title = "Open Kvantum Theme Folder..." }, size = { 1020, 765 } })
-
-hl.window_rule({
-    name = "free space",
-    match = { workspace = "10" },
-    float = true,
-})
 
 ---------------------
 ---- LAYER RULES ----

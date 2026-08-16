@@ -99,6 +99,10 @@ tooltip label {
     background-color: @alert-color;
 }
 
+#workspaces button.empty label {
+    color: @subtext-color;
+}
+
 #workspaces button.urgent label {
     color: @alert-color-text;
 }
