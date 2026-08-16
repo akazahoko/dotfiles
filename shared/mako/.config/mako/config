@@ -4,9 +4,13 @@
 font=FiraCode Nerd Font
 include=~/.config/mako/themes/catppuccin_mocha
 anchor=top-right
-output=DP-1
 default-timeout=5000
 height=300
+outer-margin=5,10
 
 [app-name=osd]
-anchor=top-center
+width=200
+max-icon-size=32
+icon-location=left
+text-alignment=center
+anchor=bottom-center

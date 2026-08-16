@@ -29,7 +29,7 @@ hl.config({
         fullscreen_on_one_column = true,
         column_width = 0.5,
         focus_fit_method = 1,
-        follow_focus = false,
+        follow_focus = true,
         follow_min_visible = 1.0,
         wrap_focus = false,
         wrap_swapcol = false,

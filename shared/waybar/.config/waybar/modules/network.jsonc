@@ -23,7 +23,7 @@
         "format-ethernet": "󰖟",
         "format-linked": "󰈀",
         "format-alt": "󰹹 {bandwidthTotalBits}",
-        "format-wifi": "{icon}  {essid}",
+        "format-wifi": "{icon}",
         "format-disconnected": "󰪎",
         "format-disabled": "󰀝",
         "format-icons": [

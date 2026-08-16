@@ -1,7 +1,7 @@
 // Reference: https://github.com/Alexays/Waybar/wiki/Configuration
 {
     "position": "bottom",
-    "height": 40,
+    "height": 30,
     "spacing": 0,
     "include": [ 
         "./modules/separator.jsonc",
@@ -11,7 +11,7 @@
         "./modules/privacy.jsonc",
         "./modules/clock.jsonc",
         "./modules/backlight.jsonc",
-        "./modules/detailed/battery.jsonc",
+        "./modules/battery.jsonc",
         "./modules/bluetooth.jsonc",
         "./modules/cpu.jsonc",
         "./modules/disk.jsonc",
@@ -24,9 +24,7 @@
     ],
 
     "modules-left": [
-        "ext/workspaces",
-        "custom/vsep#ws",
-        "hyprland/window"
+        "hyprland/workspaces"
     ],
     
     "modules-center": [
@@ -38,14 +36,14 @@
         "tray",
         "custom/vsep",
         "temperature",
-        "group/hardware",
+        "battery",
         "custom/vsep",
-        "network",
+        "network#compact",
         "bluetooth",
         "backlight",
         "pulseaudio",
         "group/power",
         "custom/vsep",
-        "clock"
+        "clock#compact"
     ]
 }

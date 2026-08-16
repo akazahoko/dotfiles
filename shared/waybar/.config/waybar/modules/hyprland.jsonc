@@ -1,5 +1,4 @@
 // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
-// https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 {
     "hyprland/workspaces": {
         "format": "{icon}{windows}",

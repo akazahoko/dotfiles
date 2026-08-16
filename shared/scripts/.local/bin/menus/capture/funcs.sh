@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source "${0:A:h}/.helper.sh"
+source "${0:A:h:h}/helper.sh"
 
 region() {
     hyprshot -m region

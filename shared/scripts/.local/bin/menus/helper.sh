@@ -2,6 +2,8 @@
 
 # VARIABLES
 
+source "${0:A:h}/locales/zh.sh"
+
 SCRIPT="${0:A:h}/$NAME/funcs.sh"
 CONTINUE='read -k 1 -q "?Press any key to continue"'
 CHAFA='chafa -f sixels -s "${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}"'

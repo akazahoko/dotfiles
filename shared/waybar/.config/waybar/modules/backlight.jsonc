@@ -1,7 +1,7 @@
 // https://github.com/Alexays/Waybar/wiki/Module:-Backlight
 {
     "backlight": {
-        "format": "{icon} {percent}%",
+        "format": "{icon}   {percent}%",
         "format-icons": [
             "󰃞",
             "󰃝",
