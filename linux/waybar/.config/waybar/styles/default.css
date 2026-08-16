@@ -59,9 +59,9 @@ tooltip label {
 }
 
 #custom-vsep,
-#custom-hsep {
+#custom-hsep{
     padding: 0px 0px;
-    color: @subtext-color
+    color: @subtext-color;
 }
 
 /* Hyprland Workspace */
@@ -88,12 +88,6 @@ tooltip label {
     background-color: @workspace-color-active;
 }
 
-#workspaces.sidebar button.active {
-    border-bottom: 0px;
-    border-left: 2px solid @highlight-color;
-    background-color: @workspace-color-active;
-}
-
 #workspaces button.urgent {
     border-radius: 0px;
     background-color: @alert-color;
@@ -103,8 +97,28 @@ tooltip label {
     color: @subtext-color;
 }
 
+#workspaces button.active label {
+    color: @highlight-color;
+}
+
 #workspaces button.urgent label {
     color: @alert-color-text;
+}
+
+#workspaces .taskbar-window {
+    margin: 0px 2px;
+    padding: 0px 0px;
+}
+
+#workspaces.side button.active {
+    border-bottom: 0px;
+    border-right: 2px solid @highlight-color;
+    background-color: @workspace-color-active;
+}
+
+#workspaces.side .taskbar-window {
+    margin: 0px 0px;
+    padding: 0px 0px;
 }
 
 /* Hyprland Window */

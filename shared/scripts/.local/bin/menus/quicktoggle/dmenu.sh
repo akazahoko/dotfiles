@@ -61,50 +61,6 @@ toggle_mute_in() {
     wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 }
 
-inhibitor_status() {
-    INHIBITOR=$(systemd-inhibit --list --no-pager | grep -i "DONTFUCKINGSLEEP")
-
-    if [[ -z "$INHIBITOR" ]] ; then
-        echo on
-    else
-        echo off
-    fi
-}
-
-toggle_inhibitor() {
-    local STATUS=$(inhibitor_status)
-
-    case $STATUS in
-        on)
-            systemd-inhibit --what=idle:sleep --mode=block --who="DONTFUCKINGSLEEP" sleep infinity &
-        ;;
-        off)
-            pkill -f DONTFUCKINGSLEEP &
-        ;;
-    esac
-}
-
-night_status() {
-    if pgrep -x "hyprsunset" > /dev/null; then
-        echo on
-    else
-        echo off
-    fi
-}
-
-toggle_night() {
-    local STATUS=$(night_status)
-
-    case $STATUS in
-        on)
-            pkill -f hyprsunset &
-        ;;
-        off)
-            hyprsunset &
-        ;;
-    esac
-}
-
 set_status_icons() {
     case $(wifi_status) in
         enabled)WIFI_STATUS=$TOGGLE_ON;;
@@ -145,8 +101,6 @@ PROMPTS=(
     "bluetooth:$BT_STATUS\tBluetooth"
     "vol_out:$VOL_OUT_STATUS\tAudio (Output)"
     "vol_in:$VOL_IN_STATUS\tAudio (Input)"
-    "inhibitor:$INHIBITOR_STATUS\tSleep Inhibitor"
-    "night:$NIGHT_STATUS\tNight Mode"
 )
 
 source "${0:A:h:h}/helper.sh"

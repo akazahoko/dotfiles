@@ -6,6 +6,8 @@ local color = require("hyprland.theme")
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
+OPACITY = 0.9
+
 local opaque_windows = {
     ".*ark",
     ".*CoolerControl",
@@ -14,25 +16,19 @@ local opaque_windows = {
     ".*konsole",
     ".*kwrite",
     ".*Nautilus",
-    ".*pavucontrol",
-    ".*printer",
     ".*PrismLauncher",
     ".*Qalculate.*",
     ".*qBittorrent",
     ".*ThunderBird",
-    ".*WhatsApp.*",
     "(?i).*manager.*",
     "(?i)code",
     "*.kdeconnect.*",
     "audacious",
-    "blueman-manager",
-    "btop",
     "calibre.*",
     "discord",
     "foot",
     "Kitty",
     "libreoffice.*",
-    "nm-connection-editor",
     "obsidian",
     "protonvpn.*",
     "qdirstat",
@@ -41,7 +37,7 @@ local opaque_windows = {
     "winegui",
 }
 
-for i, name in ipairs(opaque_windows) do hl.window_rule({ match = { class = name }, opacity = 0.9 }) end
+for i, name in ipairs(opaque_windows) do hl.window_rule({ match = { class = name }, opacity = OPACITY }) end
 
 -- Pinned Windows
 
@@ -52,17 +48,24 @@ hl.window_rule({
     border_color = color.pinned_border_color,
 })
 
--- Spawn Windows in Special
+-- Special Windows
 
 local special_windows = {
     ".*pavucontrol",
+    ".*printer",
     "blueman-manager",
     "btop",
     "menu",
     "nm-connection-editor",
 }
 
-for i, name in ipairs(special_windows) do hl.window_rule({ match = { class = name }, workspace = "special" }) end
+for _, name in ipairs(special_windows) do
+    hl.window_rule({
+        match = { class = name },
+        workspace = "special",
+        opacity = OPACITY
+    })
+end
 
 -- Fixed Size
 
@@ -79,7 +82,7 @@ hl.layer_rule({
     name = "fuzzel",
     match = { namespace = "fuzzel" },
     blur = true,
-    dim_around = false,
+    dim_around = true,
     no_anim = true
 })
 

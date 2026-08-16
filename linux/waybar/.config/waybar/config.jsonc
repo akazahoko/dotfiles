@@ -9,12 +9,7 @@
         "position": "bottom",
         "height": 30,
         "modules-left": [
-            "hyprland/workspaces",
-            "custom/vsep#ws",
-            "hyprland/window"
-        ],
-        "modules-center": [
-            "mpris"
+            "hyprland/workspaces"
         ],
         "modules-right": [
             "tray",
@@ -22,6 +17,7 @@
             "privacy",
             "bluetooth",
             "network",
+            "mpris#compact",
             "pulseaudio",
             "custom/vsep",
             "clock"
@@ -36,9 +32,7 @@
             "./modules/*.jsonc"
         ],
         "modules-left": [
-            "hyprland/workspaces#side",
-            "custom/hsep#ws",
-            "hyprland/window#side"
+            "hyprland/workspaces#side"
         ],
         "modules-right": [
             "tray",

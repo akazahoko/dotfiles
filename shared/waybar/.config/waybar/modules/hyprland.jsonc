@@ -2,8 +2,8 @@
 // https://github.com/Alexays/Waybar/wiki/Module:-Workspaces
 {
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
+        "format": "{icon}{windows}",
+        "format-window-separator": "",
         "format-icons": {
             "1": "甲",
             "2": "乙",
@@ -30,12 +30,15 @@
                 10
             ]
         },
+        "workspace-taskbar": {
+            "enable": true,
+            "on-click-window": "hyprctl dispatch 'hl.dsp.focus({ window = \"address:{address}\"})'"
+        },
         "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
         "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
     },
     "hyprland/workspaces#side": {
-        "format": "{icon}",
-        "on-click": "activate",
+        "format": "{icon}{windows}",
         "format-icons": {
             "1": "一",
             "2": "二",
@@ -61,6 +64,11 @@
                 9,
                 10
             ]
+        },
+        "workspace-taskbar": {
+            "enable": true,
+            "orientation": "vertical",
+            "on-click-window": "hyprctl dispatch 'hl.dsp.focus({ window = \"address:{address}\"})'"
         },
         "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
         "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"

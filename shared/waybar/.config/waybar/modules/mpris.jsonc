@@ -16,5 +16,12 @@
             "playing": "󰐊",
             "paused": "󰏤"
         }
+    },
+    "mpris#compact": {
+        "format": "{status_icon}",
+        "status-icons": {
+            "playing": "󰐊",
+            "paused": "󰏤"
+        }
     }
 }
