@@ -29,6 +29,9 @@
                 10
             ]
         },
+        "ignore-workspaces": [
+            "desktop"
+        ],
         "workspace-taskbar": {
             "enable": true,
             "on-click-window": "hyprctl dispatch 'hl.dsp.focus({ window = \"address:{address}\"})'"
@@ -39,16 +42,16 @@
     "hyprland/workspaces#side": {
         "format": "{icon}{windows}",
         "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
+            "1": "甲",
+            "2": "乙",
+            "3": "丙",
+            "4": "丁",
+            "5": "戊",
+            "6": "己",
+            "7": "庚",
+            "8": "辛",
+            "9": "壬",
+            "10": "癸"
         },
         "persistent-workspaces": {
             "*": [
@@ -67,6 +70,7 @@
         "workspace-taskbar": {
             "enable": true,
             "orientation": "vertical",
+            "justify": "center",
             "on-click-window": "hyprctl dispatch 'hl.dsp.focus({ window = \"address:{address}\"})'"
         },
         "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",

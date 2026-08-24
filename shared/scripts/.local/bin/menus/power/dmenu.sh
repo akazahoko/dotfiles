@@ -5,23 +5,23 @@ NAME="power"
 INHIBITOR=$(systemd-inhibit --list --no-pager | grep -i "DONTFUCKINGSLEEP")
 
 if [[ -z "$INHIBITOR" ]]; then
-    INHIBITOR_STATE="\tInhibitor 󰒳"
+    INHIBITOR_STATE="\t防止睡眠"
 else
-    INHIBITOR_STATE="\tInhibitor 󰒲"
+    INHIBITOR_STATE="\t允許睡眠"
 fi
 
 if pgrep -x "hyprsunset" >/dev/null; then
-    NIGHT_STATE="\tNight Mode"
+    NIGHT_STATE="\t關閉夜間模式"
 else
-    NIGHT_STATE="\tNight Mode"
+    NIGHT_STATE="\t開啟夜間模式"
 fi
 
 PROMPTS=(
-    "suspend:󰤄\tSuspend"
-    "shutdown:\tShutdown"
-    "reboot:󰑓\tReboot"
-    "toggle_dpms:󰶐\tDPMS"
-    "exit_hypr:󰈆\tExit"
+    "suspend:󰤄\t睡眠"
+    "shutdown:\t關機"
+    "reboot:󰑓\t重新啟動"
+    "toggle_dpms:󰶐\t關閉螢幕"
+    "exit_hypr:󰈆\t離開"
     "toggle_inhibitor:$INHIBITOR_STATE"
     "toggle_night:$NIGHT_STATE"
 )

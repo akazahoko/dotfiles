@@ -2,13 +2,13 @@
 
 NAME="pacman"
 PROMPTS=(
-    "install_pkg:󱧕\tInstall"
-    "update_pkg:󰚰\tUpdate"
-    "install_aur:\tAUR"
-    "update_aur:\tUpdate (AUR)"
-    "manage_pkg:󱧖\tDelete"
-    "clean_orphans:󰃢\tClean Orphans"
-    "print_version:󰮯\tInfo"
+    "install_pkg:󱧕\t安裝"
+    "update_pkg:󰚰\t更新"
+    "install_aur:\t安裝 (AUR)"
+    "update_aur:\t更新 (AUR)"
+    "manage_pkg:󱧖\t管理及移除"
+    "clean_orphans:󰃢\t清除棄置包"
+    "print_version:󰮯\t關於Pacman"
 )
 
 source "${0:A:h:h}/helper.sh"
@@ -22,5 +22,5 @@ fi
 TITLE=$NAME_$OPTION
 
 case $OPTION in
-    *)spawn_terminal;;
+*) spawn_terminal ;;
 esac

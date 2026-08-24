@@ -22,7 +22,7 @@ function vol_sink_notify() {
         ICON=$ICON_DIR/osd/nf-fa-volume_zero.png
     fi
 
-    notify_slider "volume_sink" "$ICON" "$MSG[VOL_SINK]" "$VOLUME" "$PROGRESS"
+    notify_slider "volume_sink" "$ICON" "輸出音量" "$VOLUME" "$PROGRESS"
 }
 
 function vol_src_notify() {
@@ -37,7 +37,7 @@ function vol_src_notify() {
         ICON=$ICON_DIR/osd/nf-md-microphone.png
     fi
 
-    notify_slider "volume_src" "$ICON" "$MSG[VOL_SRC]" "$VOLUME" "$PROGRESS"
+    notify_slider "volume_src" "$ICON" "輸入音量" "$VOLUME" "$PROGRESS"
 }
 
 function vol_sink_up() {

@@ -12,12 +12,12 @@
             "hyprland/workspaces"
         ],
         "modules-right": [
+            "mpris#compact",
             "tray",
             "custom/vsep",
             "privacy",
             "bluetooth",
             "network",
-            "mpris#compact",
             "pulseaudio",
             "custom/vsep",
             "clock"
@@ -26,26 +26,28 @@
     {
         "name": "side",
         "output": "HDMI-A-1",
-        "position": "right",
-        // "width": 30,
+        "layer": "top",
+        "position": "bottom",
+        "height": 30,
         "include": [
             "./modules/*.jsonc"
         ],
         "modules-left": [
-            "hyprland/workspaces#side"
+            "hyprland/workspaces"
         ],
         "modules-right": [
+            "mpris#compact",
             "tray",
             "privacy",
-            "custom/hsep",
+            "custom/vsep",
             "cpu",
             "memory",
             "temperature",
-            "custom/hsep",
+            "custom/vsep",
             "network",
             "pulseaudio#compact",
-            "custom/hsep",
-            "clock#side"
+            "custom/vsep",
+            "clock"
         ]
     }
 ]

@@ -2,24 +2,32 @@
 
 # VARIABLES
 
-source "${0:A:h}/locales/zh.sh"
-
 SCRIPT="${0:A:h}/$NAME/funcs.sh"
 CONTINUE='read -k 1 -q "?Press any key to continue"'
 CHAFA='chafa -f sixels -s "${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}"'
 BAT='bat --color=always'
 ICON_DIR="${0:A:h:h}/icons"
 
+show_dmenu() {
+    # fuzzel
+    fuzzel --dmenu \
+        --width=22 \
+        --nth-delimiter=: \
+        --with-nth=3 \
+        --accept-nth=2 \
+        --hide-prompt \
+        --auto-select \
+        --match-nth=1
+}
+
+print_prompt() {
+    for i in {1..${#PROMPTS}}; do
+        printf '%d:%b\n' "$i" "${PROMPTS[i]}"
+    done
+}
+
 prompt_user() {
-    OPTION=$(echo $(
-        printf '%b\n' "${PROMPTS[@]}" |
-            fuzzel --dmenu \
-                --width=22 \
-                --nth-delimiter=: \
-                --with-nth=2 \
-                --accept-nth=1 \
-                --hide-prompt
-    ))
+    OPTION=$(print_prompt | show_dmenu)
 
     if [[ -z $OPTION ]]; then
         exit 0

@@ -5,3 +5,7 @@ require("hyprland.binds")
 require("hyprland.apperance")
 require("hyprland.rules")
 require("hyprland.layouts")
+
+-- Scripts
+require("hyprland.scripts.desktop")
+require("hyprland.scripts.sidemonitor")

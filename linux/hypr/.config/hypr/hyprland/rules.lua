@@ -57,15 +57,29 @@ local special_windows = {
     "btop",
     "menu",
     "nm-connection-editor",
+    "xdg-desktop-portal-gtk"
 }
 
 for _, name in ipairs(special_windows) do
     hl.window_rule({
         match = { class = name },
         workspace = "special",
-        opacity = OPACITY
+        opacity = OPACITY,
+        float = false,
     })
 end
+
+hl.window_rule({
+    match = { class = ".*qbittorrent.*", title = "開啟.*" },
+    workspace = "special",
+    float = false,
+})
+
+hl.window_rule({
+    match = { class = ".*qbittorrent.*", title = "選取.*" },
+    workspace = "special",
+    float = false,
+})
 
 -- Fixed Size
 
@@ -90,7 +104,7 @@ hl.layer_rule({
     name = "rofi",
     match = { namespace = "rofi" },
     blur = true,
-    dim_around = false,
+    dim_around = true,
     no_anim = true
 })
 

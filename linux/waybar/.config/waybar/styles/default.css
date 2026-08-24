@@ -110,17 +110,6 @@ tooltip label {
     padding: 0px 0px;
 }
 
-#workspaces.side button.active {
-    border-bottom: 0px;
-    border-right: 2px solid @highlight-color;
-    background-color: @workspace-color-active;
-}
-
-#workspaces.side .taskbar-window {
-    margin: 0px 0px;
-    padding: 0px 0px;
-}
-
 /* Hyprland Window */
 /* window#waybar.empty */
 /* window#waybar.solo */

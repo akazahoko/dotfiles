@@ -1,5 +1,5 @@
-@import url("styles/default.css");
 @import url("theme.css");
+@import url("styles/default.css");
 
 * {
     font-weight: bold;
@@ -12,8 +12,4 @@
 
 #pulseaudio.output.muted {
     color: @alert-color;
-}
-
-#clock {
-    font-size: 14px;
 }
