@@ -132,7 +132,7 @@ tooltip label {
 }
 
 #network.disconnected {
-    color: @warning-color;
+    color: @alert-color;
 }
 
 #network.disabled {

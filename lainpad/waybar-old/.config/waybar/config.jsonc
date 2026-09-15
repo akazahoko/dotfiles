@@ -1,0 +1,63 @@
+// Reference: https://github.com/Alexays/Waybar/wiki/Configuration
+{
+    "position": "top",
+    "height": 30,
+    "spacing": 0,
+    "include": [
+        "./modules/separator.jsonc",
+        "./modules/mpris.jsonc",
+        "./modules/power-profiles-daemon.jsonc",
+        "./modules/privacy.jsonc",
+        // "./modules/clock.jsonc",
+        "./modules/backlight.jsonc",
+        "./modules/battery.jsonc",
+        "./modules/bluetooth.jsonc",
+        "./modules/cpu.jsonc",
+        "./modules/memory.jsonc",
+        "./modules/network.jsonc",
+        "./modules/pulseaudio.jsonc",
+        "./modules/temperature.jsonc",
+        "./modules/tray.jsonc"
+    ],
+    "modules-left": [
+	    "mango/layout",
+        "mango/workspaces"
+    ],
+    "modules-center": [
+	    "mango/keymode"
+    ],
+    "modules-right": [
+        "privacy",
+        "tray",
+        "temperature",
+        "group/batt",
+        // "custom/vsep",
+        "network",
+        "bluetooth",
+        // "backlight",
+        "pulseaudio",
+        // "custom/vsep",
+        "clock"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}{windows}",
+        "format-window-separator": "",
+        "ignore-workspaces": [
+            "desktop"
+        ],
+        "workspace-taskbar": {
+            "enable": true,
+            "on-click-window": "hyprctl dispatch 'hl.dsp.focus({ window = \"address:{address}\"})'"
+        },
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
+    },
+    "group/batt": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ],
+        "drawer": {}
+    }
+}

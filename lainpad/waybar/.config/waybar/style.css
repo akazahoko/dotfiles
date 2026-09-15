@@ -1,1 +1,166 @@
-styles/normal-clean.css
+/* https://github.com/Alexays/Waybar/wiki/Styling */
+
+@import url("/home/lain/.cache/wal/colors-waybar.css");
+
+* {
+    font-family: FiraCode Nerd Font;
+    font-weight: bold;
+    font-size: 16px;
+    color: @foreground;
+}
+
+window#waybar {
+    background-color: @background;
+}
+
+window#waybar.empty #window,
+window#waybar.empty #custom-vsep.ws {
+    opacity: 0;
+}
+
+tooltip {
+    border-radius: 0px;
+    background-color: @background;
+}
+
+tooltip label {
+    font-family: FiraCode Nerd Font;
+    font-weight: Normal;
+    font-size: 14px;
+}
+
+/* Widgets */
+
+#backlight,
+#battery,
+#bluetooth,
+#clock,
+#memory,
+#mpris,
+#network,
+#power-profiles-daemon,
+#privacy-item,
+#pulseaudio,
+#temperature,
+#tray,
+#window,
+#workspaces button {
+    padding: 0px 5px;
+    border-radius: 0px;
+}
+
+#cpu,
+#disk,
+#memory {
+    font-size: 14px;
+}
+
+/* Style */
+/* #workspaces */
+/* #workspaces button */
+/* #workspaces button.active */
+/* #workspaces button.empty */
+/* #workspaces button.persistent */
+/* #workspaces button.special */
+/* #workspaces button.visible */
+/* #workspaces button.urgent */
+/* #workspaces button.hosting-monitor */
+/* #workspaces .workspace-label */
+/* #workspaces .taskbar-window */
+/* #workspaces .taskbar-window.active */
+
+#workspaces button {
+    border-bottom: 0px;
+}
+
+#workspaces button.active {
+    border-bottom: 2px solid @color0;
+    background-color: @color1;
+}
+
+#workspaces button.urgent {
+    border-radius: 0px;
+    background-color: @alert-color;
+}
+
+#workspaces button.empty label {
+    color: @hidden-color;
+}
+
+#workspaces button.active label {
+    color: @highlight-color;
+}
+
+#workspaces button.urgent label {
+    color: @alert-color-text;
+}
+
+#workspaces .taskbar-window {
+    margin: 0px 2px;
+    padding: 0px 0px;
+}
+
+/* Hyprland Window */
+/* window#waybar.empty */
+/* window#waybar.solo */
+/* window#waybar.<app_id> */
+/* window#waybar.floating */
+/* window#waybar.fullscreen */
+/* window#waybar.swallowing */
+
+#pulseaudio.muted {
+    color: @color9;
+}
+
+#mpris.paused {
+    color: @color9;
+}
+
+#bluetooth.off {
+    color: @color9;
+}
+
+#network.alt {
+    font-size: 14px;
+}
+
+#network.disconnected {
+    color: @color9;
+}
+
+#network.disabled {
+    color: @color9;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @alert-color;
+}
+
+#privacy-item.screenshare image {
+    color: @privacy-screen-color;
+}
+
+#privacy-item.audio-in image {
+    color: @privacy-mic-color;
+}
+
+#power-profiles-daemon.performance {
+    color: @power-performance-color;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @power-saving-color;
+}
+
+#battery.charging {
+    color: @greenlight-color;
+}
+
+#battery.low {
+    color: @alert-color;
+}

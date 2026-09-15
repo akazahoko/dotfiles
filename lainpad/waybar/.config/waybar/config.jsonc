@@ -1,1 +1,36 @@
-configs/normal-clean.jsonc
+// Reference: https://github.com/Alexays/Waybar/wiki/Configuration
+{
+    "position": "top",
+    "height": 30,
+    "spacing": 0,
+    "modules-left": [
+        "mango/layout",
+        "mango/workspaces",
+        "mango/keymode"
+    ],
+    "modules-center": [
+        "cpu",
+        "memory",
+        "temperature"
+    ],
+    "modules-right": [
+        "privacy",
+        "tray",
+        "group/batt",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "clock"
+    ],
+    "group/batt": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ],
+        "drawer": {}
+    },
+    "network": {
+        "format-wifi": "{essid}"
+    }
+}
