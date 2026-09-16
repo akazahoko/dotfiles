@@ -10,7 +10,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("fcitx5 -r -d")
     hl.exec_cmd("awww-daemon")
-    hl.exec_cmd("mako")
+    hl.exec_cmd("dunst")
 
     -- Clipboard
 

@@ -18,5 +18,5 @@ fi
 TITLE=$NAME_$OPTION
 
 case $OPTION in
-    *)open_in_term;;
+    *)spawn_terminal;;
 esac

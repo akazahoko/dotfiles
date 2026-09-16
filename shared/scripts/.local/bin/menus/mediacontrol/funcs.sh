@@ -10,7 +10,7 @@ function vol_sink_notify() {
     local PROGRESS=$VOLUME
 
     if [[ "$STATUS" == "[MUTED]" ]]; then
-        VOLUME="Muted"
+        VOLUME="已靜音"
         ICON=$ICON_DIR/osd/nf-fa-volume_mute.png
     elif (("$VOLUME" >= 65)); then
         ICON=$ICON_DIR/osd/nf-fa-volume_high.png
@@ -31,7 +31,7 @@ function vol_src_notify() {
     local PROGRESS=$VOLUME
 
     if [[ "$STATUS" == "[MUTED]" ]]; then
-        VOLUME="Muted"
+        VOLUME="已靜音"
         ICON=$ICON_DIR/osd/nf-md-microphone_off.png
     else
         ICON=$ICON_DIR/osd/nf-md-microphone.png

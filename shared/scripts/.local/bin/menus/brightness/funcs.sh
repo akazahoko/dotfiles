@@ -23,7 +23,7 @@ function ddc_notify() {
         ICON=$ICON_DIR/osd/nf-md-brightness_0.png
     fi
 
-    notify_slider "brightness" "$ICON" "Display Brightness" "$BRIGHTNESS" "$BRIGHTNESS"
+    notify_slider "brightness" "$ICON" "螢幕亮度" "$BRIGHTNESS" "$BRIGHTNESS"
 }
 
 function bnctl_notify() {
@@ -41,7 +41,7 @@ function bnctl_notify() {
         ICON=$ICON_DIR/osd/nf-md-brightness_0.png
     fi
 
-    notify_slider "brightness" "$ICON" "Display Brightness" "$PERCENT" "$PERCENT"
+    notify_slider "brightness" "$ICON" "螢幕亮度" "$PERCENT%" "$PERCENT"
 }
 
 function ddc_up() {
@@ -55,13 +55,13 @@ function ddc_down() {
 }
 
 function bnctl_up() {
-    brightnessctl set +5%
+    brightnessctl set 5%+
     bnctl_notify
 }
 
 function bnctl_down() {
-    bnctl_notify
     brightnessctl set 5%-
+    bnctl_notify
 }
 
 $1

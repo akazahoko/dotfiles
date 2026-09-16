@@ -19,12 +19,13 @@ for i = 1, 10 do
     hl.bind("CTRL + SHIFT + SUPER + " .. key, hl.dsp.window.move({ workspace = i, follow = false })) -- Switch w/o Follow
 end
 
-hl.bind("SUPER + MINUS", hl.dsp.focus({workspace = "r-1"}))
-hl.bind("SUPER + EQUAL", hl.dsp.focus({workspace = "r+1"}))
+hl.bind("SUPER + MINUS", hl.dsp.focus({ workspace = "r-1" }))
+hl.bind("SUPER + EQUAL", hl.dsp.focus({ workspace = "r+1" }))
 
--- Special Workspaces
-hl.bind("SUPER + GRAVE", hl.dsp.workspace.toggle_special({ special_name = "special" }))
-hl.bind("SHIFT + SUPER + GRAVE", hl.dsp.window.move({ workspace = "special" }))
+-- Sketchpad & Special
+hl.bind("SUPER + GRAVE", hl.dsp.workspace.toggle_special("sketchpad"))
+hl.bind("SHIFT + SUPER + GRAVE", hl.dsp.window.move({ workspace = "special:sketchpad" }))
+hl.bind("CTRL + SUPER + GRAVE", hl.dsp.workspace.toggle_special("special"))
 
 -- Drag / Resize Windows with Mouse
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag())

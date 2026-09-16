@@ -33,12 +33,12 @@ update_aur() {
 }
 
 clean_orphans() {
-    ORPHANS=$(pacman -Qtdq)
+    ORPHANS=($(pacman -Qtdq))
 
-    if [[ -n $ORPHANS ]]; then
-        sudo pacman -Rns $ORPHANS
+    if [[ ${#ORPHANS[@]} -gt 0 ]]; then
+        sudo pacman -Rns "${ORPHANS[@]}"
     else
-        echo "NO Orphans"
+        echo "CLEAN!"
     fi
 
     eval "$CONTINUE"
@@ -46,6 +46,7 @@ clean_orphans() {
 
 print_version() {
     pacman --version
+    yay --version
     eval "$CONTINUE"
 }
 

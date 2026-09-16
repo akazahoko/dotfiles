@@ -19,6 +19,7 @@ hl.config({
         force_no_accel = false,
         scroll_factor = true,
         accel_profile = "adaptive",
+        sensitivity = 0.5,
 
         touchpad = {
             natural_scroll = true,
@@ -33,10 +34,7 @@ hl.config({
     -- See https://wiki.hypr.land/Configuring/Basics/Variables/#misc
 
     misc = {
-        -- enable_swallow = true,
-        -- swallow_regex = "^(foot|kitty|st)$",
         disable_hyprland_logo = true,
-        vrr = 2,
     },
 
     binds = {
@@ -56,5 +54,5 @@ hl.monitor({
     output = "eDP-1",
     mode = "2880x1800@120",
     position = "0x0",
-    scale = "1.50",
+    scale = "1.5",
 })

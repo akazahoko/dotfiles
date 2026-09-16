@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source "${0:A:h}/.helper.sh"
+source "${0:A:h:h}/helper.sh"
 
 REMOTE_NAME=HKUST
 MOUNT_DIR=$HOME/HKUST

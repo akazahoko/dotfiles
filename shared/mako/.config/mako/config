@@ -2,7 +2,7 @@
 
 # Style
 font=FiraCode Nerd Font
-include=~/.config/mako/themes/catppuccin_mocha
+include=~/.cache/wal/colors-mako
 anchor=top-right
 default-timeout=5000
 height=300

@@ -78,21 +78,19 @@ hl.window_rule({ match = { class = "kvantummanager", title = "Open Kvantum Theme
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/#layer-rules
 
-hl.layer_rule({
-    name = "fuzzel",
-    match = { namespace = "fuzzel" },
-    blur = true,
-    dim_around = true,
-    no_anim = true
-})
+local launchers = {
+    "fuzzel",
+    "rofi",
+}
 
-hl.layer_rule({
-    name = "rofi",
-    match = { namespace = "rofi" },
-    blur = true,
-    dim_around = false,
-    no_anim = true
-})
+for _, name in ipairs(launchers) do
+    hl.layer_rule({
+        match = { namespace = name},
+        blur = true,
+        dim_around = true,
+        no_anim = true,
+    })
+end
 
 -------------------------
 ---- WORKSPACE RULES ----
@@ -103,5 +101,11 @@ hl.layer_rule({
 hl.workspace_rule({
     workspace = "special:special",
     gaps_out = 150,
-    gaps_in = 20,
+    gaps_in = 10,
+})
+
+hl.workspace_rule({
+    workspace = "special:sketchpad",
+    gaps_out = 120,
+    gaps_in = 10,
 })

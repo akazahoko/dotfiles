@@ -1,6 +1,6 @@
 {
     "custom/vsep": {
-        "format": "│",
+        "format": " ",
         "tooltip-format": ""
     },
     "custom/hsep": {

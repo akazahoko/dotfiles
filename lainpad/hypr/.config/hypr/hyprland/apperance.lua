@@ -74,13 +74,13 @@ hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 1
 
 hl.animation({ leaf = "windows", enabled = true, speed = 3, bezier = "easeOutBack" })
 hl.animation({ leaf = "fade", enabled = true, speed = 7, bezier = "easeOutExpo" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "easeOutBack", style = "slidevert" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "easeOutQuart", style = "slidevert" })
 hl.animation({ leaf = "specialWorkspaceIn", enabled = true, speed = 3, bezier = "easeOutQuint", style = "slidevert top" })
+
 hl.animation({
     leaf = "specialWorkspaceOut",
     enabled = true,
     speed = 3,
     bezier = "easeOutQuint",
-    style =
-    "slidevert bottom"
+    style = "slidevert bottom",
 })

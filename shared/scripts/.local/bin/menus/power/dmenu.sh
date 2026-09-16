@@ -11,9 +11,9 @@ else
 fi
 
 if pgrep -x "hyprsunset" >/dev/null; then
-    NIGHT_STATE="\t關閉夜間模式"
+    NIGHT_STATE="\t夜間模式"
 else
-    NIGHT_STATE="\t開啟夜間模式"
+    NIGHT_STATE="\t夜間模式"
 fi
 
 PROMPTS=(

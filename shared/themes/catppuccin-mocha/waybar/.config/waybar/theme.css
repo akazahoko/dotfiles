@@ -28,7 +28,7 @@
 @define-color bg-color @crust;
 @define-color text-color @text;
 @define-color subtext-color @overlay0;
-@define-color hidden-color @surface0;
+@define-color hidden-color @surface2;
 @define-color tooltip-bg-color @base;
 @define-color highlight-color @mauve;
 @define-color shadow-color @base;
